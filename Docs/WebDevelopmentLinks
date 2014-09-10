@@ -1,0 +1,34 @@
+Browserling (browser compatibility testing):
+You just enter a URL and you can test the full interface of your site on multiple browsers for a set period of time. Once the time has expired, you will need to re enter the URL of your site.
+https://browserling.com/
+
+
+Spoon (browser compatability testing):
+
+Runs VMs in browser to test on all major browsers, as well as Opera Mobile and Firefox mobile.
+
+http://spoon.net/browsers/
+
+
+BrowserStack (browser compatability testing):
+
+Runs VMs in browser to test almost all browsers. Is a paid monthly subscription service. But does have a Free Trial process, which doesnt involve credit card information of any kind. Can be usefull to use for certain browser that are not supported by browserling/Spoon
+
+http://www.browserstack.com/
+
+
+Chrome Dev Tools (scability and other various functionality):
+
+Chrome dev tools, in the latest version of chrome, allows you to emmulate various mobile devices, and change the resolution of the screen itself to allow for testing of the scaling of your webpage. In addition Dev tools allows you to detect memory leaks, and framerates of renderings on your webpage.
+
+(built into chrome web browser)
+
+
+------------------Web Standards--------------------------------------
+W3 Schools:
+Numerous code samples and standards on all HTML, HTML5, CSS, CSS3, PHP, SQL, JQuery, and Javscript best practices and standards.
+Many tutorials also exist as well.
+
+http://www.w3schools.com/
+
+

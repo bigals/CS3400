@@ -1,0 +1,45 @@
+body {
+    background-color: #00AAFF;
+    color: #000000;
+    text-align: center;
+}
+body h2 {
+    postion: relative;
+    top: 2px;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+#pageWrapper {
+    position: relative;
+    width: 86%;
+    background-color: #EFEFEF;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+#header {
+    width: 100%;
+    background-color: #BBBBBB;
+    border-bottom: 3px solid black;
+}
+#navBar {
+    text-align: center;
+    height: 30px;
+}
+.navBtn {
+    position: relative;
+    display: inline;
+    margin: 0 auto;
+    padding: 4px;
+    border: 2px solid black;
+    height: 30px;
+    width: 200px;
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+.navBtn:hover {
+    background-color: #EEEEEE;
+}
+#content {
+    margin: 30px 10px 30px 10px;
+    text-align: left;
+}

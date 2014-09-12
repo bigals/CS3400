@@ -81,7 +81,7 @@ function loadFileAsText()
             <div id="content">
                <h4 align ="center"> Javascript Create & Read File Locally</h4>
 			<h4 align ="center"> This code was taken from: http://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/ </h4> 
-<table>
+<table class="exampleLayout">
 <td>
 <div id="javascriptCreateFile">
 <h4>Application</h4> 
@@ -112,10 +112,9 @@ function loadFileAsText()
 </div>
 </td>
 <td>
-<div class = "codeBoxes">
-<h4>HTML Code</h4> 
 
-<textarea>
+<h4>HTML Code</h4> 
+<textarea class = "codeBoxes">
 &lt;table&gt;<br />
 	&lt;tr&gt;&lt;td&gt;Text to Save:&lt;/td&gt;&lt;/tr&gt;<br />
 	&lt;tr&gt;<br />
@@ -139,7 +138,7 @@ function loadFileAsText()
 	</td>
 	<td>
 	<h4> JavaScript </h4>
-	<textarea>
+	<textarea class="codeBoxes">
 	<script type='text/javascript'>
 //This code was used from:
 //http://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/
@@ -202,12 +201,13 @@ function loadFileAsText()
 
 </script>
 	</textarea>
+</div>
 </tr>
 </table>
 
-<div>
+
 <hr></hr>
-<table>
+<table class="exampleLayout">
 <tr>
 <td>
 <h4> Buttons </h4>
@@ -215,44 +215,90 @@ function loadFileAsText()
 <!-- Add a function here with "onclick="function()" -->
 <button value="Single Button">Single Button</button></td>
 <td>
+
 <h4> HTML Code </h4>
-<textarea rows="10" cols="50">
+<textarea class="codeBoxes">
 <button value="Single Button">Single Button</button>
+</textarea>
+</div>
+</td>
+</tr>
+</table>
+<hr></hr>
+<!-- Check Boxes -->
+<table class="exampleLayout">
+<tr>
+<td>
+<h4> Check Boxes</h4>
+<input type="checkbox" name="console" value="Test 1">Test 1<br/>
+<input type="checkbox" name="console" value="Test 2">Test 2<br/>
+<input type="checkbox" name="console" value="Test 3">Test 3<br/>
+<input type="checkbox" name="console" value="Test 4">Test 4<br/>
+<td/>
+<td>
+<h4> HTML Code </h4>
+<textarea class="codeBoxes">
+<input type="checkbox" name="console" value="Test 1">Test 1<br/>
+<input type="checkbox" name="console" value="Test 2">Test 2<br/>
+<input type="checkbox" name="console" value="Test 3">Test 3<br/>
+<input type="checkbox" name="console" value="Test 4">Test 4<br/>
 </textarea>
 </td>
 </tr>
 </table>
 <hr></hr>
 
-<h4> Check Boxes</h4>
-<!-- Check Boxes -->
-<input type="checkbox" name="console" value="Test 1">Test 1<br>
-<input type="checkbox" name="console" value="Test 2">Test 2<br>
-<input type="checkbox" name="console" value="Test 3">Test 3<br>
-<input type="checkbox" name="console" value="Test 4">Test 4<br>
-<hr></hr>
-<h4> Single Line Entry Box</h4>
-
 <!-- Single Line Entry Box -->
-<!-- More better example on our normal JS page -->
+<table class="exampleLayout">
+<tr>
+<td>
+<h4> Single Line Entry Box</h4>
 <input type="text" name="singleBox">
+</td>
+<td>
+<h4> HTML Code </h4>
+<textarea class="codeBoxes">
+<input type="text" name="singleBox">
+</textarea>
+</td>
+</tr>
+</table>
 <hr></hr>
-<h4>Menu</h4>
 <!-- Menus -->
-
+<table class="exampleLayout">
+<tr>
+<td>
+<h4>Menu</h4>
 <h5>Single</h5>
 <select name="firstMenu">
 	<option value="iphone">IPhone</option>
 	<option value="windowsphone">Windows Phone</option>
 	<option value="android">Android Phone</option>
 </select>
-
+</td>
+<td>
+<h4> HTML Code </h4>
+<textarea class="codeBoxes">
+<select name="firstMenu">
+	<option value="iphone">IPhone</option>
+	<option value="windowsphone">Windows Phone</option>
+	<option value="android">Android Phone</option>
+</select>
+</textarea>
+</td>
+</tr>
+<tr>
+<td>
 <h5>Multiple</h5>
 <select name="secondMenu" multiple="yes">
 	<option value="mouse">Mouse</option>
 	<option value="keyboard">Keyboard</option>
 	<option value="microphone">Microphone</option>
 </select>
+</td>
+<td>
+<h4> HTML Code </h4>
+
 
 
             </div>

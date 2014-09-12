@@ -43,3 +43,19 @@ body h2 {
     margin: 30px 10px 30px 10px;
     text-align: left;
 }
+.codeBoxes {
+    overflow: auto;    
+    width: 90%;    
+    min-height: 400px;
+    height: 90%;
+    max-height: 800px;
+}
+.exampleLayout {
+    width: 100%;
+}
+.exampleLayout td {
+    width: 30%;
+}
+tbody {
+    vertical-align: top;
+}

@@ -4,7 +4,7 @@
         <link type="text/css" rel="stylesheet" href="Styles.css" />
         <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="application/javascript" src="Scripts.js"></script>
-    </head>
+	</head>
     <body>
         <div id="pageWrapper">
             <div id="header">
@@ -15,135 +15,158 @@
                     <div id="btnHtEx" class="navBtn">HTML Examples</div>
                     <div id="btnCsEx" class="navBtn">CSS Examples</div>
                     <div id="btnJsEx" class="navBtn">JS Examples</div>
-                </div>
-            </div>
+				</div>
+			</div>
             <div id="content">
                 <h3>
-	HTML Intro
-	</h3>
-	<p>
-	HTML is a markup languauge, meaning "tags" describe content. HTML is 	used to create web page documents.
-	</p>
-	<hr>
-	<p>
-	HTML Basic Paragraph Formatting
-	</p>
-	<textarea rows="15" cols="90">
-<!DOCTYPE html> <!-- Doctype declaration for HTML5-->
-<html>
-  <body>
-	<!-- THIS IS A COMMENT -->
-	<!-- Now declaring headings and paragraphs -->
-	<h1>Heading</h1>
-	<p>Paragraph 1</p>
-	<p><b>This paragraph will be bold</b></p>
-	<p><i>This paragraph will be in italics</b></p>
-	<!-- insert a line break and a horizontal line across page -->
-	<br><hr>
-  </body>
-</html>
-	</textarea>
-
-<table>
-<tr>
-<th style="width:20%">Tag</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>&lt;b&gt;</td>
-<td>Defines bold text</td>
-</tr>
-<tr>
-<td>&lt;em&gt;</td>
-<td>Defines emphasized text&nbsp;</td>
-</tr>
-<tr>
-<td>&lt;i&gt;</td>
-<td>Defines a part of text in an alternate voice or mood</td>
-</tr>
-<tr>
-<td>&lt;small&gt;</td>
-<td>Defines smaller text</td>
-</tr>
-<tr>
-<td>&lt;strong&gt;</td>
-<td>Defines important text</td>
-</tr>
-<tr>
-<td>&lt;sub&gt;</td>
-<td>Defines subscripted text</td>
-</tr>
-<tr>
-<td>&lt;sup&gt;</td>
-<td>Defines superscripted text</td>
-</tr>
-<tr>
-<td>&lt;ins&gt;</td>
-<td>Defines inserted text</td>
-</tr>
-<tr>
-<td>&lt;del&gt;</td>
-<td>Defines deleted text</td>
-</tr>
-<tr>
-<td>&lt;mark&gt;</td>
-<td>Defines marked/highlighted text</td>
-</tr>
-</table>
-<p><small>Table information taken from <a href="www.w3schools.com">W3Schools</a></small></p>
-<hr>
-<p>Inserting images and links</p>
-
-	<textarea rows="5" cols="90">
+					HTML Intro
+				</h3>
+				<hr>
+				<p>HTML Basic Paragraph Formatting</p>
+				<!--<textarea rows="15" cols="90"> -->
+				<textarea class="codeBox125">
+<!-- THIS IS A COMMENT -->
+<!-- Now declaring headings and paragraphs -->
+<h1>Heading</h1>
+  <p>Paragraph 1</p>
+  <p><b>This paragraph will be bold</b></p>
+  <p><i>This paragraph will be in italics</b></p>
+  <!-- insert a line break and a horizontal line across page -->
+  <br><hr>
+				</textarea>
+				
+				<table>
+					<tr>
+						<th style="width:20%">Tag</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>&lt;b&gt;</td>
+						<td>Defines <b>bold</b> text</td>
+					</tr>
+					<tr>
+						<td>&lt;em&gt;</td>
+						<td>Defines <em>emphasized</em> text&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&lt;i&gt;</td>
+						<td>Defines a part of text in an <i>alternate voice or mood</i></td>
+					</tr>
+					<tr>
+						<td>&lt;small&gt;</td>
+						<td>Defines <small>smaller</small> text</td>
+					</tr>
+					<tr>
+						<td>&lt;strong&gt;</td>
+						<td>Defines <strong>important</strong> text</td>
+					</tr>
+					<tr>
+						<td>&lt;sub&gt;</td>
+						<td>Defines <sub>subscripted</sub> text</td>
+					</tr>
+					<tr>
+						<td>&lt;sup&gt;</td>
+						<td>Defines <sup>superscripted</sup> text</td>
+					</tr>
+					<tr>
+						<td>&lt;ins&gt;</td>
+						<td>Defines <ins>inserted</ins> text</td>
+					</tr>
+					<tr>
+						<td>&lt;del&gt;</td>
+						<td>Defines <del>deleted</del> text</td>
+					</tr>
+					<tr>
+						<td>&lt;mark&gt;</td>
+						<td>Defines <mark>marked/highlighted</mark> text</td>
+					</tr>
+				</table>
+				<p><small>Table information taken from <a href="www.w3schools.com">W3Schools</a></small></p>
+				<hr>
+				<p>Inserting images and links</p>
+				
+				<textarea class="codeBox125">
 <!-- link -->
 <a href="www.wmich.edu">Text for your link</a>
 <!-- image -->
 <img src="sampleimage.jpg" alt="Some alternative text" width="50" height="40">
-	</textarea>
-	<hr>
-	<p>Creating tables</p>
-	<textarea rows=18 cols=90>
+				</textarea>
+				<hr>
+				<p>Creating tables</p>
+				<textarea class="codeBox125">
 <table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Points</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-  </tr>
+	<tr><th>First Name</th>
+		<th>Last Name</th>
+		<th>Points</th></tr>
+	<tr><td>Jill</td>
+		<td>Smith</td> 
+		<td>50</td></tr>
+	<tr><td>Eve</td>
+		<td>Jackson</td> 
+		<td>94</td></tr>
 </table>
-	</textarea>
-	<table>
-		<tr>
-			<th width="100">Tag</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>&lt;table&gt;</th>
-			<td>Defines a table</td>
-		</tr>
-		<tr>
-			<td>&lt;tr&gt;</td>
-			<td>Defines a table row</td>
-		</tr>
-		<tr>
-			<td>&lt;td&gt;</td>
-			<td>Defines table data</td>
-		</tr>
-		<tr>
-			<td>&lt;th&gt;</td>
-			<td>Defines a table heading</td>
-		</tr>
-	<table>
-            </div>
-        </div>
-    </body>
-</html>
+				</textarea>
+				<table>
+					<tr>
+						<th width="100">Tag</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>&lt;table&gt;</th>
+						<td>Defines a table</td>
+					</tr>
+					<tr>
+						<td>&lt;tr&gt;</td>
+						<td>Defines a table row</td>
+					</tr>
+					<tr>
+						<td>&lt;td&gt;</td>
+						<td>Defines table data</td>
+					</tr>
+					<tr>
+						<td>&lt;th&gt;</td>
+						<td>Defines a table heading</td>
+					</tr>
+				</table>
+				<hr>
+				<div class="example">
+					<p>HTML can have Unordered Lists, Ordered Lists, or Description Lists:</p>
+					<div class="example_result">
+						<table style="width:100%;border:0;margin:0">
+							<tr>
+								<td style="width:4%">
+								</td>
+								<td style="vertical-align:top;width:32%">
+									<h3>Unordered HTML List</h3>
+									<ul>
+										<li>The first item</li>
+										<li>The second item</li>
+										<li>The third item</li>
+										<li>The fourth item</li>    
+									</ul>
+								</td>
+								<td style="vertical-align:top;width:32%">
+									<h3>Ordered HTML List</h3>
+									<ol>
+										<li>The first item</li>
+										<li>The second item</li>
+										<li>The third item</li>
+										<li>The fourth item</li>  
+									</ol>
+								</td>
+								<td style="vertical-align:top">
+									<h3>HTML Description List</h3>
+									<dl>
+										<dt>The first item</dt>
+										<dd>Description of item</dd>
+										<dt>The second item</dt>
+										<dd>Description of item</dd>
+									</dl>
+								</td>
+							</tr></table>
+							<p><small>Table information taken from <a href="www.w3schools.com">W3Schools</a></small></p>
+					</div>
+				</div>
+	</body>
+
+</html>							

@@ -66,3 +66,29 @@ body h2 {
 tbody {
     vertical-align: top;
 }
+.explanationDemo {
+    width: 30%;
+}
+.htmlCode textarea {
+    min-width: 400px;
+    width: 90%;
+    max-width: 800px;
+    min-height: 200px;
+    height:90%;
+    max-height: 500px;
+}
+.htmlCode {
+    width: 30%;
+    
+}
+.cssCode {
+    width: 30%;
+}
+.cssCode textarea{
+    min-width: 400px;
+    width: 90%;
+    max-width: 800px;
+    min-height: 200px;
+    height:90%;
+    max-height: 500px;
+}

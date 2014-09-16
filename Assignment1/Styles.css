@@ -96,7 +96,7 @@ tbody {
     max-height: 500px;
 }
 .indentedBlock {
-padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 20px;
 }
 
 .browserList, .osList {
@@ -104,6 +104,12 @@ padding: 0px 0px 0px 20px;
     margin: 0px;
 }
 
-.browserUlHead, .osUlHead {
+.gHubBody {
+    font-size: 0.9em;
+    margin: 2px 0px 20px 0px;
+    padding: 0px 0px 0px 10px;
+}
+
+.browserUlHead, .osUlHead, .gHubHead {
     margin: 0px;
 }

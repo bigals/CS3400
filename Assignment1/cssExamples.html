@@ -26,12 +26,28 @@
                                 <div class="explanation">
                                     The ID Selector allows specific elements to be selected on the page for styling. IDs are generally 
                                     unique of the page, therefore the ID selector is best used when single elements need to be styled.
+                                    Below the first element of the unordered list is hgihlighted red, and is done so by using the id 
+                                    that is attached to the elements "firstItem". The rest of the items stay as the default value black.
                                 </div>
-                                <div class="demo"></div>
+                                <div class="demo">
+                                    <ul id="demoULExample">
+                                        <li id="firstItem" class="unorderListItm">This is an unordered (bulleted) list, and the first item of the list</li>
+                                        <li id="secondItem" class="unorderListItm">This is the second list item</li>
+                                        <li id="thirdItem" class="unorderListItm">This is the third list item</li>
+                                        <li id="fourthItem" class="differentClassUL">This is the fourth list item</li>
+                                    </ul>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
-                                <textarea wrap="logical"></textarea>
+                                <textarea wrap="logical">
+                                    <ul id="demoULExample">
+                                        &nbsp&nbsp&nbsp&nbsp<li id="firstItem" class="unorderListItm">This is an unordered (bulleted) list, and the first item of the list</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li id="secondItem" class="unorderListItm">This is the second list item</li>
+                                        &nbsp<li id="thirdItem" class="unorderListItm">This is the third list item</li>
+                                        &nbsp<li id="fourthItem" class="differentClassUL">This is the fourth list item</li>
+                                    </ul>
+                                </textarea>
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>

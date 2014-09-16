@@ -76,6 +76,9 @@ tbody {
     min-height: 200px;
     height:90%;
     max-height: 500px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
 }
 .htmlCode {
     width: 30%;

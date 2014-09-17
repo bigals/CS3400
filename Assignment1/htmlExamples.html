@@ -85,16 +85,32 @@
 				<p><small>Table information taken from <a href="www.w3schools.com">W3Schools</a></small></p>
 				<hr>
 				<h3>Inserting images and links</h3>
-				
+				<img src="Assignment1/images/zappa.jpg" alt="Some alternative text" width="50" height="40">
 				<textarea class="codeBox125">
 <!-- link -->
 <a href="www.wmich.edu">Text for your link</a>
 <!-- image -->
-<img src="sampleimage.jpg" alt="Some alternative text" width="50" height="40">
+<img src="CS3400/Assignment1/images/zappa.jpg" alt="Some alternative text" width="50" height="40">
 				</textarea>
 				<hr>
 				<h3>Creating tables</h3>
-				<textarea class="codeBox125">
+				<table id="html5forms">
+					<tr>
+						<td>
+						<table>
+						<tr><th>First Name</th>
+							<th>Last Name</th>
+							<th>Points</th></tr>
+						<tr><td>Jill</td>
+							<td>Smith</td> 
+							<td>50</td></tr>
+						<tr><td>Eve</td>
+							<td>Jackson</td> 
+							<td>94</td></tr>
+						</table>
+						</td>
+						<td>
+				<textarea class="codeBoxTable">
 <table>
 	<tr><th>First Name</th>
 		<th>Last Name</th>
@@ -107,37 +123,16 @@
 		<td>94</td></tr>
 </table>
 				</textarea>
-				<table>
-					<tr>
-						<th width="100">Tag</th>
-						<th>Description</th>
-					</tr>
-					<tr>
-						<td>&lt;table&gt;</th>
-						<td>Defines a table</td>
-					</tr>
-					<tr>
-						<td>&lt;tr&gt;</td>
-						<td>Defines a table row</td>
-					</tr>
-					<tr>
-						<td>&lt;td&gt;</td>
-						<td>Defines table data</td>
-					</tr>
-					<tr>
-						<td>&lt;th&gt;</td>
-						<td>Defines a table heading</td>
-					</tr>
+						</td>
 				</table>
+				
 				<hr>
 				<div>
 					<h3>HTML can have Unordered Lists, Ordered Lists, or Description Lists:</h3>
-					<div class="example_result">
+					<div>
 						<table style="width:100%;border:0;margin:0">
 							<tr>
-								<td style="width:4%">
-								</td>
-								<td style="vertical-align:top;width:32%">
+								<td>
 									<h4>Unordered HTML List</h4>
 									<ul>
 										<li>The first item</li>
@@ -145,8 +140,6 @@
 										<li>The third item</li>
 										<li>The fourth item</li>    
 									</ul>
-								</td>
-								<td style="vertical-align:top;width:32%">
 									<h4>Ordered HTML List</h4>
 									<ol>
 										<li>The first item</li>
@@ -154,8 +147,6 @@
 										<li>The third item</li>
 										<li>The fourth item</li>  
 									</ol>
-								</td>
-								<td style="vertical-align:top">
 									<h4>HTML Description List</h4>
 									<dl>
 										<dt>The first item</dt>
@@ -164,11 +155,8 @@
 										<dd>Description of item</dd>
 									</dl>
 								</td>
-							</tr></table>
-							
-					</div>
-				</div>
-				<textarea class="codeBoxes">
+								<td>
+								<textarea class="codeBoxes">
 <!--Unordered HTML List-->
 <ul>
 	<li>The first item</li>
@@ -193,7 +181,107 @@
     <dd>Description of item</dd>
 </dl>
 				</textarea>
+								</td>
+							</table>
+							
+					</div>
+				</div>
+				
 				<p><small>Table information and code taken from <a href="www.w3schools.com">W3Schools</a></small></p>
+				<hr>
+				<h3>Forms and new HTML5 input types</h3>
+				<p>HTML forms are used to handle user input</p>
+
+			<table id="html5forms">
+				<tr>
+					<td>
+					<h4>Text Fields</h4>
+					<form>
+					First name: <input type="text" name="firstname"><br>
+					Last name: <input type="text" name="lastname">
+					</form>
+					<h4>Password Field</h4>
+					<form>
+					Password: <input type="password" name="pwd">
+					</form>	
+					<h4>Radio Buttons</h4>
+					<form>
+					<input type="radio" name="sex" value="male">Male<br>
+					<input type="radio" name="sex" value="female">Female
+					</form>
+					<h4>Checkboxes</h4>
+					<form>
+					<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+					<input type="checkbox" name="vehicle" value="Car">I have a car 
+					</form>
+					<h4>Submit Button</h4>
+					<form name="input" action="demo_form_action.asp" method="get">
+					Username: <input type="text" name="user">
+					<input type="submit" value="Submit">
+					</form>
+					</td>
+					<td>
+									<textarea class="htmlexample">
+<!-- text fields -->
+<form>
+First name: <input type="text" name="firstname"><br>
+Last name: <input type="text" name="lastname">
+</form>
+
+<!-- password field -->
+<form>
+Password: <input type="password" name="pwd">
+</form>
+
+<!-- radio buttons -->
+<form>
+<input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female
+</form>
+
+<!-- checkboxes -->
+<form>
+<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+<input type="checkbox" name="vehicle" value="Car">I have a car 
+</form>
+
+<!-- submit button -->
+<form name="input" action="demo_form_action.asp" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
+</textarea>
+					</td>
+				</tr>
+				<tr>
+					
+				</tr>
+				
+			</table>
+				
+				<p>There are also several new input types that were introduced in HTML5</p>
+				<table>
+				<tr><td>
+						<ul><li>color</li>
+							<li>date</li>
+							<li>datetime</li>
+							<li>datetime-local</li>
+							<li>email</li>
+							<li>number</li>
+						<li>month</li></ul>
+					</td>
+					<td>
+						<ul>
+							<li>range</li>
+							<li>search</li>
+							<li>tel</li>
+							<li>time</li>
+							<li>url</li>
+							<li>week</li>
+						</ul>
+					</td></tr>
+				</table>
+				<p><small>Code taken from <a href="www.w3schools.com">W3Schools</a></small></p>
 				<hr>
 				<h3>New HTML5 form elements</h3>
 					<dl><dt>&lt;datalist&gt;</dt>
@@ -229,6 +317,26 @@ Encryption: <keygen name="security">
 </form>
 				</textarea>
 				<hr>
+				<h3>HTML5 Video Element</h3>
+				<p>There are currently 3 supported video formats for the &lt;video&gt; element: MP4, WebM, and Ogg</p>
+				<textarea class="codeBox125">
+<video width="320" height="240" autoplay>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+				</textarea>
+				
+				<hr>
+				<h3>HTML5 Audio Element</h3>
+				<p>There are 3 supported file formats for the &lt;audio&gt; element: MP3, Wav, Ogg</p>
+				<textarea class="codeBox125">
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+				</textarea>
 				
 	</body>
 

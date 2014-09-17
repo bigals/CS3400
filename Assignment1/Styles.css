@@ -85,6 +85,9 @@ tbody {
     width: 40%;
     
 }
+.jsCode {
+    width: 20%;
+}
 .cssCode {
     width: 15%;
 }

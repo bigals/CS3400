@@ -8,7 +8,7 @@
     <body>
         <div id="pageWrapper">
             <div id="header">
-                <h2>CS340 First Assignment: CSS Examples</h2>
+                <h1>CS340 First Assignment: CSS Examples</h1>
                 <div id="navBar">
                     <div id="btnHome" class="navBtn">Home</div>
                     <div id="btnTool" class="navBtn">Helpfull Tools</div>
@@ -17,12 +17,209 @@
                     <div id="btnJsEx" class="navBtn">JS Examples</div>
                 </div>
             </div>
-            <div id="content">
-                <p>Dummy Content</p>  
-                <p>Dummy Content</p>
-                <p>Dummy Content</p>
-                <p>Dummy Content</p>
-                <p>Dummy Content</p>
+            <div id="CssExContent">
+                <h2>CSS Selectors</h2>
+                <p>For a full list of CSS Selectors <a href="cssSelectorsTable.html" >Click Here!</a></p>
+                <table>
+                    <tbody>
+                        <tr id="idSelectors">
+                            <td class="explanationDemo">
+                                <h3>The ID Selector</h3>
+                                <div class="explanation">
+                                    The ID Selector ("#IDNameHere") allows specific elements to be selected on the page for styling. IDs 
+                                    are generally unique of the page, therefore the ID selector is best used when single elements need to 
+                                    be styled. Below the first element of the unordered list is highlighted red, and is done so by using 
+                                    the ID that is attached to the element "firstItem". The rest of the items stay as the default value 
+                                    black, due to each of them having a unique ID.
+                                </div>
+                                <div class="demo">
+                                    <ul>
+                                        <li id="firstItm">This is a bulleted list, and the first item of the list</li>
+                                        <li id="secondItm">This is the second list item</li>
+                                        <li id="thirdItm">This is the third list item</li>
+                                        <li id="fourthItm">This is the fourth list item</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="htmlCode">
+                                <h4>HTML Code</h4>
+                                <textarea wrap="logical">
+                                    <ul>
+                                        &nbsp&nbsp&nbsp&nbsp<li id="firstItm">This is a bulleted list, and the first item of the list</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li id="secondItm">This is the second list item</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li id="thirdItm">This is the third list item</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li id="fourthItm">This is the fourth list item</li>
+                                    </ul>
+                                </textarea>
+                            </td>
+                            <td class="cssCode">
+                                <h4>CSS Code</h4>
+                                <textarea wrap="logical">
+                                    #firstItm {
+                                    &nbsp&nbsp&nbsp&nbsp color: red;
+                                    }
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr id="classSelectors">
+                            <td class="explanationDemo">
+                                <h3>The Class Selector</h3>
+                                <div class="explanation">
+                                    The class selector (".classNameHere") is used to apply styling to all elements that have a particular 
+                                    class assigned to them. Since classes generally are applied to a groupd of elements, the class 
+                                    selector is best used for styling multiple objects the exact same way. Below the first three items 
+                                    are now highlighted red, by setting the CSS selector to the "unorderLItm" class, and the last item 
+                                    is left the default black, due to it having a different class assigned to it.
+                                </div>
+                                <div class="demo">
+                                    <ul>
+                                        <li class="unorderLItm">This is a bulleted list, and the first item of the list</li>
+                                        <li class="unorderLItm">This is the second list item</li>
+                                        <li class="unorderLItm">This is the third list item</li>
+                                        <li class="diffClassUL">This is the fourth list item</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="htmlCode">
+                                <h4>HTML Code</h4>
+                                <textarea wrap="logical">
+                                    <ul>
+                                        &nbsp&nbsp&nbsp&nbsp<li class="unorderLItm">This is a bulleted list, and the first item of the list</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li class="unorderLItm">This is the second list item</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li class="unorderLItm">This is the third list item</li>
+                                        &nbsp&nbsp&nbsp&nbsp<li class="diffClassUL">This is the fourth list item</li>
+                                    </ul>
+                                </textarea>
+                            </td>
+                            <td class="cssCode">
+                                <h4>CSS Code</h4>
+                                <textarea wrap="logical">
+                                    .unorderLItm {
+                                    &nbsp&nbsp&nbsp&nbsp color: red;
+                                    }
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr id="elementSelectors">
+                            <td class="explanationDemo">
+                                <h3>The Element Selector</h3>
+                                <div class="explanation">
+                                    The Element ("elementName") selector allows the CSS styling to be applied to paritcualr HTML elements 
+                                    on the page. The selector disregards any classes or IDs that are associated with elements, and simply 
+                                    applies them to all of the specified elements. Below the bulleted list is styled to have a red colored 
+                                    font, while the numbered list is styled to have green colored font.
+                                </div>
+                                <div class="demo">
+                                    <ul>
+                                        <li>A Bullet in a bulleted List</li>
+                                    </ul>
+                                    <ol>
+                                        <li>The first, and only, item in a numbered list</li>
+                                    </ol>
+                                </div>
+                            </td>
+                            <td class="htmlCode">
+                                <h4>HTML Code</h4>
+                                <textarea wrap="logical">
+                                    <ul>
+                                    &nbsp&nbsp&nbsp&nbsp<li>A Bullet in a bulleted List</li>
+                                    </ul>
+                                    <ol>
+                                    &nbsp&nbsp&nbsp&nbsp<li>The first, and only, item in a numbered list</li>
+                                    </ol>
+                                </textarea>
+                            </td>
+                            <td class="cssCode">
+                                <h4>CSS Code</h4>
+                                <textarea wrap="logical">
+                                    ul {
+                                    &nbsp&nbsp&nbsp&nbsp color: #FF0000;
+                                    }
+                                    ol {
+                                    &nbsp&nbsp&nbsp&nbsp color: #00FF00;
+                                    }
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr id="miscSelectors">
+                            <td class="explanationDemo">
+                                <h3>Mixed Selector and Miscellaneous Selectors</h3>
+                                <div class="explanation">
+                                    All the selectors mentioned above can be used together to select subsets, or specific elements with 
+                                    any styling that is desired. Furthermore, other selectors can be used to style events such as hover 
+                                    or active. Below the first bullets in either div element
+                                </div>
+                                <div class="demo">
+                                    <div id="firstDivElm">
+                                        The First Div Element
+                                        <ul>
+                                            <li class="listItms">A Bullet in a bulleted List, in first Div</li>
+                                            <li id="uniqueBullet">Another Bullet Point, in first Div</li>
+                                        </ul>
+                                        <ol>
+                                            <li class="listItms">The first, and only, item in a numbered list, in first Div</li>
+                                        </ol>
+                                    </div>
+                                    <div class="otherDivElms">
+                                        The Second Div Element
+                                        <ul>
+                                            <li class="listItms">A Bullet in a bulleted List, in second Div</li>
+                                        </ul>
+                                        <ol>
+                                            <li id="actionSel">The first, and only, item in a numbered list, in second Div</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="htmlCode">
+                                <h4>HTML Code</h4>
+                                <textarea wrap="logical">
+                                    <div id="firstDivElm">
+                                        &nbsp&nbsp&nbsp&nbsp The First Div Element
+                                        &nbsp&nbsp&nbsp&nbsp<ul>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<li class="listItms">The first bullet, in first Div</li>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<li id="uniqueBullet">Another Bullet Point, in first Div</li>
+                                        &nbsp&nbsp&nbsp&nbsp</ul>
+                                        &nbsp&nbsp&nbsp&nbsp<ol>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<li class="listItms">The first, and only, item in a numbered list, in first Div</li>
+                                        &nbsp&nbsp&nbsp&nbsp</ol>
+                                    </div>
+                                    <div class="otherDivElms">
+                                        &nbsp&nbsp&nbsp&nbsp The Second Div Element
+                                        &nbsp&nbsp&nbsp&nbsp<ul>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<li class="listItms">A Bullet in a bulleted List, in second Div</li>
+                                        &nbsp&nbsp&nbsp&nbsp</ul>
+                                        &nbsp&nbsp&nbsp&nbsp<ol>
+                                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<li id="actionSel">The first, and only, item in a numbered list, in second Div</li>
+                                        &nbsp&nbsp&nbsp&nbsp</ol>
+                                    </div>
+                                </textarea>
+                            </td>
+                            <td class="cssCode">
+                                <h4>CSS Code</h4>
+                                <textarea wrap="logical">
+                                    #firstDivElm, #otherDivElms {
+                                        border: 2px solid #000000;
+                                    }
+                                    #firstDivElm ul #uniqueBullet {
+                                        color: #FF0000;
+                                    }
+                                    ul .listItms, li .listItms {
+                                        color: #0000FF;
+                                    }
+                                    #actionSel:hover {
+                                        text-decoration: underline;
+                                        color: #00FF00;
+                                    }
+                                    #actionSel:active {
+                                        text-decoration: line-through;
+                                        color: #FF00FF;
+                                    }
+                                </textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>

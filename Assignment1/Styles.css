@@ -119,6 +119,20 @@ tbody {
     margin: 0px;
 }
 
+#html5forms {
+    width: 100%;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+}
+
+.htmlexample {
+    overflow: auto;    
+    width: 90%;    
+    min-height: 480px;
+    height: 90%;
+    max-height: 800px;
+}
+
 /* Styles being used on cssExamples.html page for demo purposes */
 #CssExContent .explanationDemo {
     width: 45%;

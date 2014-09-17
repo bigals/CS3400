@@ -153,12 +153,12 @@ function loadFileAsText()
                 </div>
             </div>
             <div id="content">
-               <h4 align ="center"> Javascript Create & Read File Locally</h4>
-			<h4 align ="center"> This code was taken from: http://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/ </h4> 
+              
+			
 <table class="exampleLayout">
 <td>
 <div id="javascriptCreateFile">
-<h4>Application</h4> 
+ <h4> Javascript Create & Read File Locally</h4>
    <table>
 	<tr><td>Text to Save:</td></tr>
 	<tr>
@@ -188,7 +188,7 @@ function loadFileAsText()
 <td>
 
 <h4>HTML Code</h4> 
-<textarea class = "codeBoxes">
+<textarea class = "htmlCode">
 &lt;table&gt;<br />
 	&lt;tr&gt;&lt;td&gt;Text to Save:&lt;/td&gt;&lt;/tr&gt;<br />
 	&lt;tr&gt;<br />
@@ -211,8 +211,8 @@ function loadFileAsText()
 	</textarea>
 	</td>
 	<td>
-	<h4> JavaScript </h4>
-	<textarea class="codeBoxes">
+	<h4> JavaScript Code </h4>
+	<textarea class="jsCode">
 	<script type='text/javascript'>
 //This code was used from:
 //http://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/
@@ -280,110 +280,12 @@ function loadFileAsText()
 </table>
 
 
-<hr></hr>
-<table class="exampleLayout">
-<tr>
-<td>
-<h4> Buttons </h4>
-<!-- Button -->
-<!-- Add a function here with "onclick="function()" -->
-<button value="Single Button">Single Button</button></td>
-<td>
 
-<h4> HTML Code </h4>
-<textarea class="codeBoxes">
-<button value="Single Button">Single Button</button>
-</textarea>
-</div>
-</td>
-</tr>
-</table>
-<hr></hr>
-<!-- Check Boxes -->
-<table class="exampleLayout">
-<tr>
-<td>
-<h4> Check Boxes</h4>
-<input type="checkbox" name="console" value="Test 1">Test 1<br/>
-<input type="checkbox" name="console" value="Test 2">Test 2<br/>
-<input type="checkbox" name="console" value="Test 3">Test 3<br/>
-<input type="checkbox" name="console" value="Test 4">Test 4<br/>
-<td/>
-<td>
-<h4> HTML Code </h4>
-<textarea class="codeBoxes">
-<input type="checkbox" name="console" value="Test 1">Test 1<br/>
-<input type="checkbox" name="console" value="Test 2">Test 2<br/>
-<input type="checkbox" name="console" value="Test 3">Test 3<br/>
-<input type="checkbox" name="console" value="Test 4">Test 4<br/>
-</textarea>
-</td>
-</tr>
-</table>
-<hr></hr>
 
-<!-- Single Line Entry Box -->
 <table class="exampleLayout">
 <tr>
 <td>
-<h4> Single Line Entry Box</h4>
-<input type="text" name="singleBox">
-</td>
-<td>
-<h4> HTML Code </h4>
-<textarea class="codeBoxes">
-<input type="text" name="singleBox">
-</textarea>
-</td>
-</tr>
-</table>
-<hr></hr>
-<!-- Menus -->
-<table class="exampleLayout">
-<tr>
-<td>
-<h4>Menu</h4>
-<h5>Single</h5>
-<select name="firstMenu">
-	<option value="iphone">IPhone</option>
-	<option value="windowsphone">Windows Phone</option>
-	<option value="android">Android Phone</option>
-</select>
-</td>
-<td>
-<h4> HTML Code </h4>
-<textarea class="codeBoxes">
-<select name="firstMenu">
-	<option value="iphone">IPhone</option>
-	<option value="windowsphone">Windows Phone</option>
-	<option value="android">Android Phone</option>
-</select>
-</textarea>
-</td>
-</tr>
-<tr>
-<td>
-<h5>Multiple</h5>
-<select name="secondMenu" multiple="yes">
-	<option value="mouse">Mouse</option>
-	<option value="keyboard">Keyboard</option>
-	<option value="microphone">Microphone</option>
-</select>
-</td>
-<td>
-<h4> HTML Code </h4>
-<textarea class="codeBoxes">
-<select name="firstMenu">
-	<option value="iphone">IPhone</option>
-	<option value="windowsphone">Windows Phone</option>
-	<option value="android">Android Phone</option>
-</select>
-</textarea>
-</td>
-</tr>
-</table>
-<div id="javaScript MenuBar">
-<h1>Sample for JavaScript Menu Bar</h1>
+<h4>Sample for JavaScript Menu Bar</h4>
  <div id="menuBar">
     
     <div>
@@ -420,15 +322,156 @@ function loadFileAsText()
 
   <div style="clear:both"></div>
 
+</div>
+</td>
+<td>
+<h4>HTML Code</h4>
+<textarea class = "htmlCode">
+ <div id="menuBar">
+    
+    <div>
+      <a href="http://alexapps.net"
+        onmouseover="openMenu('menu1')" onmouseout="closeMenu()">Home</a>
+        
+      <span id="menu1" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+      </span>
+    </div>
+    
+    <div>
+      <a href="http://alexapps.net/Apple/iOS/Apps/MyApps"
+        onmouseover="openMenu('menu2')" onmouseout="closeMenu()">iPhone Apps</a>
+        
+      <span id="menu2" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+        <a id="disable" target="_blank" href="http://alexapps.net/Apple/iOS/Apps/MyApps/BoxingiTimer">Boxing iTimer</a>
+      <a><hr/></a>
+        <a target="_blank" href="http://alexapps.net/Apple/iOS/Apps/MyApps/GPSAlarms">GPSAlarms</a>
+        <a target="_blank" href="http://alexapps.net/Apple/iOS/Apps/MyApps/GPSAlarmPlus">GPSAlarm+</a>
+      </span>
+    </div>
+    
+    <div>
+      <a href=""
+        onmouseover="openMenu('menu3')" onmouseout="closeMenu()">Help</a>
+        
+      <span id="menu3" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+        <a  target="_blank" href="http://alexapps.net" >About Us</a>
+        <a target="_blank" href="http://alexapps.net/contact.xhtml">Contact Us</a>
+      </span>
+    </div>
+    
+  </div>
 
-
-  <!-- uncomment the div below to investigate the sequence of events /-->
-  <div id="log" style="font-size: xx-small"/>
+  <div style="clear:both"></div>
 
 </div>
 
-<h4>Track Mouse Location</h4>
-<div align="center" onmouseover="boxOnHover(this);" onmouseout="boxOffHover(this);"><span id="CurLoc"></span></div>
+</textarea>
+</td>
+<td>
+<h4> JavaScript Code </h4>
+<textarea class="jsCode">
+
+        #menuBar {
+            margin: 0;
+            padding: 0;
+            display: table;
+                background-color: #333388; 
+        }
+
+        #menuBar div {
+                margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+            float: left;
+            border-right: 1px #AAAAAA solid;
+        }
+
+        #menuBar div a {
+                display: block;
+            margin: 0;
+            padding: 5px 15px;
+                color: #FFFFFA;
+            text-align: center;
+            text-decoration: none;
+                font-weight: bold;
+        }
+
+        #menuBar div a:hover {
+                background: #5555FF;
+        }
+
+        #menuBar span {
+            margin: 1px;
+            padding: 0;
+            position: absolute;
+            visibility: hidden;
+            white-space: nowrap;
+            display: table;
+            z-index: 3;
+        }
+
+        #menuBar span a {
+            margin: 0;
+            padding: 2px 10px;
+            background: #3333AA;
+            color: #FFFFFA;
+            font-size:90%;
+            text-align: left;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        #menuBar span a:hover {
+            background: #5555FF;
+        }
+</textarea>
+
+</td>
+</tr>
+</table>
+
+<table class="exampleLayout">
+<tr>
+<td>
+<h4>Track Mouse Location & Mouse Actions</h4>
+<div style="width: 20%;" onmouseover="boxOnHover(this);" onmouseout="boxOffHover(this);"><span id="CurLoc"></span></div>
+</td>
+<td>
+<h4> HTML Code</h4>
+<textarea class ="htmlCode">
+<div style="width: 20%;" onmouseover="boxOnHover(this);" onmouseout="boxOffHover(this);"><span id="CurLoc"></span></div>
+</textarea>
+</td>
+<td>
+<h4> Javascript Code </h4>
+<textarea class ="jsCode">
+<script type='text/javascript'>
+//Track mouse
+function Init() {
+ document.body.onmousemove = getMouseLoc;
+}
+function getMouseLoc(){CurLoc.innerHTML = "Y:"+window.event.clientY+"&nbsp;"+"X:"+window.event.clientX}
+</script>
+
+<script type='text/javascript'>
+//Change background of div to to highlight current location
+
+function boxOffHover(box) {
+box.style.background='#FFFFFF';
+}
+
+function boxOnHover(box) {
+box.style.background='#f3f3f3';
+}
+</script>
+
+</textarea>
+</td>
+<tr>
+</table>
+
+
 
 
 

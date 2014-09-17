@@ -85,6 +85,9 @@ tbody {
     width: 40%;
     
 }
+.jsCode {
+    width: 20%;
+}
 .cssCode {
     width: 15%;
 }
@@ -123,6 +126,20 @@ tbody {
     width: 100%;
     text-align: left;
     padding: 10px 10px 10px 10px;
+}
+
+.htmlTableData {
+    width: 50%;
+    padding: 10px 10px 10px 10px;
+}
+
+.htmlTdThin {
+    width: 30%;
+    padding: 10px 10px 10px 10px;
+}
+
+.thmlTdThick {
+    width: 70%;
 }
 
 .htmlexample {

@@ -125,6 +125,10 @@ tbody {
     padding: 10px 10px 10px 10px;
 }
 
+.htmlTableData {
+    width: 50%;
+}
+
 .htmlexample {
     overflow: auto;    
     width: 90%;    

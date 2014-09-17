@@ -39,7 +39,7 @@ body h1 {
 .navBtn:hover {
     background-color: #EEEEEE;
 }
-#content, ##CssExContent {
+#content, #CssExContent {
     margin: 30px 10px 30px 10px;
     text-align: left;
 }
@@ -154,4 +154,12 @@ ul .listItms, li .listItms {
 #actionSel:active {
     text-decoration: line-through;
     color: #FF00FF;
+}
+#cssSelectors {
+    border-collapse: collapse;
+}
+#cssSelectors, #cssSelectors th, #cssSelectors td {
+    border: 2px solid black;
+    text-align: left;
+    padding: 2px 5px 2px 5px;
 }

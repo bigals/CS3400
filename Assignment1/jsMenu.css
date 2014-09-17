@@ -1,0 +1,56 @@
+
+        #menuBar {
+            margin: 0;
+            padding: 0;
+            display: table;
+                background-color: #333388; 
+        }
+
+        #menuBar div {
+                margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+            float: left;
+            border-right: 1px #AAAAAA solid;
+        }
+
+        #menuBar div a {
+                display: block;
+            margin: 0;
+            padding: 5px 15px;
+                color: #FFFFFA;
+            text-align: center;
+            text-decoration: none;
+                font-weight: bold;
+        }
+
+        #menuBar div a:hover {
+                background: #5555FF;
+        }
+
+        #menuBar span {
+            margin: 1px;
+            padding: 0;
+            position: absolute;
+            visibility: hidden;
+            white-space: nowrap;
+            display: table;
+            z-index: 3;
+        }
+
+        #menuBar span a {
+            margin: 0;
+            padding: 2px 10px;
+            background: #3333AA;
+            color: #FFFFFA;
+            font-size:90%;
+            text-align: left;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        #menuBar span a:hover {
+            background: #5555FF;
+        }
+

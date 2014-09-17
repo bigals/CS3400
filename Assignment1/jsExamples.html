@@ -2,8 +2,81 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="Styles.css" />
+		<link type="text/css" rel="stylesheet" href="jsMenu.css" />
         <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="application/javascript" src="Scripts.js"></script>
+		
+<!--Need for Javascript Menu-->
+<!--SRC:http://alexapps.net/HowTo/JavaScript/MenuBar/index.xhtml-->
+<script type="text/javascript">
+//<! [CDATA[ (non-xhtml? remove this line. xhtml? just remove the space between! and [)
+<!--
+
+var timer = 0;
+var item = 0;
+
+function log(text) {
+    var logElement = document.getElementById('log');
+    if(logElement) logElement.innerHTML = text + '<br/>' + logElement.innerHTML;
+}
+
+//function for opening of submenu elements
+function openMenu(id) {
+    //log('openMenu('+id+')');
+    window.clearTimeout(timer);
+
+  if(item) item.style.visibility = 'hidden';
+
+    item = document.getElementById(id);
+    item.style.visibility = 'visible';
+}
+
+function closeMenu() {
+  // sets timer to close the open submenu in 0.5 seconds
+    if(item) {
+        //log('closeMenu, schedule timer for ' + item.id);
+    timer = window.setTimeout(
+       "if(item) { item.style.visibility = 'hidden';}",
+      500);
+  }
+}
+
+function keepMenuOpen() {
+    //log('keepMenuOpen');
+    window.clearTimeout(timer);
+}
+	
+
+
+
+
+document.onclick = closeMenu;
+//-->
+//]]> (non-xhtml? remove this line)
+
+</script>
+
+<script type='text/javascript'>
+
+//Track mouse
+function Init() {
+ document.body.onmousemove = getMouseLoc;
+}
+function getMouseLoc(){CurLoc.innerHTML = "Y:"+window.event.clientY+"&nbsp;"+"X:"+window.event.clientX}
+</script>
+<script type='text/javascript'>
+//Change background of div to to highlight current location
+
+function boxOffHover(box) {
+box.style.background='#FFFFFF';
+}
+
+function boxOnHover(box) {
+box.style.background='#f3f3f3';
+}
+</script>		
+		
+<!-- This is used to read and write data-->		
 		<script type='text/javascript'>
 //This code was used from:
 //http://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/
@@ -66,7 +139,7 @@ function loadFileAsText()
 
 </script>
     </head>
-    <body>
+    <body onLoad="Init()">
         <div id="pageWrapper">
             <div id="header">
                 <h2>CS340 First Assignment: JavaScript Examples</h2>
@@ -299,6 +372,63 @@ function loadFileAsText()
 </td>
 <td>
 <h4> HTML Code </h4>
+<textarea class="codeBoxes">
+<select name="firstMenu">
+	<option value="iphone">IPhone</option>
+	<option value="windowsphone">Windows Phone</option>
+	<option value="android">Android Phone</option>
+</select>
+</textarea>
+</td>
+</tr>
+</table>
+<div id="javaScript MenuBar">
+<h1>Sample for JavaScript Menu Bar</h1>
+ <div id="menuBar">
+    
+    <div>
+      <a href="http://alexapps.net"
+        onmouseover="openMenu('menu1')" onmouseout="closeMenu()">Home</a>
+        
+      <span id="menu1" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+      </span>
+    </div>
+    
+    <div>
+      <a href="http://alexapps.net/Apple/iOS/Apps/MyApps"
+        onmouseover="openMenu('menu2')" onmouseout="closeMenu()">iPhone Apps</a>
+        
+      <span id="menu2" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+        <a id="disable" target="_blank" href="http://alexapps.net/Apple/iOS/Apps/MyApps/BoxingiTimer">Boxing iTimer</a>
+      <a><hr/></a>
+        <a target="_blank" href="http://alexapps.net/Apple/iOS/Apps/MyApps/GPSAlarms">GPSAlarms</a>
+        <a target="_blank" href="http://alexapps.net/Apple/iOS/Apps/MyApps/GPSAlarmPlus">GPSAlarm+</a>
+      </span>
+    </div>
+    
+    <div>
+      <a href=""
+        onmouseover="openMenu('menu3')" onmouseout="closeMenu()">Help</a>
+        
+      <span id="menu3" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+        <a  target="_blank" href="http://alexapps.net" >About Us</a>
+        <a target="_blank" href="http://alexapps.net/contact.xhtml">Contact Us</a>
+      </span>
+    </div>
+    
+  </div>
+
+  <div style="clear:both"></div>
+
+
+
+  <!-- uncomment the div below to investigate the sequence of events /-->
+  <div id="log" style="font-size: xx-small"/>
+
+</div>
+
+<h4>Track Mouse Location</h4>
+<div align="center" onmouseover="boxOnHover(this);" onmouseout="boxOffHover(this);"><span id="CurLoc"></span></div>
 
 
 

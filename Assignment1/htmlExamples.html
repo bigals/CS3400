@@ -284,6 +284,9 @@ Username: <input type="text" name="user">
 				<p><small>Code taken from <a href="www.w3schools.com">W3Schools</a></small></p>
 				<hr>
 				<h3>New HTML5 form elements</h3>
+				<table>
+					<tr>
+					<td class="htmlTdThin">
 					<dl><dt>&lt;datalist&gt;</dt>
 						<dd>specifies a list of pre-defined options for an input element</dd>
 					    <dt>&lt;keygen&gt;</dt>
@@ -291,6 +294,8 @@ Username: <input type="text" name="user">
 						<dt>&lt;output&gt;</dt>
 						<dd>represents the result of a calculation</dd>
 					</dl>
+					</td>
+					<td class="htmlTdThick">
 				<textarea class="codeBoxes">
 <!-- <datalist> element -->
 <input list="browsers">
@@ -316,20 +321,57 @@ Encryption: <keygen name="security">
 <output name="x" for="a b"></output>
 </form>
 				</textarea>
+				</td></tr>
+				</table>
 				<hr>
+				
 				<h3>HTML5 Video Element</h3>
-				<p>There are currently 3 supported video formats for the &lt;video&gt; element: MP4, WebM, and Ogg</p>
+				<table>
+					<tr><td class="htmlTdThin">
+				<p>Supported Formats</p>
+				<dl>
+					<dt>MP4</dt>
+				<dd>Supported by:</dd>
+				<dd>IE, Chrome, Firefox, Safari</dd>
+					<dt>WebM</dt>
+				<dd>Supported by:</dd>
+				<dd>Chrome, Firefox, Opera</dd>
+					<dt>Ogg</dt>
+				<dd>Supported by:</dd>
+				<dd>Chrome, Firefox, Opera</dd>
+				</dl>
+					</td>
+					<td class="htmlTdThick">
 				<textarea class="codeBox125">
 <video width="320" height="240" autoplay>
   <source src="movie.mp4" type="video/mp4">
   <source src="movie.ogg" type="video/ogg">
+  
+  <!-- This message only displays if video does not -->
 Your browser does not support the video tag.
 </video>
 				</textarea>
-				
+					</td>
+					</tr>
+				</table>
 				<hr>
 				<h3>HTML5 Audio Element</h3>
-				<p>There are 3 supported file formats for the &lt;audio&gt; element: MP3, Wav, Ogg</p>
+				<table>
+				<tr><td class="htmlTdThin">
+				<p>Supported Formats</p>
+				<dl>
+				<dt>MP3</dt>
+				<dd>Supported by:</dd>
+				<dd>IE, Chrome, Firefox, Safari</dd>
+				<dt>Wav</dt>
+				<dd>Supported by:</dd>
+				<dd>Chrome, Firefox, Safari, Opera</dd>
+				<dt>Ogg</dt>
+				<dd>Supported by:</dd>
+				<dd>Chrome, Firefox, Opera</dd>
+				</dl>
+				</td>
+				<td class="htmlTdThick">
 				<textarea class="codeBox125">
 <audio controls>
   <source src="horse.ogg" type="audio/ogg">
@@ -337,6 +379,9 @@ Your browser does not support the video tag.
 Your browser does not support the audio element.
 </audio>
 				</textarea>
+				</td></tr>
+				</table>
+				<hr>
 				
 	</body>
 

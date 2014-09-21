@@ -200,30 +200,94 @@
 			<table id="html5forms">
 				<tr>
 					<td class="htmlTableData">
-					<h4>Text Fields</h4>
-					<form>
-					First name: <input type="text" name="firstname"><br>
-					Last name: <input type="text" name="lastname">
-					</form>
-					<h4>Password Field</h4>
-					<form>
-					Password: <input type="password" name="pwd">
-					</form>	
-					<h4>Radio Buttons</h4>
-					<form>
-					<input type="radio" name="sex" value="male">Male<br>
-					<input type="radio" name="sex" value="female">Female
-					</form>
-					<h4>Checkboxes</h4>
-					<form>
-					<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
-					<input type="checkbox" name="vehicle" value="Car">I have a car 
-					</form>
-					<h4>Submit Button</h4>
-					<form name="input" method="get">
-					Username: <input type="text" name="user">
-					<input type="submit" value="Submit">
-					</form>
+                        <h4>Text Fields</h4>
+                        <form>
+                            First name: <input type="text" name="firstname"><br>
+                            Last name: <input type="text" name="lastname">
+                        </form>
+                        <h4>Password Field</h4>
+                        <form>
+                            Password: <input type="password" name="pwd">
+                        </form>	
+                        <h4>Radio Buttons</h4>
+                        <form>
+                            <input type="radio" name="sex" value="male">Male<br>
+                            <input type="radio" name="sex" value="female">Female
+                        </form>
+                        <h4>Checkboxes</h4>
+                        <form>
+                            <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+                            <input type="checkbox" name="vehicle" value="Car">I have a car 
+                        </form>
+                        <h4>Submit Button</h4>
+                        <form name="subBtn" method="get">
+                            Username: <input type="text" name="user">
+                            <input type="submit" value="Submit">
+                        </form>
+                        <h4>Date Field With Restrictions</h4>
+                        <form>
+                            Enter a date before 1980-01-01:
+                            <input type="date" name="bday" max="1979-12-31"><br>
+                            Enter a date after 2000-01-01:
+                            <input type="date" name="bday" min="2000-01-02"><br>
+                            <input type="submit" value="Send"> 
+                        </form>
+                        <h4>Color Input Field</h4>
+                        <form>
+                          Select your favorite color: <input type="color" name="favcolor">
+                          <input type="submit" value="Send">
+                        </form>
+                        <h4>Range Input Field</h4>
+                        <form>
+                            <input type="range" name="points" min="0" max="10">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Month Input Field</h4>
+                        <form>
+                              Birthday (month and year): <input type="month" name="bdaymonth">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Week Input Field</h4>
+                        <form>
+                            Select a week: <input type="week" name="week_year">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Time Input Field</h4>
+                        <form>
+                            Select a time:
+                            <input type="time" name="usr_time">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Date-Time-Local Input Field</h4>
+                        <form>
+                            Birthday (date and time):
+                            <input type="datetime-local" name="bdaytime">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Email Input Field</h4>
+                        <form>
+                            E-mail:
+                            <input type="email" name="email">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Search Input Field</h4>
+                        <form>
+                            Search Google:
+                            <input type="search" name="googlesearch">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>Telephone Input Field</h4>
+                        <form>
+                            Telephone:
+                            <input type="tel" name="usrtel">
+                            <input type="submit" value="Send">
+                        </form>
+                        <h4>URL Input Field</h4>
+                        <form>
+                            Add your homepage:
+                            <input type="url" name="homepage">
+                            <input type="submit" value="Send">
+                        </form>
 					</td>
 					<td class="htmlTableData">
 									<textarea class="htmlexample">
@@ -254,6 +318,71 @@ Password: <input type="password" name="pwd">
 <form name="input" action="demo_form_action.asp" method="get">
 Username: <input type="text" name="user">
 <input type="submit" value="Submit">
+</form>
+                                        
+<!--Date Field With Restrictions-->
+<form>
+    Enter a date before 1980-01-01:
+    <input type="date" name="bday" max="1979-12-31"><br>
+    Enter a date after 2000-01-01:
+    <input type="date" name="bday" min="2000-01-02"><br>
+    <input type="submit" value="Send"> 
+</form>
+<!--Color Input Field-->
+<form>
+  Select your favorite color: <input type="color" name="favcolor">
+  <input type="submit" value="Send">
+</form>
+<!--Range Input Field-->
+<form>
+    <input type="range" name="points" min="0" max="10">
+    <input type="submit" value="Send">
+</form>
+<!--Month Input Field-->
+<form>
+      Birthday (month and year): <input type="month" name="bdaymonth">
+    <input type="submit" value="Send">
+</form>
+<!--Week Input Field-->
+<form>
+    Select a week: <input type="week" name="week_year">
+    <input type="submit" value="Send">
+</form>
+<!--Time Input Field-->
+<form>
+    Select a time:
+    <input type="time" name="usr_time">
+    <input type="submit" value="Send">
+</form>
+<!--Date-Time-Local Input Field-->
+<form>
+    Birthday (date and time):
+    <input type="datetime-local" name="bdaytime">
+    <input type="submit" value="Send">
+</form>
+<!--Email Input Field-->
+<form>
+    E-mail:
+    <input type="email" name="email">
+    <input type="submit" value="Send">
+</form>
+<!--Search Input Field-->
+<form>
+    Search Google:
+    <input type="search" name="googlesearch">
+    <input type="submit" value="Send">
+</form>
+<!--Telephone Input Field-->
+<form>
+    Telephone:
+    <input type="tel" name="usrtel">
+    <input type="submit" value="Send">
+</form>
+<!--URL Input Field-->
+<form>
+    Add your homepage:
+    <input type="url" name="homepage">
+    <input type="submit" value="Send">
 </form>
 </textarea>
 					</td>
@@ -295,10 +424,28 @@ Username: <input type="text" name="user">
                            <dl>
                                <dt>&lt;datalist&gt;</dt>
                                   <dd>specifies a list of pre-defined options for an input element</dd>
+                               <input list="browsers">
+                                <datalist id="browsers">
+                                  <option value="Internet Explorer">
+                                  <option value="Firefox">
+                                  <option value="Chrome">
+                                  <option value="Opera">
+                                  <option value="Safari">
+                                </datalist>
                                <dt>&lt;keygen&gt;</dt>
                                   <dd>provides a secure way to authenticate users</dd>
+                               <form action="demo_keygen.asp" method="get">
+                                    Username: <input type="text" name="usr_name">
+                                    Encryption: <keygen name="security">
+                                    <input type="submit">
+                               </form>
                                <dt>&lt;output&gt;</dt>
                                   <dd>represents the result of a calculation</dd>
+                               <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+                                    <input type="range" id="a" value="50">100 +
+                                    <input type="number" id="b" value="50">=
+                                    <output name="x" for="a b"></output>
+                               </form>
                            </dl>
 					   </td>
 					   <td class="htmlTdThick">
@@ -374,9 +521,9 @@ Encryption: <keygen name="security">
 				<table>
 				    <tr>
                         <td class="htmlTdThin">
-                            <audio controls loop preload="auto"> <!--Accepts autoplay, and muted attributes as well-->
-                                <source src="horse.ogg" type="audio/ogg">
-                                <source src="horse.mp3" type="audio/mpeg">
+                            <audio controls> <!--Accepts autoplay, loop, and load="auto|none|metadata", and muted attributes as well-->
+                                <source src="Audio/horse.ogg" type="audio/ogg">
+                                <source src="Audio/horse.mp3" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
 				            <p>Supported Formats</p>
@@ -395,9 +542,9 @@ Encryption: <keygen name="security">
 				        <td class="htmlTdThick">
                             <h4>HTML Code</h4>
 				            <textarea class="codeBox125">
-<audio controls loop preload="auto"> <!--Accepts autoplay, and muted attributes as well-->
-    <source src="horse.ogg" type="audio/ogg">
-    <source src="horse.mp3" type="audio/mpeg">
+<audio controls> <!--Accepts autoplay, loop, and load="auto|none|metadata", and muted attributes as well-->
+    <source src="Audio/horse.ogg" type="audio/ogg">
+    <source src="Audio/horse.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 				            </textarea>
@@ -590,6 +737,7 @@ ctx.drawImage(img,10,10);
 				        </td>
                     </tr>
 				</table>
+                <p>Large portions of the content on this page has been taken from the W3Schools Webpage: <a href="http://www.w3schools.com/css/default.asp">http://www.w3schools.com/css/default.asp</a></p>
 	</body>
 
 </html>							

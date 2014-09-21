@@ -22,7 +22,7 @@
                 <p>For a full list of CSS Selectors <a href="cssSelectorsTable.html" >Click Here!</a></p>
                 <table>
                     <tbody>
-                        <tr id="idSelectors">
+                        <tr id="idSelectors" class="cssExTRows">
                             <td class="explanationDemo">
                                 <h3>The ID Selector</h3>
                                 <div class="explanation">
@@ -61,7 +61,7 @@
                                 </textarea>
                             </td>
                         </tr>
-                        <tr id="classSelectors">
+                        <tr id="classSelectors" class="cssExTRows">
                             <td class="explanationDemo">
                                 <h3>The Class Selector</h3>
                                 <div class="explanation">
@@ -100,7 +100,7 @@
                                 </textarea>
                             </td>
                         </tr>
-                        <tr id="elementSelectors">
+                        <tr id="elementSelectors" class="cssExTRows">
                             <td class="explanationDemo">
                                 <h3>The Element Selector</h3>
                                 <div class="explanation">
@@ -141,7 +141,7 @@
                                 </textarea>
                             </td>
                         </tr>
-                        <tr id="miscSelectors">
+                        <tr id="miscSelectors" class="cssExTRows">
                             <td class="explanationDemo">
                                 <h3>Mixed Selector and Miscellaneous Selectors</h3>
                                 <div class="explanation">
@@ -199,21 +199,21 @@
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
                                     #firstDivElm, #otherDivElms {
-                                        border: 2px solid #000000;
+                                    &nbsp&nbsp&nbsp&nbsp border: 2px solid #000000;
                                     }
                                     #firstDivElm ul #uniqueBullet {
-                                        color: #FF0000;
+                                    &nbsp&nbsp&nbsp&nbsp color: #FF0000;
                                     }
                                     ul .listItms, li .listItms {
-                                        color: #0000FF;
+                                    &nbsp&nbsp&nbsp&nbsp color: #0000FF;
                                     }
                                     #actionSel:hover {
-                                        text-decoration: underline;
+                                    &nbsp&nbsp&nbsp&nbsp text-decoration: underline;
                                         color: #00FF00;
                                     }
                                     #actionSel:active {
-                                        text-decoration: line-through;
-                                        color: #FF00FF;
+                                    &nbsp&nbsp&nbsp&nbsp text-decoration: line-through;
+                                    &nbsp&nbsp&nbsp&nbsp color: #FF00FF;
                                     }
                                 </textarea>
                             </td>
@@ -223,86 +223,215 @@
                                 <h2>CSS3 Backgrounds</h2>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <h3>Background-Image Example</h3>
-                                <div class="explanation"></div>
+                                <h3>Background-Image</h3>
+                                <div class="explanation">
+                                    CSS3 has greatly enhanced the backgroun-image property, to now support resizing through CSS, as well as 
+                                    repeating of the image, as well as the origin of the image to all be specified.
+                                </div>
                                 <div class="demo">
-                                    
+                                    <div id="bgImageEx">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut                                                       laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation                                                       ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+                                        in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+                                        vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+                                        dolore te feugait nulla facilisi.
+                                    </div>
                                 </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <div id="bgImageEx">
+                                    &nbsp&nbsp&nbsp&nbsp Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut                                  &nbsp&nbsp&nbsp&nbsp laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation                              &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+                                    &nbsp&nbsp&nbsp&nbsp in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+                                    &nbsp&nbsp&nbsp&nbsp vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+                                    &nbsp&nbsp&nbsp&nbsp dolore te feugait nulla facilisi.
+                                    </div>
                                 </textarea>
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    #bgImageEx {
+                                    &nbsp&nbsp&nbsp&nbsp background: url(Images/img_flwr.gif);		/* can specify more than one url with ", " seperation */
+                                    &nbsp&nbsp&nbsp&nbsp background-size: 100% 100%;	     			/* could also be pixels if desired */
+                                    &nbsp&nbsp&nbsp&nbsp background-repeat: no-repeat;
+                                    &nbsp&nbsp&nbsp&nbsp background-origin: content-box;  			/* could also be padding-box, or border-box */
+                                    }
                                 </textarea>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
                                 <h3>Background-Gradient</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <div class="explanation">
+                                    CSS3 support linear, as well as radial gradient in a variety of manners. Below is a demo of some of the basic 
+                                    features of this new property, and see the code for the demo on the right, with comments containing more options 
+                                    for the styles that are being applied.
+                                </div>
+                                <div class="demo">
+                                    <div id="linGrad"></div>
+                                    <h3>Radial Gradients - Use of different size keywords</h3>
+                                    <p><strong>closest-side:</strong></p>
+                                    <div id="grad1"></div>
+                                    <p><strong>farthest-side:</strong></p>
+                                    <div id="grad2"></div>
+                                    <p><strong>closest-corner:</strong></p>
+                                    <div id="grad3"></div>
+                                    <p><strong>farthest-corner (this is default):</strong></p>
+                                    <div id="grad4"></div>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <div id="linGrad"></div>
+                                    <h3>Radial Gradients - Use of different size keywords</h3>
+                                    <p><strong>closest-side:</strong></p>
+                                    <div id="grad1"></div>
+                                    <p><strong>farthest-side:</strong></p>
+                                    <div id="grad2"></div>
+                                    <p><strong>closest-corner:</strong></p>
+                                    <div id="grad3"></div>
+                                    <p><strong>farthest-corner (this is default):</strong></p>
+                                    <div id="grad4"></div>
                                 </textarea>
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    #linGrad {
+                                    &nbsp&nbsp&nbsp&nbsp /*can swap "linear-gradient(" for "radial-gradient(cirle|ellipsis, " */
+                                    &nbsp&nbsp&nbsp&nbsp height: 200px;
+                                    &nbsp&nbsp&nbsp&nbsp width: 200px;
+                                    &nbsp&nbsp&nbsp&nbsp background: -webkit-linear-gradient(red, blue); /* linear-gradient("none|left|left top|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+                                    &nbsp&nbsp&nbsp&nbsp background: -o-linear-gradient(red, blue); 		/* linear-gradient("none|right|bottom right|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+                                    &nbsp&nbsp&nbsp&nbsp background: -moz-linear-gradient(red, blue); 	/* linear-gradient("none|right|bottom right|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+                                    &nbsp&nbsp&nbsp&nbsp background: linear-gradient(red, blue); 		/* linear-gradient("none|to right|to bottom right|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+                                    }
+
+                                    #grad1 {
+                                    &nbsp&nbsp&nbsp&nbsp height: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp width: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -o-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -moz-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+                                    &nbsp&nbsp&nbsp&nbsp background: radial-gradient(closest-side at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+                                    }
+
+                                    #grad2 {
+                                    &nbsp&nbsp&nbsp&nbsp height: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp width: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp background: -webkit-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -o-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -moz-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+                                    &nbsp&nbsp&nbsp&nbsp background: radial-gradient(farthest-side at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+                                    }
+
+                                    #grad3 {
+                                    &nbsp&nbsp&nbsp&nbsp height: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp width: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp background: -webkit-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -o-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -moz-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+                                    &nbsp&nbsp&nbsp&nbsp background: radial-gradient(closest-corner at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+                                    }
+
+                                    #grad4 {
+                                    &nbsp&nbsp&nbsp&nbsp height: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp width: 150px;
+                                    &nbsp&nbsp&nbsp&nbsp background: -webkit-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -o-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+                                    &nbsp&nbsp&nbsp&nbsp background: -moz-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+                                    &nbsp&nbsp&nbsp&nbsp background: radial-gradient(farthest-corner at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+                                    }
                                 </textarea>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td>
                                 <h2>CSS3 Borders</h2>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <h3>Box-Shadow Example</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <h3>Box-Shadow</h3>
+                                <div class="explanation">
+                                    CSS3 now support the box-shaddow property which is shown in the demo below.
+                                </div>
+                                <div class="demo">
+                                    <div id="boxShadEx"></div>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <div id="boxShadEx"></div>
                                 </textarea>
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    #boxShadEx {
+                                    &nbsp&nbsp&nbsp&nbsp width: 300px;
+                                    &nbsp&nbsp&nbsp&nbsp height: 100px;
+                                    &nbsp&nbsp&nbsp&nbsp background-color: yellow;
+                                    &nbsp&nbsp&nbsp&nbsp box-shadow: 10px 10px 5px #888888;
+                                    &nbsp&nbsp&nbsp&nbsp border: 3px solid black;
+                                    &nbsp&nbsp&nbsp&nbsp border-radius: 8px;
+                                    }
                                 </textarea>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
                                 <h3>Border-Image</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <div class="explanation">
+                                    CSS3 now supports the specification of a border to be created from a source image, rather than just a line of 
+                                    color. The property allows for strech, or tiled(round) styles to be applied to the image to create the boreder.
+                                </div>
+                                <div class="demo">
+                                    <div class="borderImgEx" id="round">
+				                        Here, the image is tiled (repeated) to fill the area.
+			                        </div>
+                                    <br>
+                                    <div class="borderImgEx" id="stretch">
+                                        Here, the image is stretched to fill the area.
+                                    </div>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <div class="borderImgEx" id="round">
+				                    &nbsp&nbsp&nbsp&nbsp Here, the image is tiled (repeated) to fill the area.
+			                        </div>
+                                    <br>
+                                    <div class="borderImgEx" id="stretch">
+                                    &nbsp&nbsp&nbsp&nbsp Here, the image is stretched to fill the area.
+                                    </div>
                                 </textarea>
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    .borderImgEx {
+                                    &nbsp&nbsp&nbsp&nbsp border: 15px solid transparent;
+                                    &nbsp&nbsp&nbsp&nbsp width: 250px;
+                                    &nbsp&nbsp&nbsp&nbsp padding: 10px 20px;
+                                    }
+                                    #round { 
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-border-image: url(Images/border.png) 30 30 round; /* Safari 3.1-5 */
+                                    &nbsp&nbsp&nbsp&nbsp -o-border-image: url(Images/border.png) 30 30 round; /* Opera 11-12.1 */
+                                    &nbsp&nbsp&nbsp&nbsp border-image: url(Images/border.png) 30 30 round;
+                                    }
+
+                                    #stretch {
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-border-image: url(Images/border.png) 30 30 stretch; /* Safari 3.1-5 */
+                                    &nbsp&nbsp&nbsp&nbsp -o-border-image: url(Images/border.png) 30 30 stretch; /* Opera 11-12.1 */
+                                    &nbsp&nbsp&nbsp&nbsp border-image: url(Images/border.png) 30 30 stretch;
+                                    }
                                 </textarea>
                             </td>
                         </tr>
@@ -311,41 +440,42 @@
                                 <h2>CSS3 Text Effects</h2>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <h3>Box-Shadow Example</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <h3>Text-Shadow/Word-Wrap</h3>
+                                <div class="explanation">
+                                    Below is an example fo the Text-Shadow property that can be applied to HTML elements through the use of 
+                                    CSS, as well as the word-wrap property that can also be applied similarily.
+                                </div>
+                                <div class="demo">
+                                    <h4 id="tShadEx">Text-Shadow Demo!</h4>
+			                        <p id="wWrapEx"> 
+                                        This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will 
+                                        break and wrap to the next line.
+                                    </p>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <h4 id="tShadEx">Text-Shadow Demo!</h4>
+			                        <p id="wWrapEx"> 
+                                    &nbsp&nbsp&nbsp&nbsp This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will 
+                                    &nbsp&nbsp&nbsp&nbsp break and wrap to the next line.
+                                    </p>
                                 </textarea>
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                    
-                                </textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="explanationDemo">
-                                <h3>Border-Image Example</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
-                            </td>
-                            <td class="htmlCode">
-                                <h4>HTML Code</h4>
-                                <textarea wrap="logical">
-                                    
-                                </textarea>
-                            </td>
-                            <td class="cssCode">
-                                <h4>CSS Code</h4>
-                                <textarea wrap="logical">
-                                    
+                                    #wWrapEx {
+                                    &nbsp&nbsp&nbsp&nbsp width: 100px; 
+                                    &nbsp&nbsp&nbsp&nbsp border: 1px solid #000000;
+                                    &nbsp&nbsp&nbsp&nbsp word-wrap: break-word;
+                                    }
+                                    #tShadEx {
+                                    &nbsp&nbsp&nbsp&nbsp text-shadow: 5px 5px 5px #FF0000;
+                                    }
                                 </textarea>
                             </td>
                         </tr>
@@ -354,64 +484,178 @@
                                 <h2>CSS3 Transformations</h2>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <h3>2D-Transforms Example</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
-                            </td>
-                            <td class="htmlCode">
-                                <h4>HTML Code</h4>
-                                <textarea wrap="logical">
-                                
-                                </textarea>
-                            </td>
-                            <td class="cssCode">
-                                <h4>CSS Code</h4>
-                                <textarea wrap="logical">
-                                
-                                </textarea>
-                            </td>
+                                <h3>2D-Transforms</h3>
+                                <div class="explanation">
+                                    Below is a table of all of the possible 2D-Transformations that can be applied through CSS3 now. (taken from 
+                                    the w3Schools webpage. See the link at the bottom of this page for more info.)
+                                </div>
+                                <table class="reference notranslate">
+                                  <thead>
+                                      <tr>
+                                        <th style="width:23%">Function</th>
+                                        <th>Description</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>  
+                                      <tr>
+                                        <td>matrix(<i>n,n,n,n,n,n</i>)</td>
+                                        <td>Defines a 2D transformation, using a matrix of six values</td>
+                                      </tr>
+                                      <tr>
+                                        <td>translate(<i>x,y</i>)</td>
+                                        <td>Defines a 2D translation, moving the element along the X- and the Y-axis</td>
+                                      </tr>
+                                        <tr>
+                                        <td>translateX(<i>n</i>)</td>
+                                        <td>Defines a 2D translation, moving the element along the X-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>translateY(<i>n</i>)</td>
+                                        <td>Defines a 2D translation, moving the element along the Y-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>scale(<i>x,y</i>)</td>
+                                        <td>Defines a 2D scale transformation, changing the elements width and 
+                                        height</td>
+                                      </tr>
+                                        <tr>
+                                        <td>scaleX(<i>n</i>)</td>
+                                        <td>Defines a 2D scale transformation, changing the element's width</td>
+                                      </tr>
+                                      <tr>
+                                        <td>scaleY(<i>n</i>)</td>
+                                        <td>Defines a 2D scale transformation, changing the element's height</td>
+                                      </tr>
+                                      <tr>
+                                        <td>rotate(<i>angle</i>)</td>
+                                        <td>Defines a 2D rotation, the angle is specified in the 
+                                            parameter</td>
+                                      </tr>
+                                      <tr>
+                                        <td>skew(<i>x-angle,y-angle</i>)</td>
+                                        <td>Defines a 2D skew transformation along the X- and the Y-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>skewX(<i>angle</i>)</td>
+                                        <td>Defines a 2D skew transformation along the X-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>skewY(<i>angle</i>)</td>
+                                        <td>Defines a 2D skew transformation along the Y-axis</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <h3>3D-Transforms Example</h3>
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
-                            </td>
-                            <td class="htmlCode">
-                                <h4>HTML Code</h4>
-                                <textarea wrap="logical">
-                                    
-                                </textarea>                           
-                            </td>
-                            <td class="cssCode">
-                                <h4>CSS Code</h4>
-                                <textarea wrap="logical">
-                                
-                                </textarea>
-                            </td>
+                                <h3>3D-Transforms</h3>
+                                <div class="explanation">
+                                    Below is a table of all of the possible 3D-Transformations that can be applied through CSS3 now. (taken from 
+                                    the w3Schools webpage. See the link at the bottom of this page for more info.)
+                                </div>
+                                <table class="reference notranslate">
+                                  <tbody>
+                                      <tr>
+                                        <th style="width:22%">Function</th>
+                                        <th>Description</th>
+                                      </tr>  
+                                      <tr>
+                                        <td>matrix3d<br>
+                                        (<i>n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n</i>)</td>
+                                        <td>Defines a 3D transformation, using a 4x4 matrix of 16 values</td>
+                                      </tr>
+                                      <tr>
+                                        <td>translate3d(<i>x,y,z</i>)</td>
+                                        <td>Defines a 3D translation</td>
+                                      </tr>
+                                      <tr>
+                                        <td>translateX(<i>x</i>)</td>
+                                        <td>Defines a 3D translation, using only the value for the X-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>translateY(<i>y</i>)</td>
+                                        <td>Defines a 3D translation, using only the value for the Y-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>translateZ(<i>z</i>)</td>
+                                        <td>Defines a 3D translation, using only the value for the Z-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>scale3d(<i>x,y,z</i>)</td>
+                                        <td>Defines a 3D scale transformation</td>
+                                      </tr>
+                                      <tr>
+                                        <td>scaleX(<i>x</i>)</td>
+                                        <td>Defines a 3D scale transformation by giving a value for the X-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>scaleY(<i>y</i>)</td>
+                                        <td>Defines a 3D scale transformation by giving a value for the Y-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>scaleZ(<i>z</i>)</td>
+                                        <td>Defines a 3D scale transformation by giving a value for the Z-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>rotate3d(<i>x,y,z,angle</i>)</td>
+                                        <td>Defines a 3D rotation</td>
+                                      </tr>
+                                      <tr>
+                                        <td>rotateX(<i>angle</i>)</td>
+                                        <td>Defines a 3D rotation along the X-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>rotateY(<i>angle</i>)</td>
+                                        <td>Defines a 3D rotation along the Y-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>rotateZ(<i>angle</i>)</td>
+                                        <td>Defines a 3D rotation along the Z-axis</td>
+                                      </tr>
+                                      <tr>
+                                        <td>perspective(<i>n</i>)</td>
+                                        <td>Defines a perspective view for a 3D transformed element</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
                         </tr>
                         <tr>
                             <td>
                                 <h2>CSS3 Transitions</h2>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <div class="explanation">
+                                    CSS3 now supports the styling of transitions of elements, usually triggered through mouse events that have 
+                                    already been specified in CSS, such as hover, or active. Below is an example of how those transitional selectors 
+                                    can be further styled through CSS to make more responsive design through CSS solely.
+                                </div>
+                                <div class="demo">
+                                    <div id="transEx"></div>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <div id="transEx"></div>
                                 </textarea>                            
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                
+                                    #transEx {
+                                     &nbsp&nbsp&nbsp&nbsp width: 100px;
+                                     &nbsp&nbsp&nbsp&nbsp height: 100px;
+                                     &nbsp&nbsp&nbsp&nbsp background: red;
+                                     &nbsp&nbsp&nbsp&nbsp -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+                                     &nbsp&nbsp&nbsp&nbsp transition: width 2s;
+                                    }
+                                    #transEx:hover {
+                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  width: 300px;
+                                    }
                                 </textarea>
                             </td>
                         </tr>
@@ -420,67 +664,173 @@
                                 <h2>CSS3 Animations</h2>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <div class="explanation">
+                                    CSS3 supports basic animations of elements now. Animation used to be something that had to be done solely 
+                                    through javascript, but now can be done is ome part through CSS. Below is an example of how animations now 
+                                    work in CSS.
+                                </div>
+                                <div class="demo">
+                                    <div id="cssAnim"></div>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                    <div id="cssAnim"></div>
                                 </textarea>                            
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                
+                                    #cssAnim {
+                                    &nbsp&nbsp&nbsp&nbsp width: 100px;
+                                    &nbsp&nbsp&nbsp&nbsp height: 100px;
+                                    &nbsp&nbsp&nbsp&nbsp background: red;
+                                    &nbsp&nbsp&nbsp&nbsp position: relative;
+                                    &nbsp&nbsp&nbsp&nbsp /* Chrome, Safari, Opera */
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-name: myfirst;
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-duration: 5s;
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-timing-function: linear;
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-delay: 2s;
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-iteration-count: infinite;
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-direction: alternate;
+                                    &nbsp&nbsp&nbsp&nbsp -webkit-animation-play-state: running;
+                                    &nbsp&nbsp&nbsp&nbsp /* Standard syntax */
+                                    &nbsp&nbsp&nbsp&nbsp animation-name: myfirst;
+                                    &nbsp&nbsp&nbsp&nbsp animation-duration: 5s;
+                                    &nbsp&nbsp&nbsp&nbsp animation-timing-function: linear;
+                                    &nbsp&nbsp&nbsp&nbsp animation-delay: 2s;
+                                    &nbsp&nbsp&nbsp&nbsp animation-iteration-count: infinite;
+                                    &nbsp&nbsp&nbsp&nbsp animation-direction: alternate;
+                                    &nbsp&nbsp&nbsp&nbsp animation-play-state: running;
+                                    }
+
+                                    /* Chrome, Safari, Opera */
+                                    @-webkit-keyframes myfirst {
+                                    &nbsp&nbsp&nbsp&nbsp 0%   {background:red; left:0px; top:0px;}
+                                    &nbsp&nbsp&nbsp&nbsp 25%  {background:yellow; left:200px; top:0px;}
+                                    &nbsp&nbsp&nbsp&nbsp 50%  {background:blue; left:200px; top:200px;}
+                                    &nbsp&nbsp&nbsp&nbsp 75%  {background:green; left:0px; top:200px;}
+                                    &nbsp&nbsp&nbsp&nbsp 100% {background:red; left:0px; top:0px;}
+                                    }
+
+                                    /* Standard syntax */
+                                    @keyframes myfirst {
+                                    &nbsp&nbsp&nbsp&nbsp 0%   {background:red; left:0px; top:0px;}
+                                    &nbsp&nbsp&nbsp&nbsp 25%  {background:yellow; left:200px; top:0px;}
+                                    &nbsp&nbsp&nbsp&nbsp 50%  {background:blue; left:200px; top:200px;}
+                                    &nbsp&nbsp&nbsp&nbsp 75%  {background:green; left:0px; top:200px;}
+                                    &nbsp&nbsp&nbsp&nbsp 100% {background:red; left:0px; top:0px;}
+                                    }
                                 </textarea>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <h2>CSS3 Multiple Column Layouts</h2>
+                                
                             </td>                                
                         </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <h3>CSS3 Multiple Column Layouts</h3>
+                                <div class="explanation">
+                                    CSS3 now supprots multiple column layouts to be added to div, and other text based elements, that normally 
+                                    could have only been done with a lot m ore lines of css before, in addition to other elements. the column 
+                                    attribute to CSS greatly shortens the length of code needed to produce the display shown below.
+                                </div>
+                                <div class="demo">
+                                        <br>
+                                    	<div id="collEx">
+		                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+                                          laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+                                          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+                                          in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at 
+                                          vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore 
+                                          te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
+                                          id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis 
+                                          qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
+	                                   </div>
+                                </div>
                             </td>
                             <td class="htmlCode">
                                 <h4>HTML Code</h4>
                                 <textarea wrap="logical">
-                                    
+                                       <div id="collEx">
+		                               &nbsp&nbsp&nbsp&nbsp Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut 
+                                       &nbsp&nbsp&nbsp&nbsp laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+                                       &nbsp&nbsp&nbsp&nbsp ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor 
+                                       &nbsp&nbsp&nbsp&nbsp in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at 
+                                       &nbsp&nbsp&nbsp&nbsp vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore 
+                                       &nbsp&nbsp&nbsp&nbsp te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
+                                       &nbsp&nbsp&nbsp&nbsp id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis 
+                                       &nbsp&nbsp&nbsp&nbsp qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.
+	                                   </div>
                                 </textarea>                            
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                
+                                    	#collEx {
+                                        &nbsp&nbsp&nbsp&nbsp -webkit-column-count: 3; /* Chrome, Safari, Opera */
+                                        &nbsp&nbsp&nbsp&nbsp -moz-column-count: 3; /* Firefox */
+                                        &nbsp&nbsp&nbsp&nbsp column-count: 3;
+                                        &nbsp&nbsp&nbsp&nbsp -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+                                        &nbsp&nbsp&nbsp&nbsp -moz-column-gap: 40px; /* Firefox */
+                                        &nbsp&nbsp&nbsp&nbsp column-gap: 40px;
+                                        &nbsp&nbsp&nbsp&nbsp -webkit-column-rule: 4px outset #ff00ff; /* Chrome, Safari, Opera */
+                                        &nbsp&nbsp&nbsp&nbsp -moz-column-rule: 4px outset #ff00ff; /* Firefox */
+                                        &nbsp&nbsp&nbsp&nbsp column-rule: 4px outset #ff00ff;
+                                        }
                                 </textarea>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <h2>User Interfaces</h2>
-                            </td>                            
-                        </tr>
-                        <tr>
+                        <tr class="cssExTRows">
                             <td class="explanationDemo">
-                                <div class="explanation"></div>
-                                <div class="demo"></div>
+                                <h4>User Interfaces</h4>
+                                <div class="explanation">
+                                    User interfaces have now been included within CSS3, which allow developers to specify resizing as an
+                                    option for divs and other elements, that normally could only have been done through javascript in the 
+                                    past.
+                                </div>
+                                <div class="demo">
+                                    <br>
+                                    <br>
+                                	<div id="uiExCont">
+                                        <div class="boxEx">This div occupies the left half.</div>
+                                        <div class="boxEx">This div occupies the right half.</div>
+                                    </div>
+                                </div>
                             </td>
                             <td class="htmlCode">
-                                <h4>HTML Code</h4>
+                                <h3>HTML Code</h3>
                                 <textarea wrap="logical">
-                                    
+                                    	<div id="uiExCont">
+                                        &nbsp&nbsp&nbsp&nbsp <div class="boxEx">This div occupies the left half.</div>
+                                        &nbsp&nbsp&nbsp&nbsp <div class="boxEx">This div occupies the right half.</div>
+                                        </div>
                                 </textarea>                            
                             </td>
                             <td class="cssCode">
                                 <h4>CSS Code</h4>
                                 <textarea wrap="logical">
-                                
+                                    #uiExCont {
+                                    &nbsp&nbsp&nbsp&nbsp width: 30em;
+                                    &nbsp&nbsp&nbsp&nbsp border: 2px solid yellow;
+                                    &nbsp&nbsp&nbsp&nbsp resize: both;
+                                    &nbsp&nbsp&nbsp&nbsp overflow: auto;
+                                    &nbsp&nbsp&nbsp&nbsp outline: 2px solid red;
+                                    &nbsp&nbsp&nbsp&nbsp outline-offset: 15px;
+                                    }
+                                	#uiExCont.boxEx
+                                    {
+                                    &nbsp&nbsp&nbsp&nbsp -moz-box-sizing: border-box; /* Firefox */
+                                    &nbsp&nbsp&nbsp&nbsp box-sizing: border-box;
+                                    &nbsp&nbsp&nbsp&nbsp width: 50%;
+                                    &nbsp&nbsp&nbsp&nbsp border: 1em solid red;
+                                    &nbsp&nbsp&nbsp&nbsp float: left;
+                                    }
                                 </textarea>
                             </td>
                         </tr>

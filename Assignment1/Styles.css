@@ -67,12 +67,13 @@ tbody {
     vertical-align: top;
 }
 .explanationDemo {
-
+    width: 30%;
+    height: 100%;
 }
 .htmlCode textarea {
-    min-width: 400px;
+    /*min-width: 400px;*/
     width: 90%;
-    max-width: 800px;
+    /*max-width: 800px;*/
     min-height: 218px;
     height:90%;
     max-height: 500px;
@@ -82,9 +83,11 @@ tbody {
     overflow: auto;
 }
 .htmlCode {
-    width: 40%;
-    
+    width: 30%;
+    height: 90%;
 }
+
+
 
 .jsCode textarea{
  min-width: 400px;
@@ -102,7 +105,7 @@ tbody {
     width: 20%;
 }
 .cssCode {
-    width: 15%;
+    width: 25%;
 }
 .cssCode textarea{
     
@@ -165,7 +168,8 @@ tbody {
 
 /* Styles being used on cssExamples.html page for demo purposes */
 #CssExContent .explanationDemo {
-    width: 45%;
+    width: 30%;
+    height: 100%;
     text-align: left;
 }
 #CssExContent .explanationDemo div {
@@ -206,4 +210,166 @@ ul .listItms, li .listItms {
     border: 2px solid black;
     text-align: left;
     padding: 2px 5px 2px 5px;
+}
+#uiExCont {
+    width: 30em;
+    border: 2px solid yellow;
+    resize: both;
+    overflow: auto;
+    outline: 2px solid red;
+    outline-offset: 15px;
+    margin: 20px;
+}
+
+#uiExCont.boxEx
+{
+    -moz-box-sizing: border-box; /* Firefox */
+    box-sizing: border-box;
+    width: 50%;
+    border: 1em solid red;
+    float: left;
+}
+#collEx {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+    -webkit-column-rule: 4px outset #ff00ff; /* Chrome, Safari, Opera */
+    -moz-column-rule: 4px outset #ff00ff; /* Firefox */
+    column-rule: 4px outset #ff00ff;
+}
+#cssAnim {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-name: myfirst;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    /* Standard syntax */
+    animation-name: myfirst;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {background:red; left:0px; top:0px;}
+    25%  {background:yellow; left:100px; top:0px;}
+    50%  {background:blue; left:100px; top:100px;}
+    75%  {background:green; left:0px; top:100px;}
+    100% {background:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    0%   {background:red; left:0px; top:0px;}
+    25%  {background:yellow; left:200px; top:0px;}
+    50%  {background:blue; left:200px; top:200px;}
+    75%  {background:green; left:0px; top:200px;}
+    100% {background:red; left:0px; top:0px;}
+}
+#transEx {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+#transEx:hover {
+    width: 300px;
+}
+#wWrapEx {
+    width: 100px; 
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+#tShadEx {
+    text-shadow: 5px 5px 5px #FF0000;
+}
+.borderImgEx {
+    border: 15px solid transparent;
+    width: 250px;
+    padding: 10px 20px;
+}
+#round { 
+    -webkit-border-image: url(Images/border.png) 30 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(Images/border.png) 30 30 round; /* Opera 11-12.1 */
+    border-image: url(Images/border.png) 30 30 round;
+}
+
+#stretch {
+    -webkit-border-image: url(Images/border.png) 30 30 stretch; /* Safari 3.1-5 */
+    -o-border-image: url(Images/border.png) 30 30 stretch; /* Opera 11-12.1 */
+    border-image: url(Images/border.png) 30 30 stretch;
+}
+#boxShadEx {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px #888888;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+#linGrad {
+    /*can swap "linear-gradient(" for "radial-gradient(cirle|ellipsis, " */
+    height: 200px;
+    width: 200px;
+    background: -webkit-linear-gradient(red, blue); /* linear-gradient("none|left|left top|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+    background: -o-linear-gradient(red, blue); 		/* linear-gradient("none|right|bottom right|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+    background: -moz-linear-gradient(red, blue); 	/* linear-gradient("none|right|bottom right|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+    background: linear-gradient(red, blue); 		/* linear-gradient("none|to right|to bottom right|Xdeg", color1 color1Space%, color2 color2Space%, ...) */
+}
+
+#grad1 {
+    height: 150px;
+    width: 150px;
+    background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(closest-side at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+}
+
+#grad2 {
+    height: 150px;
+    width: 150px;
+    background: -webkit-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(farthest-side at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+}
+
+#grad3 {
+    height: 150px;
+    width: 150px;
+    background: -webkit-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(closest-corner at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+}
+
+#grad4 {
+    height: 150px;
+    width: 150px;
+    background: -webkit-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(farthest-corner at 60% 55%,blue,green,yellow,black); /* Standard syntax (must be last) */
+}
+#bgImageEx {
+    background: url(Images/img_flwr.gif);		/* can specify more than one url with ", " seperation */
+    background-size: 100% 100%;	     			/* could also be pixels if desired */
+    background-repeat: no-repeat;
+    background-origin: content-box;  			/* could also be padding-box, or border-box */
 }

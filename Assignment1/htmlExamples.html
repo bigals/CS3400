@@ -5,7 +5,11 @@
         <title>CS3400 First Assignment: HTML Examples</title>
         <link type="text/css" rel="stylesheet" href="Styles.css" />
         <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="application/javascript" src="Scripts.js"></script>        
+        <script type="application/javascript" src="Scripts.js"></script> 
+        <!--Script for Canvas Execution-->
+        <script>
+			
+		</script>
 	</head>
     <body>
         <div id="pageWrapper">
@@ -287,17 +291,18 @@ Username: <input type="text" name="user">
 				<h3>New HTML5 form elements</h3>
 				<table>
 					<tr>
-					<td class="htmlTdThin">
-					<dl><dt>&lt;datalist&gt;</dt>
-						<dd>specifies a list of pre-defined options for an input element</dd>
-					    <dt>&lt;keygen&gt;</dt>
-						<dd>provides a secure way to authenticate users</dd>
-						<dt>&lt;output&gt;</dt>
-						<dd>represents the result of a calculation</dd>
-					</dl>
-					</td>
-					<td class="htmlTdThick">
-				<textarea class="codeBoxes">
+					   <td class="htmlTdThin">
+                           <dl>
+                               <dt>&lt;datalist&gt;</dt>
+                                  <dd>specifies a list of pre-defined options for an input element</dd>
+                               <dt>&lt;keygen&gt;</dt>
+                                  <dd>provides a secure way to authenticate users</dd>
+                               <dt>&lt;output&gt;</dt>
+                                  <dd>represents the result of a calculation</dd>
+                           </dl>
+					   </td>
+					   <td class="htmlTdThick">
+				            <textarea class="codeBoxes">
 <!-- <datalist> element -->
 <input list="browsers">
 <datalist id="browsers">
@@ -321,69 +326,270 @@ Encryption: <keygen name="security">
 <input type="number" id="b" value="50">=
 <output name="x" for="a b"></output>
 </form>
-				</textarea>
-				</td></tr>
+				            </textarea>
+				        </td>
+                    </tr>
 				</table>
 				<hr>
 				
 				<h3>HTML5 Video Element</h3>
 				<table>
-					<tr><td class="htmlTdThin">
-				<p>Supported Formats</p>
-				<dl>
-					<dt>MP4</dt>
-				<dd>Supported by:</dd>
-				<dd>IE, Chrome, Firefox, Safari</dd>
-					<dt>WebM</dt>
-				<dd>Supported by:</dd>
-				<dd>Chrome, Firefox, Opera</dd>
-					<dt>Ogg</dt>
-				<dd>Supported by:</dd>
-				<dd>Chrome, Firefox, Opera</dd>
-				</dl>
-					</td>
-					<td class="htmlTdThick">
-				<textarea class="codeBox125">
-<video width="320" height="240" autoplay>
-  <source src="movie.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-  
-  <!-- This message only displays if video does not -->
-Your browser does not support the video tag.
+					<tr>
+                        <td class="htmlTdThin">
+                            <video width="320" height="240" controls autoplay>
+                                <source src="Videos/movie_bbb.mp4" type="video/mp4">
+                                <source src="Videos/movie_bbb.ogg" type="video/ogg">  
+                                <!-- This message only displays if video does not -->
+                                Your browser does not support the video tag.
+                            </video>
+				            <p>Supported Formats</p>
+				            <dl>
+					           <dt>MP4</dt>
+				                    <dd>Supported by:</dd>
+				                    <dd>IE, Chrome, Firefox, Safari</dd>
+					           <dt>WebM</dt>
+				                    <dd>Supported by:</dd>
+				                    <dd>Chrome, Firefox, Opera</dd>
+					           <dt>Ogg</dt>
+				                    <dd>Supported by:</dd>
+				                    <dd>Chrome, Firefox, Opera</dd>
+				            </dl>
+
+					   </td>
+                        <td class="htmlTdThick" style="height:100%;">
+                            <h4>HTML Code</h4>
+                            <textarea class="codeBox125">
+<video width="320" height="240" controls autoplay>
+    <source src="Videos/movie_bbb.mp4" type="video/mp4">
+    <source src="Videos/movie_bbb.ogg" type="video/ogg">  
+    <!-- This message only displays if video does not -->
+    Your browser does not support the video tag.
 </video>
-				</textarea>
-					</td>
+                            </textarea>
+                        </td>
 					</tr>
 				</table>
 				<hr>
 				<h3>HTML5 Audio Element</h3>
 				<table>
-				<tr><td class="htmlTdThin">
-				<p>Supported Formats</p>
-				<dl>
-				<dt>MP3</dt>
-				<dd>Supported by:</dd>
-				<dd>IE, Chrome, Firefox, Safari</dd>
-				<dt>Wav</dt>
-				<dd>Supported by:</dd>
-				<dd>Chrome, Firefox, Safari, Opera</dd>
-				<dt>Ogg</dt>
-				<dd>Supported by:</dd>
-				<dd>Chrome, Firefox, Opera</dd>
-				</dl>
-				</td>
-				<td class="htmlTdThick">
-				<textarea class="codeBox125">
-<audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
+				    <tr>
+                        <td class="htmlTdThin">
+                            <audio controls loop preload="auto"> <!--Accepts autoplay, and muted attributes as well-->
+                                <source src="horse.ogg" type="audio/ogg">
+                                <source src="horse.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+				            <p>Supported Formats</p>
+				            <dl>
+				                <dt>MP3</dt>
+                                    <dd>Supported by:</dd>
+                                    <dd>IE, Chrome, Firefox, Safari</dd>
+				                <dt>Wav</dt>
+                                    <dd>Supported by:</dd>
+                                    <dd>Chrome, Firefox, Safari, Opera</dd>
+				                <dt>Ogg</dt>
+                                    <dd>Supported by:</dd>
+                                    <dd>Chrome, Firefox, Opera</dd>
+				            </dl>
+				        </td>
+				        <td class="htmlTdThick">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<audio controls loop preload="auto"> <!--Accepts autoplay, and muted attributes as well-->
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
 </audio>
-				</textarea>
-				</td></tr>
+				            </textarea>
+				        </td>
+                    </tr>
 				</table>
 				<hr>
 				
+                <h3>HTML5 SVG Element</h3>
+				<table>
+				    <tr>
+                        <td class="htmlTdThin">
+                            <h2>Simple Example</h2>
+                            <svg width="100" height="100">
+                                 <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                                 Sorry, your browser does not support inline SVG.
+                            </svg> 
+                            <h2>Complex Example</h2>
+                            <svg width="300" height="200">
+                               <polygon points="100,10 40,198 190,78 10,78 160,198" 
+                               style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                               Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <h2>Very Complex Example</h2>
+                            <svg width="100%" height="300px">
+                                <g id="R1" transform="translate(150 200)"> 
+                                    <ellipse rx="200" ry="0" opacity=".3">
+                                        <animateTransform attributeName="transform" type="rotate" dur="7s" from="150" to="300" repeatCount="indefinite"/>
+                                        <animate attributeName="cx" dur="8s" values="-20; 100; -20" repeatCount="indefinite"/>
+                                        <animate attributeName="ry" dur="3s" values="10; 60; 10" repeatCount="indefinite"/>
+                                    </ellipse>
+                                </g>
+                                <use xlink:href="#R1" transform="rotate(72 50 150)"/>
+                                <use xlink:href="#R1" transform="rotate(144 50 150)"/>
+                                <use xlink:href="#R1" transform="rotate(116 50 150)"/>
+                                <use xlink:href="#R1" transform="rotate(168 50 150)"/>
+                            </svg>
+				        </td>
+				        <td class="htmlTdThick">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<!--Simple Example-->
+<svg width="100" height="100">
+     <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+     Sorry, your browser does not support inline SVG.
+</svg> 
+<!--Complex Example-->
+<svg width="300" height="200">
+   <polygon points="100,10 40,198 190,78 10,78 160,198" 
+   style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+   Sorry, your browser does not support inline SVG.
+</svg>
+<!--Very Complex Example-->
+<svg width="100%" height="300px">
+    <g id="R1" transform="translate(50 50)"> 
+        <ellipse rx="100" ry="0" opacity=".3">
+            <animateTransform attributeName="transform" type="rotate" dur="7s" from="0" to="150" repeatCount="indefinite"/>
+            <animate attributeName="cx" dur="8s" values="-20; 100; -20" repeatCount="indefinite"/>
+            <animate attributeName="ry" dur="3s" values="10; 60; 10" repeatCount="indefinite"/>
+        </ellipse>
+    </g>
+    <use xlink:href="#R1" transform="rotate(72 50 150)"/>
+    <use xlink:href="#R1" transform="rotate(144 50 150)"/>
+    <use xlink:href="#R1" transform="rotate(216 50 150)"/>
+    <use xlink:href="#R1" transform="rotate(168 50 150)"/>
+</svg>
+				            </textarea>
+				        </td>
+                    </tr>
+				</table>
+                
+                <hr>
+				
+                <h3>HTML5 Canvas Element</h3>
+				<table>
+				    <tr>
+                        <td class="htmlTdThin">
+                            <h2>Canvas 1</h2>
+                            <canvas id="canvas1" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 2</h2>
+                            <canvas id="canvas2" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 3</h2>
+                            <canvas id="canvas3" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 4</h2>
+                            <canvas id="canvas4" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 5</h2>
+                            <canvas id="canvas5" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 6</h2>
+                            <canvas id="canvas6" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 7</h2>
+                            <canvas id="canvas7" width="200" height="100" style="border:1px solid #000000;"></canvas>
+                            <h2>Canvas 8</h2>
+                            <p>Image to use:</p>
+                            <img id="scream" src="Images/img_the_scream.jpg" alt="The Scream" width="220" height="277" />
+                            <p>Canvas:</p>
+                            <canvas id="canvas8" width="250" height="300" style="border:1px solid #d3d3d3;"></canvas>
+				        </td>
+				        <td class="htmlCode">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<!--Canvas 1-->
+<canvas id="canvas1" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 2-->
+<canvas id="canvas2" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 3-->
+<canvas id="canvas3" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 4-->
+<canvas id="canvas4" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 5-->
+<canvas id="canvas5" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 6-->
+<canvas id="canvas6" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 7-->
+<canvas id="canvas7" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<!--Canvas 8-->
+<p>Image to use:</p>
+<img id="scream" src="Images/img_the_scream.jpg" alt="The Scream" width="220" height="277" />
+<p>Canvas:</p>
+<canvas id="canvas8" width="250" height="300" style="border:1px solid #d3d3d3;"></canvas>
+				            </textarea>
+				        </td>
+    				    <td class="cssCode">
+                            <h4>Javascript Code</h4>
+				            <textarea class="codeBox125">
+/* Script for #canvas1 */
+var c = document.getElementById("canvas1");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(0,0,150,75);
+
+/* Script for #canvas2 */
+var c = document.getElementById("canvas2");
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+
+/* Script for #canvas3 */
+var c = document.getElementById("canvas3");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+/* Script for #canvas4 */
+var c = document.getElementById("canvas4");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hello World",10,50);
+
+/* Script for #canvas5 */
+var c = document.getElementById("canvas5");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Hello World",10,50);
+
+/* Script for #canvas6 */
+var c = document.getElementById("canvas6");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+
+/* Script for #canvas7 */
+var c = document.getElementById("canvas7");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+
+
+/* Script for #canvas8 */
+var c = document.getElementById("canvas8");
+var ctx = c.getContext("2d");
+var img = document.getElementById("scream");
+ctx.drawImage(img,10,10);
+				            </textarea>
+				        </td>
+                    </tr>
+				</table>
 	</body>
 
 </html>							

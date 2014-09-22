@@ -37,6 +37,8 @@
                     <a href="#svgEX">HTML5 SVG</a><br>
                     <a href="#canvasEX">HTML5 Canvas</a><br>
                     <a href="#htmlAPIs">HTML5 API's</a><br>
+					<a href="#menus">HTML Menus</a><br>
+					<a href="#nav">HTML Navigation Links</a><br>
                 </div>
 				<hr>
 				<a name="pFormatEX"></a><h3>HTML Basic Paragraph Formatting</h3>
@@ -1013,6 +1015,25 @@ function stopWorker() {
                     </tr>
 				</table>
 				<hr>
+				<a id="menus"><h3>HTML Menus</h3></a>
+				<table>
+					<tr><td class="htmlTdThin">
+					<p>The menu tag is only supported by Fifefox</p>
+					<menu type="context" id="mymenu">
+  <menuitem label="Refresh" onclick="window.location.reload();" icon="ico_reload.png">
+  </menuitem>
+  <menu label="Share on...">
+    <menuitem label="Twitter" icon="ico_twitter.png"
+    onclick="window.open('//twitter.com/intent/tweet?text='+window.location.href);">
+    </menuitem>
+    <menuitem label="Facebook" icon="ico_facebook.png"
+    onclick="window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);">
+    </menuitem>
+  </menu>
+  <menuitem label="Email This Page"
+  onclick="window.location='mailto:?body='+window.location.href;"></menuitem>
+</menu>
+					</td><td>
 				<textarea class="codeBoxes">
 <menu type="context" id="mymenu">
   <menuitem label="Refresh" onclick="window.location.reload();" icon="ico_reload.png">
@@ -1029,6 +1050,33 @@ function stopWorker() {
   onclick="window.location='mailto:?body='+window.location.href;"></menuitem>
 </menu>
 				</textarea>
+					</td></tr></table>
+					<hr>
+					<a id="nav"><h3>HTML Navigation Links</h3></a>
+					<table style="width:100%">
+						<tr>
+						<td class="htmlTdThin">
+						<br>
+						<nav>
+						  <a href="/html/">HTML</a> |
+						  <a href="/css/">CSS</a> |
+						  <a href="/js/">JavaScript</a> |
+						  <a href="/jquery/">jQuery</a>
+						</nav>
+						</td>
+						<td>
+						<h4>HTML Code</h4>
+						<textarea class="codeBox125">
+<nav>
+  <a href="/html/">HTML</a> |
+  <a href="/css/">CSS</a> |
+  <a href="/js/">JavaScript</a> |
+  <a href="/jquery/">jQuery</a>
+</nav>
+						</textarea>
+						</td></tr>
+					</table>
+					
                 <p>Large portions of the content on this page has been taken from the W3Schools Webpage: <a href="http://www.w3schools.com/css/default.asp">http://www.w3schools.com/css/default.asp</a></p>
 	</body>
 

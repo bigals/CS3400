@@ -742,6 +742,259 @@ ctx.drawImage(img,10,10);
 				            </textarea>
 				        </td>
                     </tr>
+                    
+                                    <hr>
+				
+                <h3>HTML5 API's</h3>
+				<table>
+				    <tr>
+                        <td class="htmlTdThin">
+                            <h4>HTML Geolocation</h4>
+                            <p id="demo">Click the button to get your coordinates:</p>
+		                    <button onclick="getLocation()">Try It</button>
+				        </td>
+				        <td class="htmlCode">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<p id="demo">Click the button to get your coordinates:</p>
+<button onclick="getLocation()">Try It</button>
+				            </textarea>
+				        </td>
+    				    <td class="cssCode">
+                            <h4>Javascript Code</h4>
+				            <textarea class="codeBox125">
+var locationBtn = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        locationBtn.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    locationBtn.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+				            </textarea>
+				        </td>
+                    </tr>
+                    <tr>
+                        <td class="htmlTdThin">
+                            <h4>HTML Drag and Drop</h4>                            
+                            <p>Drag the image into the rectangle:</p>
+                            <div id="dragToDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                            <br>
+                            <img id="drag1" src="Images/img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+				        </td>
+				        <td class="htmlCode">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<p>Drag the image into the rectangle:</p>
+<div id="dragToDiv" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="Images/img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+				            </textarea>
+				        </td>
+    				    <td class="cssCode">
+                            <h4>Javascript Code</h4>
+				            <textarea class="codeBox125">
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text/html", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text/html");
+    ev.target.appendChild(document.getElementById(data));
+}
+				            </textarea>
+				        </td>
+                    </tr>
+                    <tr>
+                        <td class="htmlTdThin">
+                            <h4>HTML Local Storage</h4>
+                            <p>
+                                HTML Local storage can allow HTML to store data locally within the user's browser, unlike cookies the storage limit 
+                                is at least 5MB, and data is never transferred to the server. The data is stored as name/value pairs, and the 
+                                storing web page is the only one that can acsess the data. window.localStorage keeps data with no expiration 
+                                date, where as code.sessionStorage stores data only until the tab is closed.
+                            </p>
+                            
+                            <!--Creating Name/Value pair Example-->
+                            <h3>Name Value Pair Example</h3>
+                            <p>
+                                Below this paragraph the value of the name="lastname" object will appear, that was stored in local storage of 
+                                the webpage:
+                            </p>
+                            <div id="nameValResult"></div>
+                            
+                            <br>
+
+                            <!--Local Storage Example-->
+                            <h3>Local Storage Example</h3>
+                            <p><button onclick="localClickCounter()" type="button">Click me!</button></p>
+                            <div id="localSresult"></div>
+                            <p>Click the button to see the counter increase.</p>
+                            <p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+                            <br>
+
+                            <!--Session Storage Example-->
+                            <h3>Session Storage Example</h3>
+                            <p><button onclick="sessionClickCounter()" type="button">Click me!</button></p>
+                            <div id="codeSresult"></div>
+                            <p>Click the button to see the counter increase.</p>
+                            <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+				        </td>
+				        <td class="htmlCode">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<!--Creating Name/Value pair Example-->
+<h3>Name Value Pair Example</h3>
+<p>Below this paragraph the value of the name="lastname" object will appear, that was stored in local storage of the webpage</p>
+<div id="nameValResult"></div>
+
+<!--Local Storage Example-->
+<h3>Local Storage Example</h3>
+<p><button onclick="localClickCounter()" type="button">Click me!</button></p>
+<div id="localSresult"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+<br>
+
+<!--Session Storage Example-->
+<h3>Session Storage Example</h3>
+<p><button onclick="sessionClickCounter()" type="button">Click me!</button></p>
+<div id="codeSresult"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+				            </textarea>
+				        </td>
+    				    <td class="cssCode">
+                            <h4>Javascript Code</h4>
+				            <textarea class="codeBox125">
+function localClickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("localSresult").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("localSresult").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function sessionClickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("codeSresult").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+    } else {
+        document.getElementById("codeSresult").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+// Check browser support
+if (typeof(Storage) != "undefined") {
+    // Store
+    localStorage.setItem("lastname", "Smith");
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+				            </textarea>
+				        </td>
+                    </tr>
+                    <tr>
+                        <td class="htmlTdThin">
+                            <h4>HTML App Cache</h4>
+                            <p>
+                                The "&lt html manifest="demo.appcache"&gt" element, placed in the &lt head &gt element of the page, will allow the 
+                                webpage to be cached, and then brought up again, even when offline. Then the manifest file should have the following 
+                                form, the CACHE MANIFEST files are those that are available offline and is mandatory in the file, the NETWORK files 
+                                are those that should not be available offline, and the FALLBACK is the file that should be loaded to replace the 
+                                entire "/html/" folder with the offline.html file. NETWORK, and FALLBACK are optional fields.
+                            </p>
+                            <h5>Example CacheManifest file</h5>
+                            <div>
+                                CACHE MANIFEST<br>
+                                /index.html<br>
+                                /styles.css<br>
+                                /scripts.js<br>
+                                NETWORK:<br>
+                                login.asp<br>
+                                FALLBACK:<br>
+                                /html/ /offline.html<br>
+                            </div>
+				        </td>
+                    </tr>
+                    <tr>
+                        <td class="htmlTdThin">
+                            <h4>HTML Web Workers</h4>
+                            <p>
+                                Web workers are javascript funtions that allow the javascript to execute in the background, rather than making 
+                                the page become unresponsive until the script has finished execution. To the right is an example of what the 
+                                code may look like to make a Web Worker constantly count up (demo_worker.js is the file that would contain the 
+                                javascript to count up continuously).
+                            </p>
+				        </td>
+				        <td class="htmlCode">
+                            <h4>HTML Code</h4>
+				            <textarea class="codeBox125">
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
+<br><br>
+				            </textarea>
+				        </td>
+    				    <td class="cssCode">
+                            <h4>Javascript Code</h4>
+				            <textarea class="codeBox125">
+var w;
+
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("demo_workers.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}
+				            </textarea>
+				        </td>
+                    </tr>
+                    <tr>
+                        <td class="htmlTdThin">
+                            <h4>HTML SSE</h4>
+                            <p>
+                              A server-sent event is when a web page automatically gets updates from a server.	This was possible before HTML5, 
+                              but the web page would have to ask if any updates were available. With server-sent events, the updates come 
+                              automatically. Examples: Facebook/Twitter updates, stock price updates, news feeds, sport results, etc.
+                            </p>
+				        </td>
+                    </tr>
 				</table>
                 <p>Large portions of the content on this page has been taken from the W3Schools Webpage: <a href="http://www.w3schools.com/css/default.asp">http://www.w3schools.com/css/default.asp</a></p>
 	</body>

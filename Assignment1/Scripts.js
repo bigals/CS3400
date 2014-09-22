@@ -4,6 +4,35 @@ var pageScripts = (function () {
     return pageScripts;
 })();
 
+var timer = 0;
+var item = 0;
+
+//function for opening of submenu elements
+function openMenu(id) {
+    //log('openMenu('+id+')');
+    window.clearTimeout(timer);
+
+  if(item) item.style.visibility = 'hidden';
+
+    item = document.getElementById(id);
+    item.style.visibility = 'visible';
+}
+
+function closeMenu() {
+  // sets timer to close the open submenu in 0.5 seconds
+    if(item) {
+        //log('closeMenu, schedule timer for ' + item.id);
+    timer = window.setTimeout(
+       "if(item) { item.style.visibility = 'hidden';}",
+      500);
+  }
+}
+
+function keepMenuOpen() {
+    //log('keepMenuOpen');
+    window.clearTimeout(timer);
+}
+
 /* for local storage example */
 function localClickCounter() {
     if(typeof(Storage) !== "undefined") {
@@ -81,6 +110,11 @@ $(document).ready(function() {
         window.location.href = "jsExamples.html";
     });
     
+    $("#btnHtEx").hover(function() {
+    
+    }, function() {
+    
+    });
     
     /* Script for #canvas1 */
     var c1 = document.getElementById("canvas1");

@@ -165,7 +165,12 @@ tbody {
     height: 90%;
     max-height: 800px;
 }
-
+#dragToDiv {
+    width:350px;
+    height:70px;
+    padding:10px;
+    border:1px solid #aaaaaa;
+}
 /* Styles being used on cssExamples.html page for demo purposes */
 #CssExContent .explanationDemo {
     width: 30%;

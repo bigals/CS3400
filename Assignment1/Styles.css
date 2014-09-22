@@ -50,6 +50,13 @@ body h1 {
     height: 90%;
     max-height: 800px;
 }
+.codeBox680 {
+    overflow: auto;    
+    width: 90%;    
+    min-height: 680px;
+    height: 90%;
+    max-height: 800px;
+}
 .codeBox125 {
     overflow: auto;    
     width: 90%;    

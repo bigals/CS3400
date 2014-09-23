@@ -5,9 +5,66 @@
         <title>CS3400 First Assignment: Javascript Examples</title>
         <link type="text/css" rel="stylesheet" href="Styles.css" />
 		<link type="text/css" rel="stylesheet" href="jsMenu.css" />
-        <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="application/javascript" src="Scripts.js"></script>
-		
+        
+	<style>
+	#menuBar {
+margin: 0;
+padding: 0;
+display: table;
+background-color: #333388; 
+}
+
+#menuBar div {
+margin: 0;
+padding: 0;
+list-style: none;
+position: relative;
+float: left;
+border-right: 1px #AAAAAA solid;
+}
+
+#menuBar div a {
+display: block;
+margin: 0;
+padding: 5px 15px;
+color: #FFFFFA;
+text-align: center;
+text-decoration: none;
+font-weight: bold;
+}
+
+#menuBar div a:hover {
+background: #5555FF;
+}
+
+#menuBar span {
+margin: 1px;
+padding: 0;
+position: absolute;
+visibility: hidden;
+white-space: nowrap;
+display: table;
+z-index: 3;
+}
+
+#menuBar span a {
+margin: 0;
+padding: 2px 10px;
+background: #3333AA;
+color: #FFFFFA;
+font-size:90%;
+text-align: left;
+text-decoration: none;
+font-weight: normal;
+}
+
+#menuBar span a:hover {
+background: #5555FF;
+}
+
+	
+	
+	</style>
 <!--Need for Javascript Menu-->
 <!--SRC:http://alexapps.net/HowTo/JavaScript/MenuBar/index.xhtml-->
 <script type="text/javascript">
@@ -145,13 +202,82 @@ function loadFileAsText()
         <div id="pageWrapper">
             <div id="header">
                 <h1>CS340 First Assignment: JavaScript Examples</h1>
-                <div id="navBar">
-                    <div id="btnHome" class="navBtn">Home</div>
-                    <div id="btnTool" class="navBtn">Helpfull Tools</div>
-                    <div id="btnHtEx" class="navBtn">HTML Examples</div>
-                    <div id="btnCsEx" class="navBtn">CSS Examples</div>
-                    <div id="btnJsEx" class="navBtn">JS Examples</div>
-                </div>
+                <nav id="navBar">
+					<div id="navMenu">
+					
+				
+						<!--Home Menu -->
+						<div id ="homeMenu">
+						<a href="index.html" onmouseover="openMenu('homeMenuAction')" onmouseout="closeMenu()">Home</a>
+					
+						<span id= "homeMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						</span>
+						</div>
+						
+						<!--Tools Menu -->
+						<div id="toolsMenu">
+						<a href="helpfullTools.html" onmouseover="openMenu('toolsMenuAction')" onmouseout="closeMenu()">Helpfull Tools</a>
+						<span id="toolsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()"> 
+						<!--Menu childen go here-->
+						<!--ADD Anchors-->
+						<a href ="">Compatability</a>
+						<a href="">Standards & Practices</a>
+						<a href="">Version Control</a>
+						</span>
+						</div>
+						
+						<!--HTML Examples Menu -->
+						<div id="htmlMenu">
+						<a href="htmlExamples.html" onmouseover="openMenu('htmlMenuAction')" onmouseout="closeMenu()" >HTML Examples</a>
+						<span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<a href="#pFormatEX">Paragraph Formatting</a>
+						<a href="#imgLinkEX">Images & Links</a>
+						<a href="#tablesEX">Tables</a>
+						<a href="#listsEX">Lists</a>
+						<a href="#nInputsEX">Input Elements</a>
+						<a href="#nFormsEX">Form Elements</a>
+						<a href="#videoEX">Video Elements</a>
+						<a href="#audioEX">Audio Elements</a>
+						<a href="#svgEX">SVG</a>
+						<a href="#canvasEX">Canvas</a>
+						<a href="#htmlAPIs">API's</a>
+						</span>
+						</div>
+						
+						
+						<!--CSS Examples Menu -->
+						<div id="cssMenu">
+						<a href="cssExamples.html" onmouseover="openMenu('cssMenuAction')" onmouseout="closeMenu()">CSS Examples</a>
+						<span id="cssMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<!--ADD Anchors-->
+						<a href="cssSelectorsTable.html">Selectors</a>
+						<a href="">Backgrounds</a>
+						<a href="">Borders</a>
+						<a href="">Text Effects</a>
+						<a href="">Transitions</a>
+						<a href="">Animations</a>
+						<a href="">Column Layouts</a>
+						<a href="">Interfaces</a>
+						<a href="cssResponsiveDesign.html">Responsive Design</a>
+						</span>
+						</div>
+						
+						<!--JS Example Menu -->
+						<div id="jsMenu"> 
+						<a href="jsExamples.html" onmouseover="openMenu('jsMenuAction')" onmouseout="closeMenu()">JavaScript Examples</a>
+						<span id="jsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<a href="">Content Coming Soon</a>
+						</span>
+						</div>
+						
+				</div>
+				<div style="clear:both"></div>
+				
+                </nav>
             </div>
             <div id="content">
               
@@ -478,5 +604,7 @@ box.style.background='#f3f3f3';
 
             </div>
         </div>
+		<script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="application/javascript" src="Scripts.js"></script>
     </body>
 </html>

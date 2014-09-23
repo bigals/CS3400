@@ -4,41 +4,93 @@
         <meta charset="UTF-8">
         <title>CS3400 First Assignment: HTML Examples</title>
         <link type="text/css" rel="stylesheet" href="Styles.css" />
-        <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="application/javascript" src="Scripts.js"></script> 
-        <!--Script for Canvas Execution-->
-        <script>
-			
-		</script>
+		<link type="text/css" rel="stylesheet" href="jsMenu.css" />
+        
+       
 	</head>
     <body>
         <div id="pageWrapper">
             <div id="header">
                 <h1>CS340 First Assignment: HTML Examples</h1>
-                <div id="navBar">
-                    <div id="btnHome" class="navBtn">Home</div>
-                    <div id="btnTool" class="navBtn">Helpfull Tools</div>
-                    <div id="btnHtEx" class="navBtn">HTML Examples</div>
-                    <div id="btnCsEx" class="navBtn">CSS Examples</div>
-                    <div id="btnJsEx" class="navBtn">JS Examples</div>
+                <nav id="navBar">
+					<div id="navMenu">
+					
+				
+						<!--Home Menu -->
+						<div id ="homeMenu">
+						<a href="index.html" onmouseover="openMenu('homeMenuAction')" onmouseout="closeMenu()">Home</a>
+					
+						<span id= "homeMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						</span>
+						</div>
+						
+						<!--Tools Menu -->
+						<div id="toolsMenu">
+						<a href="helpfullTools.html" onmouseover="openMenu('toolsMenuAction')" onmouseout="closeMenu()">Helpfull Tools</a>
+						<span id="toolsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()"> 
+						<!--Menu childen go here-->
+						<!--ADD Anchors-->
+						<a href ="">Compatability</a>
+						<a href="">Standards & Practices</a>
+						<a href="">Version Control</a>
+						</span>
+						</div>
+						
+						<!--HTML Examples Menu -->
+						<div id="htmlMenu">
+						<a href="htmlExamples.html" onmouseover="openMenu('htmlMenuAction')" onmouseout="closeMenu()" >HTML Examples</a>
+						<span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<a href="#pFormatEX">Paragraph Formatting</a>
+						<a href="#imgLinkEX">Images & Links</a>
+						<a href="#tablesEX">Tables</a>
+						<a href="#listsEX">Lists</a>
+						<a href="#nInputsEX">Input Elements</a>
+						<a href="#nFormsEX">Form Elements</a>
+						<a href="#videoEX">Video Elements</a>
+						<a href="#audioEX">Audio Elements</a>
+						<a href="#svgEX">SVG</a>
+						<a href="#canvasEX">Canvas</a>
+						<a href="#htmlAPIs">API's</a>
+						</span>
+						</div>
+						
+						
+						<!--CSS Examples Menu -->
+						<div id="cssMenu">
+						<a href="cssExamples.html" onmouseover="openMenu('cssMenuAction')" onmouseout="closeMenu()">CSS Examples</a>
+						<span id="cssMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<!--ADD Anchors-->
+						<a href="cssSelectorsTable.html">Selectors</a>
+						<a href="">Backgrounds</a>
+						<a href="">Borders</a>
+						<a href="">Text Effects</a>
+						<a href="">Transitions</a>
+						<a href="">Animations</a>
+						<a href="">Column Layouts</a>
+						<a href="">Interfaces</a>
+						<a href="cssResponsiveDesign.html">Responsive Design</a>
+						</span>
+						</div>
+						
+						<!--JS Example Menu -->
+						<div id="jsMenu"> 
+						<a href="jsExamples.html" onmouseover="openMenu('jsMenuAction')" onmouseout="closeMenu()">JavaScript Examples</a>
+						<span id="jsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<a href="">Content Coming Soon</a>
+						</span>
+						</div>
+						
 				</div>
+				<div style="clear:both"></div>
+				
+                </nav>
 			</div>
             <div id="content">
-                <h2>Page Content:</h2>
-                <div>
-                    <a href="#pFormatEX">HTML Basic Paragraph Formatting</a><br>
-                    <a href="#imgLinkEX">HTML Images and Links</a><br>
-                    <a href="#tablesEX">HTML Tables</a><br>
-                    <a href="#listsEX">HTML Lists</a><br>
-                    <a href="#nInputsEX">New HTML5 Input Elements</a><br>
-                    <a href="#nFormsEX">New HTML5 Form Elements</a><br>
-                    <a href="#videoEX">HTML5 Video Element</a><br>
-                    <a href="#audioEX">HTML5 Audio Element</a><br>
-                    <a href="#svgEX">HTML5 SVG</a><br>
-                    <a href="#canvasEX">HTML5 Canvas</a><br>
-                    <a href="#htmlAPIs">HTML5 API's</a><br>
-                </div>
-				<hr>
+                
 				<a name="pFormatEX"></a><h3>HTML Basic Paragraph Formatting</h3>
 				<h4>HTML Code</h4>
 				<textarea class="codeBox125">
@@ -1030,6 +1082,9 @@ function stopWorker() {
 </menu>
 				</textarea>
                 <p>Large portions of the content on this page has been taken from the W3Schools Webpage: <a href="http://www.w3schools.com/css/default.asp">http://www.w3schools.com/css/default.asp</a></p>
+				 <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="application/javascript" src="Canvas Scripts.js"></script> 
+        <script type="application/javascript" src="Scripts.js"></script>
 	</body>
 
 </html>							

@@ -30,8 +30,12 @@ body h1 {
 	display: table;
 	margin-left: auto;
     margin-right: auto;
-    width: 65%;
+    width: 78%;
 	
+}
+
+#navMenu:first-child {
+    border-left: 1px solid black;
 }
 	
 #navMenu div{
@@ -43,7 +47,7 @@ body h1 {
 	list-style: none;
 	float: left;
 
-	border-left: 1px solid black;
+	
 	border-right: 1px solid black;
 	padding: 2px;
 	

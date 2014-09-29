@@ -2,6 +2,8 @@ body {
     background-color: #00AAFF;
     color: #000000;
     text-align: center;
+	min-width: 300px;
+	
 }
 body h1 {
     postion: relative;

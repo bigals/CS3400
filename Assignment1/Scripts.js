@@ -96,29 +96,7 @@ function showPosition(position) {
 };
 
 $(document).ready(function() {
-    $("#btnHome").click(function() {
-        window.location.href = "index.html";
-    });
-    $("#btnTool").click(function() {
-        window.location.href = "helpfullTools.html";
-    });
-    $("#btnHtEx").click(function() {
-        window.location.href = "htmlExamples.html";
-    });
-    $("#btnCsEx").click(function() {
-        window.location.href = "cssExamples.html";
-    });
-    $("#btnJsEx").click(function() {
-        window.location.href = "jsExamples.html";
-    });
-    
-    $("#btnHtEx").hover(function() {
-    
-    }, function() {
-    
-    });
-	
-    });
+   
        
 
     /*For Local storage name-value pair example */
@@ -132,4 +110,6 @@ $(document).ready(function() {
     } else {
         document.getElementById("nameValResult").innerHTML = "Sorry, your browser does not support Web Storage...";
     };
-	};
+	}
+	});
+	

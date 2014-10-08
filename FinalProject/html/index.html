@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GitHub Manager Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--JQuery Library-->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        
+        <!--JQuery Mobile Themeing/Library-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        
+        <!--Custom Styles/Scripts-->
+        <link rel="stylesheet" href="../Styles/styles.css" />
+        <script src="../Scripts/script.js"></script>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header">
+                <h1>GitHub Manager</h1>
+            </div>
+            <div data-role="main" class="ui-content center-wrapper" data-theme="a">
+                <form class="center-wrapper"> <!--Need to add method="", and action="" attributes-->
+                    <label for="loginEmail" class="ui-hidden-accessible">Email:</label>
+                    <input type="email" name="loginEmail" id="loginEmail" value="" placeholder="GitHub Email" data-clear-btn="true"/>
+                    <label for="loginPass" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="loginPass" id="loginPass" value="" placeholder="GitHub Password" data-clear-btn="true"/>
+                    <input type="submit" value="Submit Button" class="center-button" data-icon="check" data-iconpos="right" data-theme="a" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

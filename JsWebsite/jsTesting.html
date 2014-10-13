@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CS3400 First Assignment: Change ME!!!</title>
+        <link type="text/css" rel="stylesheet" href="Styles.css" />
+		<link type="text/css" rel="stylesheet" href="jsMenu.css" />
+        <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="application/javascript" src="Scripts.js"></script>
+    </head>
+    <body onLoad="Init()">
+        <div id="pageWrapper">
+            <div id="header">
+                <h1>About JavaScript Website</h1>
+                <nav id="navBar">
+					<div id="navMenu">
+					    <!--Home Menu -->
+						<div id ="homeMenu">
+						<a href="index.html" onmouseover="openMenu('homeMenuAction')" onmouseout="closeMenu()">Home</a>					
+						<span id= "homeMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						</span>
+						</div>
+						
+						<!--JavaScript Best Practices Menu -->
+						<div id="toolsMenu">
+						<a href="bestPractices.html" onmouseover="openMenu('toolsMenuAction')" onmouseout="closeMenu()">Best Practices</a>
+						<span id="toolsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()"> 
+						<!--Menu childen go here-->
+						<!--ADD Anchors-->
+						</span>
+						</div>
+						
+						<!--JavScript Unit Testing Menu -->
+						<div id="htmlMenu">
+						<a href="jsTesting.html" onmouseover="openMenu('htmlMenuAction')" onmouseout="closeMenu()" >Unit Testing</a>
+						<span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						</span>
+						</div>						
+						
+						<!--JavaScript Debugging Menu -->
+						<div id="cssMenu">
+						<a href="jsDebugging.html" onmouseover="openMenu('cssMenuAction')" onmouseout="closeMenu()">Debuging</a>
+						<span id="cssMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
+						<!--Menu childen go here-->
+						<!--ADD Anchors-->
+						</span>
+						</div>						
+				    </div>
+				    <div style="clear:both"></div>				
+                </nav>
+            </div>
+            <div id="content">
+			Hello World!!!
+            </div>
+        </div>
+    </body>
+</html>

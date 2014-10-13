@@ -1,0 +1,48 @@
+body {
+    background-color: #CCCCCC;
+}
+#pageWrapper {
+    width: 95%;
+    height: 100%; 
+    font-family: sans-serif;
+    margin: 0 auto;
+    background-color: rgba(238, 238, 238, 0.9);
+    border: 3px solid #222222;
+    border-radius: 2px;
+}
+header {
+    width: 100%;
+    height: 10%;
+
+    border-bottom: 1px solid black;
+    text-align: center;
+    z-index: 10;
+}
+header h1 {
+    margin: 0px;
+}
+#navBar {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: rgb(90,90,90);
+    color: #FFFFFF;
+}
+.navBarElem {
+    height: 100%;
+    width: 23%;
+    margin: 0px;
+    padding: 5px;
+    display: inline-block;
+    border-right: 1px solid black;
+    border-radius: 2px;
+}
+.navBarElem:nth-last-child(1) {
+    border-right: 0px solid black;
+} 
+.navBarElem:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid black;
+}
+

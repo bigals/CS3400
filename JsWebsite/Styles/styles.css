@@ -134,3 +134,7 @@ header h1 {
     padding:10px;
     border:1px solid #aaaaaa;
 }
+#ldedFile {
+    width: 75%; 
+    height: 100%;
+}

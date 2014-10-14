@@ -2,92 +2,103 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CS3400 First Assignment: Change ME!!!</title>
-        <link type="text/css" rel="stylesheet" href="Styles/styles.css" />
-		<link type="text/css" rel="stylesheet" href="Scripts/jsMenu.css" />
-        <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="application/javascript" src="Scripts.js"></script>
+        <title>CS3400 JavaScript Website: JavaScript Debugging and IDEs</title>
+        <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" href="Styles/navBar.css" />
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <script src="Scripts/scripts.js"></script>
     </head>
-    <body onLoad="Init()">
+    <body>
         <div id="pageWrapper">
-            <div id="header">
-                <h1>About JavaScript Website</h1>
+            <header>
+                <h1>JavaScript Debugging and IDEs</h1>
                 <nav id="navBar">
-					<div id="navMenu">
-					    <!--Home Menu -->
-						<div id ="homeMenu">
-						<a href="index.html" onmouseover="openMenu('homeMenuAction')" onmouseout="closeMenu()">Home</a>					
-						<span id= "homeMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						</span>
-						</div>
-						
-						<!--JavaScript Best Practices Menu -->
-						<div id="toolsMenu">
-						<a href="bestPractices.html" onmouseover="openMenu('toolsMenuAction')" onmouseout="closeMenu()">Best Practices</a>
-						<span id="toolsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()"> 
-						<!--Menu childen go here-->
-						<!--ADD Anchors-->
-						</span>
-						</div>
-						
-						<!--JavScript Unit Testing Menu -->
-						<div id="htmlMenu">
-						<a href="jsTesting.html" onmouseover="openMenu('htmlMenuAction')" onmouseout="closeMenu()" >Unit Testing</a>
-						<span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						</span>
-						</div>
-						
-						
-						<!--JavaScript Debugging Menu -->
-						<div id="cssMenu">
-						<a href="jsDebugging.html" onmouseover="openMenu('cssMenuAction')" onmouseout="closeMenu()">Debuging</a>
-						<span id="cssMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						<!--ADD Anchors-->
-						</span>
-						</div>						
-				    </div>
-				    <div style="clear:both"></div>				
+                    <ul id="menu">
+                        <!--Home Menu -->
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        
+                        <!--JavaScript Best Practices Menu -->
+                        <li>
+                            <a href="bestPractices.html">Best Practices</a>
+                            <ul>
+                                <li><a href="bestPractices.html#">Best Practices 0</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 1</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 2</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 3</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 4</a></li>
+                            </ul>
+                        </li>
+                        
+                         <!--JavScript Unit Testing Menu -->
+                        <li>
+                            <a href="jsTesting.html">Unit Testing</a>
+                            <ul>
+                                <li><a href="jsTesting.html">Unit Testing 0</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 1</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 2</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 3</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 4</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Debugging Menu -->
+                        <li>
+                            <a href="jsDebugging.html">Debuging</a>
+                            <ul>
+                                <li><a href="jsDebugging.html#">Debugging 0</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 1</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 2</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 3</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>									
                 </nav>
-            </div>
+            </header>
             <div id="content">
-            	<table>
-            	<tr><td>
-            		<h2>JavaScript Debugging Tools</h2>
-            	</td></tr>
-            	<tr><td>
-            		<dl>
-            		<dt><h3>Firebug</h3></dt>
-            		<dd><p>Firebug can be used to debug, edit, and monitor a website's HTML, CSS, DOM, XHR, and Javascript. It will log errors, profile function calls, and sort and organize files into a clean list with the 'script file chooser'. It also allows the developer to run their JavaScript line by line, or run an arbitrary block of code.</p></dd>
-            		</dl>
-            	</td></tr>
-            	<tr><td>
-            		<dl>
-            		<dt><h3>Chrome Dev Tools</h3></dt>
-            		<dd><p>This debugger is built into the Chrome web browser. Features include the ability to insert conditional breakpoints and navaigate through code step by step with execution control. This tool also has the ability to track exceptions and print stack traces. Chrome Dev Tools also offers a pretty print utility which adds line breaks and makes code easier to read and debug. </p></dd>
-            		</dl>
-            	</td></tr>
-            	<tr><td>
-            		<dl>
-            		<dt><h3>Firefox JavaScript Debugger</h3></dt>
-            		<dd><p>This debugger is a tool built into the Firefox web browser. It allows both local and remote debugging. Another cool feature included in this debugger is the variable popup tool. When the developer hovers over a variable, a window will popup showing the variable's current value.</p></dd>
-            		</dl>
-            	</td></tr>
-            	<tr><td>
-            		<dl>
-            		<dt><h3>IE Developer Tools</h3></dt>
-            		<dd><p>This tool comes with the Internet Explorer web browser. </p></dd>
-            		</dl>
-            	</td></tr>
-            	<tr><td>
-            		<dl>
-            		<dt><h3>Eclipse JavaScript Development Tools</h3></dt>
-            		<dd><p> </p></dd>
-            		</dl>
-            	</td></tr>
-            	</table>
+                <div id="contentNavBar">
+                    <div id="cNav-1" class="contentBtn">JavaScript Debugging Tools</div>
+                    <div id="cNav-2" class="contentBtn">JavaScript IDEs</div>                   
+                </div>
+                <div id="contentFrame">
+                    <div id="content-1" class="contentPanels">
+                        <h2>JavaScript Debugging Tools</h2>
+                        <h3>Firebug</h3>
+                        <p>
+                            Firebug can be used to debug, edit, and monitor a website's HTML, CSS, DOM, XHR, and Javascript. It will log errors,
+                            profile function calls, and sort and organize files into a clean list with the 'script file chooser'. It also allows the
+                            developer to run their JavaScript line by line, or run an arbitrary block of code.
+                        </p>
+                        <h3>Chrome Dev Tools</h3>
+                        <p>
+                            This debugger is built into the Chrome web browser. Features include the ability to insert conditional breakpoints and
+                            navaigate through code step by step with execution control. This tool also has the ability to track exceptions and print
+                            stack traces. Chrome Dev Tools also offers a pretty print utility which adds line breaks and makes code easier to read
+                            and debug. 
+                        </p>
+                        <h3>Firefox JavaScript Debugger</h3>
+                        <p>
+                            This debugger is a tool built into the Firefox web browser. It allows both local and remote debugging. Another cool
+                            feature included in this debugger is the variable popup tool. When the developer hovers over a variable, a window will
+                            popup showing the variable's current value.
+                        </p>
+                        <h3>IE Developer Tools</h3>
+                        <p>
+                            This tool comes with the Internet Explorer web browser. 
+                        </p>
+                        <h3>Eclipse JavaScript Development Tools</h3>
+                        <p>
+                        
+                        </p>
+                    </div>
+                    <div id="content-2" class="contentPanels">
+                        <h2>JavaScript IDEs</h2>
+                        <p>Dummy content for Content Pane 2</p>
+                    </div>                    
+                </div>            	
             </div>
         </div>
     </body>

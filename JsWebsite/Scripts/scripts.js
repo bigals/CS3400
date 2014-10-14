@@ -1,26 +1,21 @@
+function openPane(btnSelector, panelSelector) {
+    $(btnSelector).addClass('selected', 200, 'easeOutSine');
+    $('.contentPanels').hide();
+    $(panelSelector).show();
+}
+
 $(document).ready(function() {
     
-    $('#homeNav').hover(function() { //Hover In Event Handler
+    openPane('#cNav-1', '#content-1');
     
-    }, function() { //Hover Out event Handler
-    
-    });
-    
-    $('#practNav').hover(function() { //Hover In Event Handler
-    
-    }, function() { //Hover Out event Handler
-    
-    });
-    
-    $('#testNav').hover(function() { //Hover In Event Handler
-    
-    }, function() { //Hover Out event Handler
-    
-    });
-    
-    $('#debugNav').hover(function() { //Hover In Event Handler
-    
-    }, function() { //Hover Out event Handler
-    
+    //Click event handler for the left bar of content nav buttons
+    $("div.contentBtn").click(function() {
+        var btnSel = '#' + this.id;
+        var panelIndex = this.id.split("-")[1];
+        var panelSel = '#content-' + panelIndex;
+        
+        $('.contentBtn').removeClass('selected');
+        
+        openPane(btnSel, panelSel);
     });
 });

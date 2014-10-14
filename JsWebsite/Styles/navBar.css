@@ -5,7 +5,7 @@
     list-style: none;
 }
 #menu {
-    width: 100%;
+    width: auto;
     border: 1px solid #222;
     background-color: #111;
     background-image: linear-gradient(#444, #111);

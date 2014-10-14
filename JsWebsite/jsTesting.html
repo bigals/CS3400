@@ -2,55 +2,62 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CS3400 First Assignment: Change ME!!!</title>
-        <link type="text/css" rel="stylesheet" href="Styles.css" />
-		<link type="text/css" rel="stylesheet" href="jsMenu.css" />
-        <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="application/javascript" src="Scripts.js"></script>
+        <title>CS3400 JavaScript Website: Best Practices</title>
+        <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" href="Styles/navBar.css" />
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        <script src="Scripts/scripts.js"></script>
     </head>
-    <body onLoad="Init()">
+    <body>
         <div id="pageWrapper">
-            <div id="header">
-                <h1>About JavaScript Website</h1>
+            <header>
+                <h1>JavaScript Best Practices</h1>
                 <nav id="navBar">
-					<div id="navMenu">
-					    <!--Home Menu -->
-						<div id ="homeMenu">
-						<a href="index.html" onmouseover="openMenu('homeMenuAction')" onmouseout="closeMenu()">Home</a>					
-						<span id= "homeMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						</span>
-						</div>
-						
-						<!--JavaScript Best Practices Menu -->
-						<div id="toolsMenu">
-						<a href="bestPractices.html" onmouseover="openMenu('toolsMenuAction')" onmouseout="closeMenu()">Best Practices</a>
-						<span id="toolsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()"> 
-						<!--Menu childen go here-->
-						<!--ADD Anchors-->
-						</span>
-						</div>
-						
-						<!--JavScript Unit Testing Menu -->
-						<div id="htmlMenu">
-						<a href="jsTesting.html" onmouseover="openMenu('htmlMenuAction')" onmouseout="closeMenu()" >Unit Testing</a>
-						<span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						</span>
-						</div>						
-						
-						<!--JavaScript Debugging Menu -->
-						<div id="cssMenu">
-						<a href="jsDebugging.html" onmouseover="openMenu('cssMenuAction')" onmouseout="closeMenu()">Debuging</a>
-						<span id="cssMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						<!--ADD Anchors-->
-						</span>
-						</div>						
-				    </div>
-				    <div style="clear:both"></div>				
+                    <ul id="menu">
+                        <!--Home Menu -->
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        
+                        <!--JavaScript Best Practices Menu -->
+                        <li>
+                            <a href="bestPractices.html">Best Practices</a>
+                            <ul>
+                                <li><a href="bestPractices.html#">Best Practices 0</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 1</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 2</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 3</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 4</a></li>
+                            </ul>
+                        </li>
+                        
+                         <!--JavScript Unit Testing Menu -->
+                        <li>
+                            <a href="jsTesting.html">Unit Testing</a>
+                            <ul>
+                                <li><a href="jsTesting.html">Unit Testing 0</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 1</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 2</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 3</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 4</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Debugging Menu -->
+                        <li>
+                            <a href="jsDebugging.html">Debuging</a>
+                            <ul>
+                                <li><a href="jsDebugging.html#">Debugging 0</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 1</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 2</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 3</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>									
                 </nav>
-            </div>
+            </header>
             <div id="content">
 			<h1>A Summary of QUnit</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>

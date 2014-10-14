@@ -52,9 +52,10 @@
                 </nav>
             </div>
             <div id="content">
-			<h1>A Summary of QUnit</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h1>JavaScript Unit Testing</h1>
+			
 			<image src="Images/Unit-testing.png" />
+			This comic id from: <a href="http://www.leonardscomic.com/comic/68/unit-testing/"> LeonardsComics.com </a>
 			<h2>What is Unit Testing?</h2>
 			<p> Unit testing is the automated testing of software that can be run
 				over and over with any need for any additional interactions. So 
@@ -71,7 +72,48 @@
 				implmentation unit it passes. Then from there you follow the same steps 
 				until you include all your wanted functionality. 
 			<p>
-			<h2> You Will Need: </h2>	
+			<h2> You Will Need: </h2>
+			<p> <li>Small framework to provide a test runner.</li>
+				<li>A few  utilities to write the tests</li>
+			</p>
+			<h1>A Summary of QUnit</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>The QUnit Solution </h2>
+			<p> Creating your own framework to test JavaScript would take alot of work
+				to include all the details and needed requirements for the many different
+				browsers that are used to day. 
+			</p>
+			<p>The good news is that are many different testing frameworks. One commonly
+				used one is QUnit. Qunit is JQuery's unit test framework and is currently 
+				used on many different projects.
+			</p>
+			<h2> Using QUnit</h2>
+			<p>If you want to use QUnit to need to include two files on your page.
+				<li><a href="https://code.jquery.com/qunit/qunit-1.15.0.js" target="blank">qunit.js:</a> The test runner and framework. </li>
+				<li><a href="https://code.jquery.com/qunit/qunit-1.15.0.css" target="blank">qunit.css:</a> The test suite's display page style's. </li>
+			</p>
+			<textarea wrap="logicial">
+			<!DOCTYPE html>
+			<html>
+			<head>
+			  <meta charset="utf-8">
+			  <title>QUnit basic example</title>
+			  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.15.0.css">
+			</head>
+			<body>
+			  <div id="qunit"></div>
+			  <div id="qunit-fixture"></div>
+			  <script src="//code.jquery.com/qunit/qunit-1.15.0.js"></script>
+			  <script>
+				QUnit.test( "a basic test example", function( assert ) {
+				  var value = "hello";
+				  assert.equal( value, "hello", "We expect value to be hello" );
+				});
+			  </script>
+			</body>
+			</html>
+			
+			</textarea>
             </div>
         </div>
     </body>

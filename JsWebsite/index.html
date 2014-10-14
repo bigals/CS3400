@@ -2,64 +2,183 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CS3400 JavaScript Website: Best Practices</title>
+        <title>CS3400 JavaScript Website: Home</title>
+        
+        <!--Custom Style Sheets-->
         <link rel="stylesheet" href="Styles/styles.css" />
         <link rel="stylesheet" href="Styles/navBar.css" />
+        
+        <!--JQuery Library-->
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <!--JQuery UI Library-->
         <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        
+        <!--Custom Scripts-->
         <script src="Scripts/scripts.js"></script>
     </head>
     <body>
         <div id="pageWrapper">
             <header>
-                <h1>JavaScript Best Practices</h1>
+                <h1>JavaScript Information Website</h1>
                 <nav id="navBar">
                     <ul id="menu">
                         <!--Home Menu -->
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.html?tOpVal=1">Home</a>
+                            <ul>
+                                <li><a href="index.html?tOpVal=1">Welcome</a></li>
+                                <li><a href="index.html?tOpVal=2">Security Issues</a></li>
+                                <li><a href="index.html?tOpVal=3">Standards/Browsers</a></li>
+                            </ul>
                         </li>
                         
                         <!--JavaScript Best Practices Menu -->
                         <li>
-                            <a href="bestPractices.html">Best Practices</a>
+                            <a href="bestPractices.html?tOpVal=1">Best Practices</a>
                             <ul>
-                                <li><a href="bestPractices.html#">Best Practices 0</a></li>
-                                <li><a href="bestPractices.html#">Best Practices 1</a></li>
-                                <li><a href="bestPractices.html#">Best Practices 2</a></li>
-                                <li><a href="bestPractices.html#">Best Practices 3</a></li>
-                                <li><a href="bestPractices.html#">Best Practices 4</a></li>
+                                <li><a href="bestPractices.html?tOpVal=1">Best Practices 0</a></li>
+                                <li><a href="bestPractices.html?tOpVal=2">Best Practices 1</a></li>
+                                <li><a href="bestPractices.html?tOpVal=3">Best Practices 2</a></li>
+                                <li><a href="bestPractices.html?tOpVal=4">Best Practices 3</a></li>
+                                <li><a href="bestPractices.html?tOpVal=5">Best Practices 4</a></li>
                             </ul>
                         </li>
                         
                          <!--JavScript Unit Testing Menu -->
                         <li>
-                            <a href="jsTesting.html">Unit Testing</a>
+                            <a href="jsTesting.html?tOpVal=1">Unit Testing</a>
                             <ul>
-                                <li><a href="jsTesting.html">Unit Testing 0</a></li>
-                                <li><a href="jsTesting.html">Unit Testing 1</a></li>
-                                <li><a href="jsTesting.html">Unit Testing 2</a></li>
-                                <li><a href="jsTesting.html">Unit Testing 3</a></li>
-                                <li><a href="jsTesting.html">Unit Testing 4</a></li>
+                                <li><a href="jsTesting.html?tOpVal=1">Unit Testing 0</a></li>
+                                <li><a href="jsTesting.html?tOpVal=2">Unit Testing 1</a></li>
+                                <li><a href="jsTesting.html?tOpVal=3">Unit Testing 2</a></li>
+                                <li><a href="jsTesting.html?tOpVal=4">Unit Testing 3</a></li>
+                                <li><a href="jsTesting.html?tOpVal=5">Unit Testing 4</a></li>
                             </ul>
                         </li>
                         <!--JavaScript Debugging Menu -->
                         <li>
-                            <a href="jsDebugging.html">Debuging</a>
+                            <a href="jsDebugging.html?tOpVal=1">Debugging & IDEs</a>
                             <ul>
-                                <li><a href="jsDebugging.html#">Debugging 0</a></li>
-                                <li><a href="jsDebugging.html#">Debugging 1</a></li>
-                                <li><a href="jsDebugging.html#">Debugging 2</a></li>
-                                <li><a href="jsDebugging.html#">Debugging 3</a></li>
-                                <li><a href="jsDebugging.html#">Debugging 4</a></li>
+                                <li><a href="jsDebugging.html?tOpVal=1">Debugging Tools</a></li>
+                                <li><a href="jsDebugging.html?tOpVal=2">JavaScript IDEs</a></li>
                             </ul>
+                        </li>
+                        <!--JavaScript Tutorials/Examples Menu -->
+                        <li>
+                            <a href="examples.html?tOpVal=1">Tutorials/Examples</a>
+                            <ul>
+                                <li><a href="examples.html?tOpVal=1">Tutorials/Examples 1</a></li>
+                                <li><a href="examples.html?tOpVal=2">Tutorials/Examples 2</a></li>
+                                <li><a href="examples.html?tOpVal=3">Tutorials/Examples 2</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Assignment Menu -->
+                        <li>
+                            <a href="assignment.html?tOpVal=1">Simple JavaScript Assignment</a>
                         </li>
                     </ul>									
                 </nav>
             </header>
             <div id="content">
-			Content Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content ContentContent Content Content
+                <div id="contentNavBar">
+                    <div id="cNav-1" class="contentBtn">Welcome</div>
+                    <div id="cNav-2" class="contentBtn">Security Issues Links</div>
+                    <div id="cNav-3" class="contentBtn">Standards/Browser Support</div>
+                </div>
+                <div id="contentFrame">
+                    <div id="content-1" class="contentPanels">
+                        <h2>Welcome</h2>
+                        <p>
+                            This site contains all of the information compiled by Michael Hillenbrand, Alexander McLean, and John M. Smith, on the 
+                            JavaScript programming language. The various pages will go into detail on the debugging tools and IDEs available for
+                            JavaScript, the options/how to test JavaScript, programming/style best practices for JavaScript, as well as provide 
+                            various examples of JavaScript in action. Lastly the site will also include a page which contains the required 
+                            JavaScript assignment that was given with the website project.
+                        </p>
+                    </div>
+                    <div id="content-2" class="contentPanels">
+                        <h2>JavaScript Security Issues Links</h2>
+                        <dl>
+                            <dt><a href="http://www.veracode.com/security/javascript-security">XSS and CSRF Vulnerabilities</a></dt>
+                            <dd>
+                                Cross-site Scripting, XSS, is one of the most common JavaScript vulnerabilities, and is the process of manipulating 
+                                websites to return malicious code that will render on the client-side, in a manner that is determined by the 
+                                attacker. Cross-site Request Forgery, CSRF, allows attackers to manipulate browsers to take unintended actions on 
+                                other sites of the attackers choosing.
+                            </dd>
+                            <dt><a href="http://docstore.mik.ua/orelly/webprog/jscript/ch21_01.htm">JavaScript Security Features</a></dt>
+                            <dd>
+                                The O'Reilly Definitive Guide to JavaScript's 21st chapter is focused on the security feature built into JavaScript, 
+                                and includes sections that discuss Restricted Features, Same-Origin Policy, and Security Zones/Signed Scripts.
+                            </dd>
+                            <dt><a href="https://code.google.com/p/browsersec/wiki/Part2">The Browser Security Handbook, on code.google.com</a></dt>
+                            <dd>
+                                The Browser Security Handbook contains large amounts of information about the security features that can be leverged 
+                                in JavaScript, in order to create secure code, that is less prone to attack, and safer for the end-user to use.
+                            </dd>
+                        </dl>
+                    </div>  
+                    <div id="content-3" class="contentPanels">
+                        <h2>JavaScript Standardization/Browser Support</h2>
+                        <p>
+                            ECMAScript is the language that forms the basis of JavaScript. It is standardized by the Ecma International 
+                            Standards orginization, and the following list of JavaScript versions refrence the revision of the ECMA-262 
+                            specification that the version corresponds to.
+                        </p>
+                        <dl>
+                            <dt>JavaScript v1.8.5</dt>
+                            <dd>
+                                Javascript version 1.8.5 is the current standard used widely today. The version is based upon ECMAScript 5, and was 
+                                released in July of 2010. It is supported by Firefox 4 and higher, Internet Explorer 9, Opera 11.60, and Safari 
+                                6.00. <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262%205th%20edition%20December%202009.pdf">ECMAScript 5 Specification</a>
+                            </dd>
+                            <dt>JavaScript v1.8.2</dt>
+                            <dd>
+                                JavaScript version 1.8.2 included everything that JavaScript version 1.8.1 had, but various minor updates were 
+                                also added. The version was released in June of 2009, and was only supported by Firefox 3.6.
+                                <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript 3 Specification</a>
+                            </dd>
+                            <dt>JavaScript v1.8.1</dt>
+                            <dd>
+                                JavaScript version 1.8.1 included everything that JavaScript version 1.8 had, but in addition it added support of 
+                                native JSON, and other various minor updates were also added. The version was supported by Firefox 3.5.
+                                <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript 3 Specification</a>
+                            </dd>
+                            <dt>JavaScript v1.8</dt>
+                            <dd>
+                                JavaScript version 1.8 included everything that JavaScript version 1.7 had, but in addition it added support of 
+                                generator expressions, and expression closures. The version was released in June of 2008, and was supported by 
+                                Firefox 3.0, as well as Opera 11.50.
+                                <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript 3 Specification</a>
+                            </dd>
+                            <dt>JavaScript v1.7</dt>
+                            <dd>
+                                JavaScript version 1.7 included everything that JavaScript version 1.6 had, but in addition it added support of 
+                                Pythonic Generators, iterators and let. The version was released in October of 2006, and was supported by 
+                                Firefox 2.0, as well as Google Chrome 28.0.1500.95.
+                                <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript 3 Specification</a>
+                            </dd>
+                            <dt>JavaScript v1.6</dt>
+                            <dd>
+                                JavaScript 1.6 was based upon ECMA-262 Edition 3, but added support of array extras, array/string generics, and E4X. 
+                                The version was released in November of 2005, and the only browser to support JavaScript 1.6 was Firefox 1.5.
+                                <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript 3 Specification</a>
+                            </dd>
+                            <dt>JavaScript v1.5</dt>
+                            <dd>
+                                ECMA-262 Edition 3 was the third revision of the ECMAScript standards. It corresponded to JavaScript 1.5, and was 
+                                released in December of 1999. It was released in November of 2000, and was supported by Firefox 1.0, Internet 
+                                Explorer 5.5 through 8, Opera 7.0, Safari 3.0-5, and Google Chrome 1.0 through 10.0.666.
+                                <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript 3 Specification</a>
+                            </dd>
+                        </dl>
+                    </div>   
+                </div>
+                
+                
+                
             </div>
         </div>
     </body>

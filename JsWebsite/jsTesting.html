@@ -2,55 +2,104 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>CS3400 First Assignment: Change ME!!!</title>
-        <link type="text/css" rel="stylesheet" href="Styles.css" />
-		<link type="text/css" rel="stylesheet" href="jsMenu.css" />
-        <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="application/javascript" src="Scripts.js"></script>
+        <title>CS3400 JavaScript Website: Unit Testing</title>
+        
+        <!--Custom Style Sheets-->
+        <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" href="Styles/navBar.css" />
+        
+        <!--JQuery Library-->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <!--JQuery UI Library-->
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        
+        <!--Custom Scripts-->
+        <script src="Scripts/scripts.js"></script>
     </head>
-    <body onLoad="Init()">
+    <body>
         <div id="pageWrapper">
-            <div id="header">
-                <h1>About JavaScript Website</h1>
+            <header>
+                <h1>JavaScript Unit Testing</h1>
                 <nav id="navBar">
-					<div id="navMenu">
-					    <!--Home Menu -->
-						<div id ="homeMenu">
-						<a href="index.html" onmouseover="openMenu('homeMenuAction')" onmouseout="closeMenu()">Home</a>					
-						<span id= "homeMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						</span>
-						</div>
-						
-						<!--JavaScript Best Practices Menu -->
-						<div id="toolsMenu">
-						<a href="bestPractices.html" onmouseover="openMenu('toolsMenuAction')" onmouseout="closeMenu()">Best Practices</a>
-						<span id="toolsMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()"> 
-						<!--Menu childen go here-->
-						<!--ADD Anchors-->
-						</span>
-						</div>
-						
-						<!--JavScript Unit Testing Menu -->
-						<div id="htmlMenu">
-						<a href="jsTesting.html" onmouseover="openMenu('htmlMenuAction')" onmouseout="closeMenu()" >Unit Testing</a>
-						<span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						</span>
-						</div>						
-						
-						<!--JavaScript Debugging Menu -->
-						<div id="cssMenu">
-						<a href="jsDebugging.html" onmouseover="openMenu('cssMenuAction')" onmouseout="closeMenu()">Debuging</a>
-						<span id="cssMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-						<!--Menu childen go here-->
-						<!--ADD Anchors-->
-						</span>
-						</div>						
-				    </div>
-				    <div style="clear:both"></div>				
+                    <ul id="menu">
+                        <!--Home Menu -->
+                        <li>
+                            <a href="index.html?tOpVal=1">Home</a>
+                            <ul>
+                                <li><a href="index.html?tOpVal=1">Welcome</a></li>
+                                <li><a href="index.html?tOpVal=2">Security Issues</a></li>
+                                <li><a href="index.html?tOpVal=3">Standards/Browsers</a></li>
+                                <li><a href="index.html?tOpVal=4">Embedded Browsers</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!--JavaScript Best Practices Menu -->
+                        <li>
+                            <a href="bestPractices.html?tOpVal=1">Best Practices</a>
+                            <ul>
+                                <li><a href="bestPractices.html?tOpVal=1">Paradigms to Use</a></li>
+                                <li><a href="bestPractices.html?tOpVal=2">Paradigms to Avoid</a></li>
+                                <li><a href="bestPractices.html?tOpVal=3">Superior Paradigms</a></li>
+                                <li><a href="bestPractices.html?tOpVal=4">Naming Conventions</a></li>
+                                <li><a href="bestPractices.html?tOpVal=5">Format Conventions</a></li>
+                            </ul>
+                        </li>
+                        
+                         <!--JavScript Unit Testing Menu -->
+                        <li>
+                            <a href="jsTesting.html?tOpVal=1">Unit Testing</a>
+                            <ul>
+                                <li><a href="jsTesting.html?tOpVal=1">Unit Testing 0</a></li>
+                                <li><a href="jsTesting.html?tOpVal=2">Unit Testing 1</a></li>
+                                <li><a href="jsTesting.html?tOpVal=3">Unit Testing 2</a></li>
+                                <li><a href="jsTesting.html?tOpVal=4">Unit Testing 3</a></li>
+                                <li><a href="jsTesting.html?tOpVal=5">Unit Testing 4</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Debugging Menu -->
+                        <li>
+                            <a href="jsDebugging.html?tOpVal=1">Debugging & IDEs</a>
+                            <ul>
+                                <li><a href="jsDebugging.html?tOpVal=1">Debugging Tools</a></li>
+                                <li><a href="jsDebugging.html?tOpVal=2">JavaScript IDEs</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Tutorials/Examples Menu -->
+                        <li>
+                            <a href="examples.html?tOpVal=1">JS Tutorials/Examples</a>
+                            <ul>
+                                <li><a href="examples.html?tOpVal=1">Various JS Examples</a></li>
+                                <li><a href="examples.html?tOpVal=2">Local File Access</a></li>
+                                <li><a href="examples.html?tOpVal=3">Basic Canvas</a></li>
+                                <li><a href="examples.html?tOpVal=4">KineticJS Canvas</a></li>
+                                <li><a href="examples.html?tOpVal=5">Drag & Drop</a></li>
+                                <li><a href="examples.html?tOpVal=6">WebGL</a></li>
+                            </ul>
+                        </li>
+                        <!--JQuery Tutorials/Examples Menu -->
+                        <li>
+                            <a href="jqueryBestPract.html?tOpVal=1">JQuery</a>
+                            <ul>
+                                <li><a href="jqueryBestPract.html?tOpVal=1">Intro to JQuery</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=2">Selectors</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=3">DOM Manipulation</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=4">Events</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=5">Ajax</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=6">Effects and Animations</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=7">Plugins</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=8">Chaining</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=9">Miscellaneous</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Assignment Menu -->
+                        <li>
+                            <a href="assignment.html?tOpVal=1">Simple Assignment</a>
+                        </li>
+                    </ul>									
                 </nav>
-            </div>
+            </header>
             <div id="content">
 			<h1>JavaScript Unit Testing</h1>
 			

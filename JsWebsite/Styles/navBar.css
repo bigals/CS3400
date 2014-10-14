@@ -6,6 +6,7 @@
 }
 #menu {
     width: auto;
+    height: 10%;
     border: 1px solid #222;
     background-color: #111;
     background-image: linear-gradient(#444, #111);
@@ -19,7 +20,7 @@
     clear: both;
 }
 #menu {
-    zoom:1;
+    zoom: 1;
 }
 #menu li {
     float: left;

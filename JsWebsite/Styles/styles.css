@@ -1,3 +1,4 @@
+/* General Page Layout Styling */
 body {
     background-color: #CCCCCC;
     margin: 0;
@@ -28,16 +29,18 @@ header h1 {
 }
 
 #content {
-    height: 86%;
+    height: 85%;
     width: 98%;
-    clear: both;
+    position: relative;
+    padding-top: 10px;
     margin-top: 10px;
 }
 
-/* Vertical JQuery UI Tabs */
+/* Vertical Content Panel Tabs */
 #contentNavBar {
     width: 20%;
     height: 100%;
+    
     float: left;
     margin: 0;
     padding-top: 10px;
@@ -45,6 +48,7 @@ header h1 {
 #contentFrame {
     width: 77%;
     height: 94%;
+    margin-top: 5px;
     border: 4px solid black;
     border-radius: 6px;
     background-color: #F4F4F4;
@@ -77,9 +81,56 @@ header h1 {
     border: 2px solid white;
     border-radius: 4px;
 }
-.visible {
-    display: block;
+
+/* Textarea Stylings */
+.codeBlock {
+    width: 90%;
+    height: 80px;   
 }
-.hidden {
-    display: none;
+.htmlContainer {
+    width: 25%;
+    height: 100%;
+    vertical-align: top;
+    display: table-cell;
+}
+.htmlCode {
+    width: 94%;
+    height: 90%;
+    margin: 5px;
+    position: relative;
+    font-size: 0.8em;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+
+}
+.jsContainer {
+    width: 25%;
+    height: 100%;
+    vertical-align: top;
+    display: table-cell;
+}
+.jsCode {
+    width: 94%;
+    height: 90%;
+    margin: 5px;
+    vertical-align: top;
+    font-size: 0.8em;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+
+/* JavaScript Examples Styling */
+#exampleArea {
+    width: 30%;
+    height: 100%;
+    display: table-cell;
+}
+#dragToDiv {
+    width:90%;
+    height:70px;
+    padding:10px;
+    border:1px solid #aaaaaa;
 }

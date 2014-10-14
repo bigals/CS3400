@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CS3400 JavaScript Website: JQuery</title>
+        
+        <!--Custom Style Sheets-->
+        <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" href="Styles/navBar.css" />
+        
+        <!--JQuery Library-->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <!--JQuery UI Library-->
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        
+        <!--Custom Scripts-->
+        <script src="Scripts/scripts.js"></script>
+    </head>
+    <body>
+        <div id="pageWrapper">
+            <header>
+                <h1>JQuery Tutorials & Examples</h1>
+                <nav id="navBar">
+                    <ul id="menu">
+                        <!--JQuery Menu -->
+                        <li>
+                            <a href="index.html?tOpVal=1">Home</a>
+                            <ul>
+                                <li><a href="index.html?tOpVal=1">Welcome</a></li>
+                                <li><a href="index.html?tOpVal=2">Security Issues</a></li>
+                                <li><a href="index.html?tOpVal=3">Standards/Browsers</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!--JavaScript Best Practices Menu -->
+                        <li>
+                            <a href="bestPractices.html?tOpVal=1">Best Practices</a>
+                            <ul>
+                                <li><a href="bestPractices.html?tOpVal=1">Paradigms to Use</a></li>
+                                <li><a href="bestPractices.html?tOpVal=2">Paradigms to Avoid</a></li>
+                                <li><a href="bestPractices.html?tOpVal=3">Superior Paradigms</a></li>
+                                <li><a href="bestPractices.html?tOpVal=4">Naming Conventions</a></li>
+                                <li><a href="bestPractices.html?tOpVal=5">Format Conventions</a></li>
+                            </ul>
+                        </li>
+                        
+                         <!--JavScript Unit Testing Menu -->
+                        <li>
+                            <a href="jsTesting.html?tOpVal=1">Unit Testing</a>
+                            <ul>
+                                <li><a href="jsTesting.html?tOpVal=1">Unit Testing 0</a></li>
+                                <li><a href="jsTesting.html?tOpVal=2">Unit Testing 1</a></li>
+                                <li><a href="jsTesting.html?tOpVal=3">Unit Testing 2</a></li>
+                                <li><a href="jsTesting.html?tOpVal=4">Unit Testing 3</a></li>
+                                <li><a href="jsTesting.html?tOpVal=5">Unit Testing 4</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Debugging Menu -->
+                        <li>
+                            <a href="jsDebugging.html?tOpVal=1">Debugging & IDEs</a>
+                            <ul>
+                                <li><a href="jsDebugging.html?tOpVal=1">Debugging Tools</a></li>
+                                <li><a href="jsDebugging.html?tOpVal=2">JavaScript IDEs</a></li>
+                            </ul>
+                        </li>
+                                                <!--JavaScript Tutorials/Examples Menu -->
+                        <li>
+                            <a href="examples.html?tOpVal=1">JS Tutorials/Examples</a>
+                            <ul>
+                                <li><a href="examples.html?tOpVal=1">Various JS Examples</a></li>
+                                <li><a href="examples.html?tOpVal=2">Local File Access</a></li>
+                                <li><a href="examples.html?tOpVal=3">Canvas</a></li>
+                                <li><a href="examples.html?tOpVal=4">Drag & Drop</a></li>
+                                <li><a href="examples.html?tOpVal=5">WebGL</a></li>
+                            </ul>
+                        </li>
+                        <!--JQuery Tutorials/Examples Menu -->
+                        <li>
+                            <a href="jqueryBestPract.html?tOpVal=1">JQuery</a>
+                            <ul>
+                                <li><a href="jqueryBestPract.html?tOpVal=1">Intro to JQuery</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=2">Selectors</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=3">DOM Manipulation</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=4">Events</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=5">Ajax</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=6">Effects and Animations</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=7">Plugins</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=8">Chaining</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=9">Miscellaneous</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Assignment Menu -->
+                        <li>
+                            <a href="assignment.html?tOpVal=1">Simple Assignment</a>
+                        </li>
+                    </ul>									
+                </nav>
+            </header>
+            <div id="content">
+                <div id="contentNavBar">
+                    <div id="cNav-1" class="contentBtn">Intro to JQuery</div>
+                    <div id="cNav-2" class="contentBtn">Selectors</div>
+                    <div id="cNav-3" class="contentBtn">DOM Manipulation</div>
+                    <div id="cNav-4" class="contentBtn">Events</div>
+                    <div id="cNav-5" class="contentBtn">Ajax</div>
+                    <div id="cNav-6" class="contentBtn">Effects and Animations</div>
+                    <div id="cNav-7" class="contentBtn">Plugins</div>
+                    <div id="cNav-8" class="contentBtn">Chaining</div>
+                    <div id="cNav-9" class="contentBtn">Miscellaneous</div>
+                </div>
+                <div id="contentFrame">
+                    <div id="content-1" class="contentPanels">
+                        <h2>Loading JQuery</h2>
+                        <p>Use a CDN, whenever possible, but provide a fallback to a local copy of JQuery, incase the CDN goes down:</p>
+                        <textarea class="codeBlock">
+&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script>window.jQuery || document.write('&lt;script src="js/jquery-2.1.1.min.js" type="text/javascript"&gt;&lt;\/script&gt;')&lt;/script&gt;
+                        </textarea>
+                        <h2>JQuery Variables</h2>
+                        <p>
+                            Use camel case  for naming variables, and all variables that are used to store/cache jQuery objects should have a name 
+                            prefixed with a $. Furthermore, Always cache your jQuery selector returned objects in variables for reuse:
+                        </p>
+                        <textarea class="codeBlock">
+var $myDiv = $("#myDiv");
+$myDiv.click(function(){...});
+                        </textarea>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>
+                    <div id="content-2" class="contentPanels">
+                        <h2>Selectors</h2>
+                        <p>
+                            Use ID selector whenever possible. It is faster because they are handled using document.getElementById(). Also, when 
+                            using class selectors, don't use the element type in your selector:
+                        </p>
+                        <textarea class="codeBlock">
+var $products = $("div.products"); // SLOW
+var $products = $(".products"); // FAST
+                        </textarea>
+                        <p>
+                            Use find for Id->Child nested selectors. The .find() approach is faster because the first selection is handled without
+                            going through the Sizzle selector engine:
+                        </p>
+                        <textarea class="codeBlock">
+// BAD, a nested query for Sizzle selector engine
+var $productIds = $("#products div.id");
+
+// GOOD, #products is already selected by document.getElementById() so only div.id needs to go through Sizzle selector engine
+var $productIds = $("#products").find("div.id");
+                        </textarea>
+                        <p>
+                            Be specific on the right-hand side of your selector, and less specific on the left:
+                        </p>
+                        <textarea class="codeBlock">
+// Unoptimized
+$("div.data .gonzalez");
+
+// Optimized
+$(".data td.gonzalez");
+                        </textarea>
+                        <p>
+                            Avoid Excessive Specificity:
+                        </p>
+                        <textarea class="codeBlock">
+$(".data table.attendees td.gonzalez");
+
+// Better: Drop the middle if possible.
+$(".data td.gonzalez");
+                        </textarea>
+                        <p>
+                            Give your Selectors a Context:
+                        </p>
+                        <textarea class="codeBlock">
+// SLOWER because it has to traverse the whole DOM for .class
+$('.class');
+
+// FASTER because now it only looks under class-container.
+$('.class', '#class-container');
+                        </textarea>
+                        <p>
+                            Avoid Universal Selectors
+                        </p>
+                        <textarea class="codeBlock">
+$('div.container > *'); // BAD
+$('div.container').children(); // BETTER
+                        </textarea>
+                        <p>
+                            Avoid Implied Universal Selectors. When you leave off the selector, the universal selector (*) is still implied. More 
+                            Info
+                        </p>
+                        <textarea class="codeBlock">
+$('div.someclass :radio'); // BAD
+$('div.someclass input:radio'); // GOOD
+                        </textarea>
+                        <p>
+                            Don’t Descend Multiple IDs or nest when selecting an ID. ID-only selections are handled using document.getElementById() 
+                            so don't mix them with other selectors:
+                        </p>
+                        <textarea class="codeBlock">
+$('#outer #inner'); // BAD
+$('div#inner'); // BAD
+$('.outer-container #inner'); // BAD
+$('#inner'); // GOOD, only calls document.getElementById()
+                        </textarea>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>  
+                    <div id="content-3" class="contentPanels">
+                        <h2>DOM Manipulation</h2>
+                        <p>
+                            Always detach any existing element before manipulation and attach it back after manipulating it:
+                        </p>
+                        <textarea class="codeBlock">
+var $myList = $("#list-container > ul").detach();
+//...a lot of complicated things on $myList
+$myList.appendTo("#list-container");
+                        </textarea>
+                        <p>
+                            Use string concatenation or array.join() over .append():
+                        </p>
+                        <textarea class="codeBlock">
+                        // BAD
+var $myList = $("#list");
+for(var i = 0; i &lt; 10000; i++){
+    $myList.append("&lt;li&gt;"+i+"&lt;/li&gt;");
+}
+
+// GOOD
+var $myList = $("#list");
+var list = "";
+for(var i = 0; i &lt; 10000; i++){
+    list += "&lt;li&gt;"+i+"&lt;/li&gt;";
+}
+$myList.html(list);
+
+// EVEN FASTER
+var array = []; 
+for(var i = 0; i &lt; 10000; i++){
+    array[i] = "&lt;li&gt;"+i+"&lt;/li&gt;"; 
+}
+$myList.html(array.join(''));
+                        </textarea>
+                        <p>
+                            Don’t Act on Absent Elements: 
+                        </p>
+                        <textarea class="codeBlock">
+// BAD: This runs three functions before it realizes there's nothing in the selection
+$("#nosuchthing").slideUp();
+
+// GOOD
+var $mySelection = $("#nosuchthing");
+if ($mySelection.length) {
+    $mySelection.slideUp();
+}
+                        </textarea>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>
+                    <div id="content-4" class="contentPanels">
+                        <h2>Events</h2>
+                        <p>
+                            Use only one Document Ready handler per page. It makes it easier to debug and keep track of the behavior flow. DO NOT 
+                            use anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse:
+                        </p>
+                        <textarea class="codeBlock">
+$("#myLink").on("click", function(){...}); // BAD
+
+// GOOD
+function myLinkClickHandler(){...}
+$("#myLink").on("click", myLinkClickHandler);
+                        </textarea>
+                        <p>
+                            Document ready event handler should not be an anonymous function. Once again, anonymous functions are difficult to 
+                            debug, maintain, test, or reuse:
+                        </p>
+                        <textarea class="codeBlock">
+$(function(){ ... }); // BAD: You can never reuse or write a test for this function.
+
+// GOOD
+$(initPage); // or $(document).ready(initPage);
+function initPage(){
+    // Page load event where you can initialize values and call other initializers.
+}
+                        </textarea>
+                        <p>
+                            Document ready event handlers should be included from external files and inline JavaScript can be used to call the ready 
+                            handle after any initial setup:
+                        </p>
+                        <textarea class="codeBlock">
+&lt;script src="my-document-ready.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    // Any global variable set-up that might be needed.
+    $(document).ready(initPage); // or $(initPage);
+&lt;/script&gt;
+                        </textarea>
+                        <p>
+                            DO NOT use behavioral markup in HTML (JavaScript inlining), these are debugging nightmares. Always bind events with 
+                            jQuery to be consistent so it's easier to attach and remove events dynamically:
+                        </p>
+                        <textarea class="codeBlock">
+&lt;a id="myLink" href="#" onclick="myEventHandler();"&gt;my link&lt;/a&gt; <!-- BAD -->
+$("#myLink").on("click", myEventHandler); // GOOD
+                        </textarea>
+                        <p>
+                            When possible, use custom namespace  for events. It's easier to unbind the exact event that you attached without 
+                            affecting other events bound to the DOM element:
+                        </p>
+                        <textarea class="codeBlock">
+$("#myLink").on("click.mySpecialClick", myEventHandler); // GOOD
+// Later on, it's easier to unbind just your click event
+$("#myLink").unbind("click.mySpecialClick");
+                        </textarea>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>
+                    <div id="content-5" class="contentPanels">
+                        <h2>Ajax</h2>
+                        <p>
+                            Avoid using .getJson() or .get(), simply use the $.ajax() as that's what gets called internally.
+                        </p>
+                        <p>
+                            DO NOT use http requests on https sites. Prefer schemaless URLs (leave the protocol http/https out of your URL)
+                        </p>
+                        <p>
+                            DO NOT put request parameters in the URL, send them using data object setting:
+                        </p>
+                        <textarea class="codeBlock">
+// Less readable...
+$.ajax({
+    url: "something.php?param1=test1&param2=test2",
+    ....
+});
+
+// More readable...
+$.ajax({
+    url: "something.php",
+    data: { param1: test1, param2: test2 }
+});
+                        </textarea>
+                        <p>
+                            Try to specify the dataType setting so it's easier to know what kind of data you are working with. (See Ajax Template 
+                            example below)
+                        </p>
+                        <p>
+                            Use Delegated event handlers for attaching events to content loaded using Ajax. Delegated events have the advantage that 
+                            they can process events from descendant elements that are added to the document at a later time (example Ajax):
+                        </p>
+                        <textarea class="codeBlock">
+$("#parent-container").on("click", "a", delegatedClickHandlerForAjax);
+                        </textarea>
+                        <p>
+                            Use Promise interface: 
+                        </p>
+                        <textarea class="codeBlock">
+$.ajax({ ... }).then(successHandler, failureHandler);
+
+// OR
+var jqxhr = $.ajax({ ... });
+jqxhr.done(successHandler);
+jqxhr.fail(failureHandler);
+                        </textarea>
+                        <p>
+                            Sample Ajax Template:
+                        </p>
+                        <textarea class="codeBlock">
+var jqxhr = $.ajax({
+    url: url,
+    type: "GET", // default is GET but you can use other verbs based on your needs.
+    cache: true, // default is true, but false for dataType 'script' and 'jsonp', so set it on need basis.
+    data: {}, // add your request parameters in the data object.
+    dataType: "json", // specify the dataType for future reference
+    jsonp: "callback", // only specify this to match the name of callback parameter your API is expecting for JSONP requests.
+    statusCode: { // if you want to handle specific error codes, use the status code mapping settings.
+        404: handler404,
+        500: handler500
+    }
+});
+jqxhr.done(successHandler);
+jqxhr.fail(failureHandler);
+                        </textarea>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>  
+                    <div id="content-6" class="contentPanels">
+                        <h2>Effects and Animations</h2>
+                        <p>
+                            Adopt a restrained and consistent approach to implementing animation functionality.
+                        </p>
+                        <p>
+                            DO NOT over-do the animation effects until driven by the UX requirements.
+                        </p>
+                        <p>
+                            Try to use simeple show/hide, toggle and slideUp/slideDown functionality to toggle elements.
+                        </p>
+                        <p>
+                            Try to use predefined animations durations of "slow", "fast" or 400 (for medium).
+                        </p>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>
+                    <div id="content-7" class="contentPanels">
+                        <h2>Plugins</h2>
+                        <p>
+                            Always choose a plugin with good support, documentation, testing and community support.
+                        </p>
+                        <p>
+                            Check the compatibility of plugin with the version of jQuery that you are using.
+                        </p>
+                        <p>
+                            Any common reusable component should be implemented as a jQuery plugin.
+                        </p>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>
+                    <div id="content-8" class="contentPanels">
+                        <h2>Chaining</h2>
+                        <p>
+                            Use chaining as an alternative to variable caching and multiple selector calls:
+                        </p>
+                        <textarea class="codeBlock">
+$("#myDiv").addClass("error").show();
+                        </textarea>
+                        <p>
+                            Whenever the chain grows over 3 links or gets complicated because of event assignment, use appropriate line breaks and 
+                            indentation to make the code readable:
+                        </p>
+                        <textarea class="codeBlock">
+$("#myLink")
+    .addClass("bold")
+    .on("click", myClickHandler)
+    .on("mouseover", myMouseOverHandler)
+    .show();
+                        </textarea>
+                        <p>
+                           For long chains it is acceptable to cache intermediate objects in a variable. 
+                        </p>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>  
+                    <div id="content-9" class="contentPanels">
+                        <h2>Miscellaneous</h2>
+                        <p>
+                            Use Object literals for parameters:
+                        </p>
+                        <textarea class="codeBlock">
+$myLink.attr("href", "#").attr("title", "my link").attr("rel", "external"); // BAD, 3 calls to attr()
+// GOOD, only 1 call to attr()
+$myLink.attr({
+    href: "#",
+    title: "my link",
+    rel: "external"
+});
+                        </textarea>
+                        <p>
+                           Do not mix CSS with jQuery: 
+                        </p>
+                        <textarea class="codeBlock">
+$("#mydiv").css({'color':red, 'font-weight':'bold'}); // BAD
+ .error { color: red; font-weight: bold; } /* GOOD */
+$("#mydiv").addClass("error"); // GOOD
+                        </textarea>
+                        <p>
+                            DO NOT use Deprecated Methods. It is always important to keep an eye on deprecated methods for each new version and try 
+                            avoid using them.
+                        </p>
+                        <p>
+                           Combine jQuery with native JavaScript when needed: 
+                        </p>
+                        <textarea class="codeBlock">
+$("#myId"); // is still little slower than...
+document.getElementById("myId");
+                        </textarea>
+                        <a href="http://lab.abhinayrathore.com/jquery-standards/">Original Source: JQuery Standard & Best Practices</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

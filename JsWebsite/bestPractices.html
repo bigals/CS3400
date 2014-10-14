@@ -38,11 +38,11 @@
                         <li>
                             <a href="bestPractices.html?tOpVal=1">Best Practices</a>
                             <ul>
-                                <li><a href="bestPractices.html?tOpVal=1">Best Practices 0</a></li>
-                                <li><a href="bestPractices.html?tOpVal=2">Best Practices 1</a></li>
-                                <li><a href="bestPractices.html?tOpVal=3">Best Practices 2</a></li>
-                                <li><a href="bestPractices.html?tOpVal=4">Best Practices 3</a></li>
-                                <li><a href="bestPractices.html?tOpVal=5">Best Practices 4</a></li>
+                                <li><a href="bestPractices.html?tOpVal=1">Paradigms to Use</a></li>
+                                <li><a href="bestPractices.html?tOpVal=2">Paradigms to Avoid</a></li>
+                                <li><a href="bestPractices.html?tOpVal=3">Superior Paradigms</a></li>
+                                <li><a href="bestPractices.html?tOpVal=4">Naming Conventions</a></li>
+                                <li><a href="bestPractices.html?tOpVal=5">Format Conventions</a></li>
                             </ul>
                         </li>
                         
@@ -65,55 +65,620 @@
                                 <li><a href="jsDebugging.html?tOpVal=2">JavaScript IDEs</a></li>
                             </ul>
                         </li>
-                        <!--JavaScript Tutorials/Examples Menu -->
+                                                <!--JavaScript Tutorials/Examples Menu -->
                         <li>
-                            <a href="examples.html?tOpVal=1">Tutorials/Examples</a>
+                            <a href="examples.html?tOpVal=1">JS Tutorials/Examples</a>
                             <ul>
-                                <li><a href="examples.html?tOpVal=1">Tutorials/Examples 1</a></li>
-                                <li><a href="examples.html?tOpVal=2">Tutorials/Examples 2</a></li>
-                                <li><a href="examples.html?tOpVal=3">Tutorials/Examples 2</a></li>
+                                <li><a href="examples.html?tOpVal=1">Various JS Examples</a></li>
+                                <li><a href="examples.html?tOpVal=2">Local File Access</a></li>
+                                <li><a href="examples.html?tOpVal=3">Canvas</a></li>
+                                <li><a href="examples.html?tOpVal=4">Drag & Drop</a></li>
+                                <li><a href="examples.html?tOpVal=5">WebGL</a></li>
+                            </ul>
+                        </li>
+                        <!--JQuery Tutorials/Examples Menu -->
+                        <li>
+                            <a href="jqueryBestPract.html?tOpVal=1">JQuery</a>
+                            <ul>
+                                <li><a href="jqueryBestPract.html?tOpVal=1">Intro to JQuery</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=2">Selectors</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=3">DOM Manipulation</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=4">Events</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=5">Ajax</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=6">Effects and Animations</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=7">Plugins</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=8">Chaining</a></li>
+                                <li><a href="jqueryBestPract.html?tOpVal=9">Miscellaneous</a></li>
                             </ul>
                         </li>
                         <!--JavaScript Assignment Menu -->
                         <li>
-                            <a href="assignment.html?tOpVal=1">Simple JavaScript Assignment</a>
+                            <a href="assignment.html?tOpVal=1">Simple  Assignment</a>
                         </li>
                     </ul>									
                 </nav>
             </header>
             <div id="content">
                 <div id="contentNavBar">
-                    <div id="cNav-1" class="contentBtn">Content Button 1</div>
-                    <div id="cNav-2" class="contentBtn">Content Button 2</div>
-                    <div id="cNav-3" class="contentBtn">Content Button 3</div>
-                    <div id="cNav-4" class="contentBtn">Content Button 4</div>
-                    <div id="cNav-5" class="contentBtn">Content Button 5</div>
-                    <div id="cNav-6" class="contentBtn">Content Button 6</div>                    
+                    <div id="cNav-1" class="contentBtn">Paradigms to Always Use</div>
+                    <div id="cNav-2" class="contentBtn">Paradigms to Avoid</div>
+                    <div id="cNav-3" class="contentBtn">Superior Paradigms</div>
+                    <div id="cNav-4" class="contentBtn">Naming Conventions</div>
+                    <div id="cNav-5" class="contentBtn">Format Conventions</div>                    
                 </div>
                 <div id="contentFrame">
                     <div id="content-1" class="contentPanels">
-                        <h2>Dummy Header Content Pane 1</h2>
-                        <p>Dummy content for Content Pane 1</p>
+                        <h2>Semicolons</h2>
+                        <p>
+                            Although JavaScript will implicitly insert semicolons, when they are missing, it is very dangerous to do so, as the 
+                            compiler can make assumptions that you will not expect. This creates bugs that are incredibly hard to debug, and 
+                            therefore semicolons should always be placed by the programmer, rather than relying on the compiler to do it for them. 
+                            Declarations will always require a semicolon, even if a "var" is being declared as a function. You can not rely on a 
+                            closing curly brace to signify to the compiler that the declaration has finished.
+                        </p>
+                        <h2>Declarations with "var"</h2>
+                        <p>
+                            New variable declarations should always be done with the keyword "var", because if they are not, the variable will be 
+                            added to the global namespace, which can cause problems with overwriting variables that were physically declared in the 
+                            global namespace with the same name.
+                        </p>
+                        <h2>Constants</h2>
+                        <p>
+                            Constants in javascript should be defined with all capital names with "_" seperating multiple words in the name. Never 
+                            use the "const" keyword, as IE does not support it. The @const annotation on a variable, method or constructor, will be 
+                            enforced by the compiler at build time, and will not allow the variable to be overwritten, method cannot be overridden 
+                            in a subclass, and constructor can not be subclasses (like final in Java). ALL_CAPS_VAR_NAME implies a @const 
+                            annotation, but a @const annotation does not imply the ALL_CAPS_VAR_NAME.
+                        </p>
+                        <h2>Closures</h2>
+                        <p>
+                            The ability to create closures is perhaps the most useful and often overlooked feature of JS. Here is a good description 
+                            of how closures work. One thing to keep in mind, however, is that a closure keeps a pointer to its enclosing scope. As a 
+                            result, attaching a closure to a DOM element can create a circular reference and thus, a memory leak. For example, in 
+                            the following code:
+                        </p>
+                        <textarea class="codeBlock">
+function foo(element, a, b) {
+    element.onclick = function() { /* uses a and b */ };
+}
+                        </textarea>
+                        <p>
+                            The function closure keeps a reference to element, a, and b even if it never uses element. Since element also keeps a 
+                            reference to the closure, we have a cycle that won't be cleaned up by garbage collection. In these situations, the code 
+                            can be structured as follows:
+                        </p>
+                        <textarea class="codeBlock">
+function foo(element, a, b) {
+    element.onclick = bar(a, b);
+}
+
+function bar(a, b) {
+    return function() { /* uses a and b */ };
+}
+                        </textarea>
+                        <h2>Exceptions/Custom Exceptions</h2>
+                        <p>
+                            It is nearly impossible to avoid exceptions when using application development frameworks, and doing other non-trivial 
+                            tasks, so exceptions and custom exceptions should be used whenever possible.
+                        </p>
+                        <h2>Multi-level prototype hierarchies</h2>
+                        <p>
+                            Multi-level prototype hierarchies are how JavaScript implements inheritance. You have a multi-level hierarchy if you 
+                            have a user-defined class D with another user-defined class B as its prototype. These hierarchies are much harder to get 
+                            right than they first appear! For that reason, it is best to use goog.inherits() from the Closure Library or a similar 
+                            library function.
+                        </p>
+                        <textarea class="codeBlock">
+function D() {
+    goog.base(this)
+}
+goog.inherits(D, B);
+
+D.prototype.method = function() {
+    ...
+};
+                        </textarea>
+                        <h2>Nested Functions</h2>
+                        <p>
+                            Can be usefull for facilitating continuation functions, or hiding helper functions, and should be used whenever 
+                            nessecary and possible.
+                        </p>
+                        <h2>Deferred Initialization</h2>
+                        <p>
+                            It isn't always possible to initialize variables at the point of declaration, so deferred initialization is fine.
+                        </p>
+                        <h2>Explicit Scope</h2>
+                        <p>
+                            Always use explicit scope - doing so increases portability and clarity. For example, don't rely on window being in the 
+                            scope chain. You might want to use your function in another application for which window is not the content window.
+                        </p>
+                        <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Original Source: Google JavaScript Style Guide</a>
                     </div>
                     <div id="content-2" class="contentPanels">
-                        <h2>Dummy Header Content Pane 2</h2>
-                        <p>Dummy content for Content Pane 2</p>
+                        <h2>Modifying Prototypes of Builtin Objects</h2>
+                        <p>
+                            Modifying builtins like Object.prototype and Array.prototype are strictly forbidden. Modifying other builtins like 
+                            Function.prototype is less dangerous but still leads to hard to debug issues in production and should be avoided.
+                        </p>
+                        <h2>Internet Explorer's Conditional Comments</h2>
+                        <p>
+                            Conditional Comments hinder automated tools as they can vary the JavaScript syntax tree at runtime. Therefore refrain 
+                            from using such code as shown below: 
+                        </p>
+                        <textarea class="codeBlock">
+var f = function () {
+    /*@cc_on if (@_jscript) { return 2* @*/  3; /*@ } @*/
+};
+                        </textarea>
+                        <h2>Associative Arrays</h2>
+                        <p>
+                            Associative Arrays are not allowed... or more precisely you are not allowed to use non number indexes for arrays. If you 
+                            need a map/hash use Object instead of Array in these cases because the features that you want are actually features of 
+                            Object and not of Array. Array just happens to extend Object (like any other object in JS and therefore you might as 
+                            well have used Date, RegExp or String).
+                        </p>
+                        <h2>Using eval()</h2>
+                        <p>
+                            eval() makes for confusing semantics and is dangerous to use if the string being eval()'d contains user input. There's 
+                            usually a better, clearer, and safer way to write your code, so its use is generally not permitted. For RPC you can 
+                            always use JSON and read the result using JSON.parse() instead of eval(). Let's assume we have a server that returns the 
+                            following key-value pairs: ("name": "Alice", "id": 31502, and "email": "looking_glass@example.com"). If the feed was 
+                            modified to include malicious JavaScript code, then if we use eval then that code will be executed. With JSON.parse, 
+                            invalid JSON (including all executable JavaScript) will cause an exception to be thrown. Use a structure as follows: 
+                        </p>
+                        <textarea class="codeBlock">
+var userInfo = JSON.parse(feed);
+var email = userInfo['email'];
+                        </textarea>
+                        <p>Instead of a structure such as:</p>
+                        <textarea class="codeBlock">
+var userInfo = eval(feed);
+var email = userInfo['email'];
+                        </textarea>
+                        <h2>Using with() {}</h2>
+                        <p>Do not use, due to the unpredictability of the use of the with clouds.</p>
+                        <h2>Wrapper Objects for primitive types</h2>
+                        <p>Never use wrapper objects for primitive types, as they can be dangerous, such as shown below:</p>
+                        <textarea class="codeBlock">
+var x = new Boolean(false);
+if (x) {
+    alert('hi');
+}
+                        </textarea>
+                        <p>But type casting is fine, and can be very usefull, as shown below:</p>
+                        <textarea class="codeBlock">
+var x = new Boolean(false);
+if (x) {
+    alert('hi');
+}
+typeof Boolean(0) == 'boolean';
+typeof new Boolean(0) == 'object';
+                        </textarea>
+                        <h2>Multiline String Literals</h2>
+                        <p>
+                            The whitespace at the beginning of each line can't be safely stripped at compile time; whitespace after the slash will 
+                            result in tricky errors; and while most script engines support this, it is not part of ECMAScript Use a structure as 
+                            shown below:
+                        </p>
+                        <textarea class="codeBlock">
+var myString =  'A rather long string of English text, an error message ' +
+                    'actually that just keeps going and going -- an error ' +
+                    'message to make the Energizer bunny blush (right through ' +
+                    'those Schwarzenegger shades)! Where was I? Oh yes, ' +
+                    'you\'ve got an error and all the extraneous whitespace is ' +
+                    'just gravy.  Have a nice day.';
+                        </textarea>
+                        <p>Instead of using a structure,  such as:</p>
+                        <textarea class="codeBlock">
+var myString = 'A rather long string of English text, an error message \
+                    actually that just keeps going and going -- an error \
+                    message to make the Energizer bunny blush (right through \
+                    those Schwarzenegger shades)! Where was I? Oh yes, \
+                    you\'ve got an error and all the extraneous whitespace is \
+                    just gravy.  Have a nice day.';
+                        </textarea>
+                        <h2>Custom toString() Methods</h2>
+                        <p>
+                            You can control how your objects string-ify themselves by defining a custom toString() method. This is fine, but you 
+                            need to ensure that your method (1) always succeeds and (2) does not have side-effects. If your method doesn't meet 
+                            these criteria, it's very easy to run into serious problems. For example, if toString() calls a method that does an 
+                            assert, assert might try to output the name of the object in which it failed, which of course requires calling 
+                            toString().
+                        </p>
+                        <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Original Source: Google JavaScript Style Guide</a>
                     </div>
                     <div id="content-3" class="contentPanels">
-                        <h2>Dummy Header Content Pane 3</h2>
-                        <p>Dummy content for Content Pane 3</p>
+                        <h2>Function Declarations in Blocks</h2>
+                        <p>
+                            While most scripting engines will support declaring functions within blocks, it is not apart of ECMAScript, and as such 
+                            may not be supported in the future, and should not be used as shown below:
+                        </p>
+                        <textarea class="codeBlock">
+if(x) {
+    function foo() {}
+}
+                        </textarea>
+                        <p>Instead use a structure such as:</p>
+                        <textarea class="codeBlock">
+if(x) {
+    var foo = function foo() {}
+}
+                        </textarea>
+                        <h2>Method and Property Definitions</h2>
+                        <p>
+                            There are several ways to attach methods and properties to an object that is created via the 'new' keyword, however the 
+                            best format is shown below. This format is best due to the fact that JavaScript engines optomize based on the shape of 
+                            an object, and adding a property to an object changes the shape of the object, therefore it can degrade performance if 
+                            it is done differently.
+                        </p>
+                        <textarea class="codeBlock">
+Foo.prototype.bar = function() {
+    ...
+};
+
+/** @constructor */
+function Foo() {
+    this.bar = value;
+}
+                        </textarea>
+                        <h2>Deletions</h2>
+                        <p>
+                            In modern JavaScript engines, changing the number of properties on an object is much slower than reassigning the values. 
+                            The delete keyword should be avoided except when it is necessary to remove a property from an object's iterated list of 
+                            keys, or to change the result of if (key in obj). Avoid using something like shown below:
+                        </p>
+                        <textarea class="codeBlock">
+Foo.prototype.dispose = function() {
+    delete this.property_;
+};
+                        </textarea>
+                        <p>Instead use a structure such as:</p>
+                        <textarea class="codeBlock">
+Foo.prototype.dispose = function() {
+    this.property_ = null;
+};
+                        </textarea>
+                        <h2>Using and Understanding 'this' in JavaScript</h2>
+                        <p>
+                            The semantics of this can be tricky. At times it refers to the global object (in most places), the scope of the caller 
+                            (in eval), a node in the DOM tree (when attached using an event handler HTML attribute), a newly created object (in a 
+                            constructor), or some other object (if function was call()ed or apply()ed). Because this is so easy to get wrong, limit 
+                            its use to those places where it is required, such as within Constructors, and methods of object, including the creation 
+                            of closures.
+                        </p>
+                        <h2>The for-in loop</h2>
+                        <p>
+                            The for-in loop is often incorrectly used to loop over the elements in an Array. This is however very error prone 
+                            because it does not loop from 0 to length - 1 but over all the present keys in the object and its prototype chain. Here 
+                            are a few cases where it fails:
+                        </p>
+                        <textarea class="codeBlock">
+function printArray(arr) {
+    for (var key in arr) {
+        print(arr[key]);
+    }
+}
+
+printArray([0,1,2,3]);  // This works.
+
+var a = new Array(10);
+printArray(a);  // This is wrong.
+
+a = document.getElementsByTagName('*');
+printArray(a);  // This is wrong.
+
+a = [0,1,2,3];
+a.buhu = 'wine';
+printArray(a);  // This is wrong again.
+
+a = new Array;
+a[3] = 3;
+printArray(a);  // This is wrong again.
+                        </textarea>
+                        <p>Always use normal for loops when using arrays, such as:</p>
+                        <textarea class="codeBlock">
+function printArray(arr) {
+  var l = arr.length;
+  for (var i = 0; i &lt; l; i++) {
+    print(arr[i]);
+  }
+}
+                        </textarea>
+                        <h2>Array and Object Literals</h2>
+                        <p>
+                            Use Array and Object literals instead of Array and Object constructors. Array constructors are error-prone due to their
+                            arguments. Because of this, if someone changes the code to pass 1 argument instead of 2 arguments, the array might not 
+                            have the expected length. To avoid these kinds of weird cases, always use the more readable array literal. Object 
+                            constructors don't have the same problems, but for readability and consistency object literals should be usedAvoid the 
+                            following format:
+                        </p>
+                        <textarea class="codeBlock">
+// Length is 3.
+var a1 = new Array(x1, x2, x3);
+
+// Length is 2.
+var a2 = new Array(x1, x2);
+
+// If x1 is a number and it is a natural number the length will be x1.
+// If x1 is a number but not a natural number this will throw an exception.
+// Otherwise the array will have one element with x1 as its value.
+var a3 = new Array(x1);
+
+// Length is 0.
+var a4 = new Array();
+                            
+var o = new Object();
+var o2 = new Object();
+o2.a = 0;
+o2.b = 1;
+o2.c = 2;
+o2['strange key'] = 3;
+                        </textarea>
+                        <p>Instead it is best practice to use a structure such as:</p>
+                        <textarea class="codeBlock">
+var a = [x1, x2, x3];
+var a2 = [x1, x2];
+var a3 = [x1];
+var a4 = [];
+var o = {};
+var o2 = {
+  a: 0,
+  b: 1,
+  c: 2,
+  'strange key': 3
+};
+                        </textarea>
+                        <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Original Source: Google JavaScript Style Guide</a>
                     </div>
-                    <div id="content-4" class="contentPanels">
-                        <h2>Dummy Header Content Pane 4</h2>
-                        <p>Dummy content for Content Pane 4</p>
+                    <div id="content-4" class="contentPanels"> <!--Naming Conventions-->
+                        <h2>Properties and Methods</h2>
+                        <p>
+                            Private properties and methods should be named with a trailing underscore. Protected properties and methods should be 
+                            named without a trailing underscore (like public ones).
+                        </p>
+                        <h2>Method and Function Parameters</h2>
+                        <p>
+                            Optional function arguments start with opt_. Functions that take a variable number of arguments should have the last 
+                            argument named var_args. You may not refer to var_args in the code; use the arguments array. Optional and variable 
+                            arguments can also be specified in @param annotations. Although either convention is acceptable to the compiler, using 
+                            both together is preferred.
+                        </p>
+                        <h2>Getters and Setters</h2>
+                        <p>
+                            EcmaScript 5 getters and setters for properties are discouraged. However, if they are used, then getters must not change 
+                            observable state.
+                        </p>
+                        <h2>Accessor Functions</h2>
+                        <p>
+                            Getters and setters methods for properties are not required. However, if they are used, then getters must be named 
+                            getFoo() and setters must be named setFoo(value). (For boolean getters, isFoo() is also acceptable, and often sounds 
+                            more natural.)
+                        </p>
+                        <h2>Namspaces</h2>
+                        <p>
+                            JavaScript has no inherent packaging or namespacing support. Global name conflicts are difficult to debug, and can cause 
+                            intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, 
+                            we've adopted conventions to prevent collisions.
+                        </p>
+                        <h3>Use Namespaces for Global Code</h3>
+                        <p>
+                            ALWAYS prefix identifiers in the global scope with a unique pseudo namespace related to the project or library. If you 
+                            are working on "Project Sloth", a reasonable pseudo namespace would be sloth.*.
+                        </p>
+                        <textarea class="codeBlock">
+var sloth = {};
+sloth.sleep = function() {
+  ...
+};
+                        </textarea>
+                        <h3>Respect Namespace Ownership</h3>
+                        <p>
+                            When choosing a child-namespace, make sure that the owners of the parent namespace know what you are doing. If you start 
+                            a project that creates hats for sloths, make sure that the Sloth team knows that you're using sloth.hats.
+
+                        </p>
+                        <h3>Use Different Namespaces for External Code and Internal Code</h3>
+                        <p>
+                            "External code" is code that comes from outside your codebase, and is compiled independently. Internal and external 
+                            names should be kept strictly separate. If you're using an external library that makes things available in foo.hats.*, 
+                            your internal code should not define all its symbols in foo.hats.*, because it will break if the other team defines new 
+                            symbols. If you need to define new APIs on an external namespace, then you should explicitly export the public API 
+                            functions, and only those functions. Your internal code should call the internal APIs by their internal names, for 
+                            consistency and so that the compiler can optimize them better. Use a structure such as the one below:
+                        </p>
+                        <textarea class="codeBlock">
+foo.provide('googleyhats.BowlerHat');
+foo.require('foo.hats');
+/**
+ * @constructor
+ * @extends {foo.hats.RoundHat}
+ */
+googleyhats.BowlerHat = function() {
+  ...
+};
+goog.exportSymbol('foo.hats.BowlerHat', googleyhats.BowlerHat);
+                        </textarea>
+                        <p>
+                            Instead of a structure like this:
+                        </p>
+                        <textarea class="codeBlock">
+foo.require('foo.hats');
+/**
+ * WRONG -- Do NOT do this.
+ * @constructor
+ * @extends {foo.hats.RoundHat}
+ */
+foo.hats.BowlerHat = function() {
+};
+                        </textarea>
+                        <h3>Alias Long Type Names to Improve Readability</h3>
+                        <p>
+                            Use local aliases for fully-qualified types if doing so improves readability. The name of a local alias should match the 
+                            last part of the type. Do not create local aliases of namespaces. Namespaces should only be aliased using goog.scope. Use a structure like the one below:
+                        </p>
+                        <textarea class="codeBlock">
+/**
+ * @constructor
+ */
+some.long.namespace.MyClass = function() {
+};
+/**
+ * @param {some.long.namespace.MyClass} a
+ */
+some.long.namespace.MyClass.staticHelper = function(a) {
+  ...
+};
+myapp.main = function() {
+  var MyClass = some.long.namespace.MyClass;
+  var staticHelper = some.long.namespace.MyClass.staticHelper;
+  staticHelper(new MyClass());
+};
+                        </textarea>
+                        <p>
+                            Instead of a structure like this:
+                        </p>
+                        <textarea class="codeBlock">
+myapp.main = function() {
+  var namespace = some.long.namespace;
+  namespace.MyClass.staticHelper(new namespace.MyClass());
+};
+                        </textarea>
+                        <p>
+                            Avoid accessing properties of an aliased type, unless it is an enum. Never create aliases in the global scope. Use them 
+                            only in function blocks, like shown below:
+                        </p>
+                        <textarea class="codeBlock">
+/** @enum {string} */
+some.long.namespace.Fruit = {
+  APPLE: 'a',
+  BANANA: 'b'
+};
+                        </textarea>
+                        <p>
+                            Instead of using a structure like this:
+                        </p>
+                        <textarea class="codeBlock">
+myapp.main = function() {
+  var MyClass = some.long.namespace.MyClass;
+  MyClass.staticHelper(null);
+};
+                        </textarea>
+                        <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Original Source: Google JavaScript Style Guide</a>
                     </div>
-                    <div id="content-5" class="contentPanels">
-                        <h2>Dummy Header Content Pane 5</h2>
-                        <p>Dummy content for Content Pane 5</p>
-                    </div>
-                    <div id="content-6" class="contentPanels">
-                        <h2>Dummy Header Content Pane 6</h2>
-                        <p>Dummy content for Content Pane 6</p>
+                    <div id="content-5" class="contentPanels"><!--format convetions-->
+                        <h2>Parentheses</h2>
+                        <p>
+                            Use sparingly and in general only where required by the syntax and semantics. Never use parentheses for unary operators 
+                            such as delete, typeof and void or after keywords such as return, throw as well as others (case, in or new).
+                        </p>
+                        <h2>Strings</h2>
+                        <p>
+                            For consistency single-quotes (') are preferred to double-quotes ("). This is helpful when creating strings that include 
+                            HTML.
+                        </p>
+                        <h2>JavaScript Types</h2>                        
+                        <h2>Comments</h2>
+                        <p>
+                            It is recommended by various sources to adopt and use the JSDoc. JsDoc Toolkit is an application, written in JavaScript, 
+                            for automatically generating template-formatted, multi-page HTML (or XML, JSON, or any other text-based) documentation 
+                            from commented JavaScript source code. The syntax of every JSDoc comment starts with a '/**', and ends with a '*/'. Line 
+                            breaks for a block tag should be indented with 4 spaces for the second and consequtive lines. Keywords such as '@param 
+                            {type}', '@return {type}', and '@desc' can be used to create nicely formatted explanations for the parameters, return 
+                            values, and descriptions respectivly. Also html elements such as lists can be directly placed inline in the comment, to 
+                            give further styling to your descriptions or general comment notes.
+                        </p>
+                        <p>
+                            The '@fileoverview' keyword should be used at the top of the file to give a general description of the file contents and 
+                            its functionality.
+                        </p>
+                        <p>
+                            The '@constructor', and '@extends' keywords can/should be used in comments above class declarations.
+                        </p>
+                        <p>
+                            The '@type {type}' keyword should be used above properties, in order to specify the property type in the output
+                             documentation. 
+                        </p>
+                        <p>
+                            The link at https://code.google.com/p/jsdoc-toolkit/wiki/TagReference contains a complete listing of the tags that can 
+                            be used in comments, and that are recognized by the JSDoc toolkit.
+                        </p>
+                        <h2>True and False Boolean Expressions</h2>
+                        <p>
+                            The following are all false in boolean expressions:
+                        </p>
+                        <ul>
+                            <li>null</li>
+                            <li>undefined</li>
+                            <li>'' the empty string</li>
+                            <li>0 the number</li>
+                        </ul>
+                        <p>
+                            But be careful, because these are all true:
+                        </p>
+                        <ul>
+                            <li>'0' the string</li>
+                            <li>[] the empty array</li>
+                            <li>{} the empty object</li>
+                        </ul>
+                        <p>
+                            This means you can write this shorter code to check for a null x (as long as you don't expect x to be 0, or the empty 
+                            string, or false):
+                        </p>
+                        <ul>
+                            <li>while (x) {}</li>
+                        </ul>
+                        <p>
+                            If you want to check a string to see if it is null or empty, you could do this:
+                        </p>
+                        <ul>
+                            <li>if (y) {}</li>
+                        </ul>
+                        <p>
+                            There are also many unintuitive things about boolean expressions. Here are some of them:
+                        </p>
+                        <ul>
+                           <li> Boolean('0') == true</li>
+                            <li>'0' != true</li>
+                            <li>0 != null</li>
+                            <li>0 == []</li>
+                            <li>0 == false</li>
+                            <li>Boolean(null) == false</li>
+                            <li>null != true</li>
+                            <li>null != false</li>
+                            <li>Boolean(undefined) == false</li>
+                            <li>undefined != true</li>
+                            <li>undefined != false</li>
+                            <li>Boolean([]) == true</li>
+                            <li>[] != true</li>
+                            <li>[] == false</li>
+                            <li>Boolean({}) == true</li>
+                            <li>{} != true</li>
+                            <li>{} != false</li>
+                        </ul>
+                        <h2>Conditional (Ternary) Operator (?:)</h2>
+                        <p>
+                            The Ternary Operator allows for a quick if-else syntax to be written in a single line. Below is an example of an 
+                            equivilent if-else statement and a single line use fo the Ternary Operator, as well as using it for the generation of 
+                            HTML.
+                        </p>
+                        <textarea class="codeBlock">
+//Instead of writing this
+if (val) {
+  return foo();
+} else {
+  return bar();
+}
+
+//You can write this
+return val ? foo() : bar();
+
+//When generating HTML:
+var html = '&lt;input type="checkbox"' +
+    		(isChecked ? ' checked' : '') +
+    		(isEnabled ? '' : ' disabled') +
+    		' name="foo"&gt;';
+                        </textarea>
+                        <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Original Source: Google JavaScript Style Guide</a>
                     </div>
                 </div>
             </div>

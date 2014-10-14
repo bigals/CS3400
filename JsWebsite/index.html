@@ -4,47 +4,56 @@
         <meta charset="UTF-8">
         <title>CS3400 JavaScript Website: Home</title>
         <link type="text/css" rel="stylesheet" href="Styles/styles.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/navBar.css" />
         <script type="application/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script type="application/javascript" src="Scripts/scripts.js"></script>
     </head>
     <body>
         <div id="pageWrapper">
             <header>
-                <h1>About JavaScript Website</h1>
+                <h1>JavaScript Info Website</h1>
                 <nav id="navBar">
-                    <!--Home Menu -->
-                    <div id ="homeNav" class="navBarElem">
-                      <a href="index.html">Home</a>					
-                      <span id= "homeMenuAction">
-                      <!--Menu childen go here-->
-                      </span>
-                    </div>
-
-                    <!--JavaScript Best Practices Menu -->
-                    <div id="practNav" class="navBarElem">
-                      <a href="bestPractices.html">Best Practices</a>
-                      <span id="toolsMenuAction"> 
-                      <!--Menu childen go here-->
-                      <!--ADD Anchors-->
-                      </span>
-                    </div>
-
-                    <!--JavScript Unit Testing Menu -->
-                    <div id="testNav" class="navBarElem">
-                        <a href="jsTesting.html">Unit Testing</a>
-                        <span id="htmlMenuAction" onmouseover="keepMenuOpen()" onmouseout="closeMenu()">
-                        <!--Menu childen go here-->
-                        </span>
-                    </div>						
-
-                    <!--JavaScript Debugging Menu -->
-                    <div id="debugNav" class="navBarElem">
-                        <a href="jsDebugging.html">Debuging</a>
-                        <span id="cssMenuAction">
-                        <!--Menu childen go here-->
-                        <!--ADD Anchors-->
-                        </span>
-                    </div>									
+                    <ul id="menu">
+                        <!--Home Menu -->
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        
+                        <!--JavaScript Best Practices Menu -->
+                        <li>
+                            <a href="bestPractices.html">Best Practices</a>
+                            <ul>
+                                <li><a href="bestPractices.html#">Best Practices 0</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 1</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 2</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 3</a></li>
+                                <li><a href="bestPractices.html#">Best Practices 4</a></li>
+                            </ul>
+                        </li>
+                        
+                         <!--JavScript Unit Testing Menu -->
+                        <li>
+                            <a href="jsTesting.html">Unit Testing</a>
+                            <ul>
+                                <li><a href="jsTesting.html">Unit Testing 0</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 1</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 2</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 3</a></li>
+                                <li><a href="jsTesting.html">Unit Testing 4</a></li>
+                            </ul>
+                        </li>
+                        <!--JavaScript Debugging Menu -->
+                        <li>
+                            <a href="jsDebugging.html">Debuging</a>
+                            <ul>
+                                <li><a href="jsDebugging.html#">Debugging 0</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 1</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 2</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 3</a></li>
+                                <li><a href="jsDebugging.html#">Debugging 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>									
                 </nav>
             </header>
             <div id="content">

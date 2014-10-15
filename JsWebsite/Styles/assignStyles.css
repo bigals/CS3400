@@ -118,26 +118,30 @@ ul li a:hover + .hidden, .hidden:hover {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
 	color: #000000;
-	background-color: #0186ba;
-    background-image: linear-gradient(#04acec, #0186ba);
+	background: #0186BA;
 	text-align: center;
 	padding: 10px 0;
 	display: none;
 }
 
 /*Hide checkbox*/
-#show-menu{
+input[type=checkbox]{
     display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
 }
 
 
 
 /*Responsive Styles*/
 @media screen and (max-width : 760px){
-    /*Show menu when invisible checkbox is checked*/
-    #show-menu{
-        display: block;
-    }
+/*Display 'show menu' link*/
+	.show-menu {
+		display:block;
+	}
 	/*Make dropdown links appear inline*/
 	ul {
 		position: static;
@@ -152,10 +156,6 @@ ul li a:hover + .hidden, .hidden:hover {
 		width: 100%;
 	}
     
-    /*Display 'show menu' link*/
-	.show-menu {
-		display:block;
-	}
     #uhForm {
         width: 90%;
         margin-left: 5px;

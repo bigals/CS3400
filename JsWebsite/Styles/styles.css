@@ -2,9 +2,9 @@
 body {
     background-color: #CCCCCC;
     margin: 0;
-    position: fixed;
+    
     width: 100%;
-    height: 100%;
+
 }
 #pageWrapper {
     width: 95%;
@@ -30,32 +30,31 @@ header h1 {
 
 #content {
     height: 85%;
-    width: 98%;
-    position: relative;
-    padding-top: 10px;
+    width: 100%;
+    top: 8%;
     margin-top: 10px;
+    margin-top: 75px;
 }
 
 /* Vertical Content Panel Tabs */
 #contentNavBar {
     width: 20%;
-    height: 100%;
-    
+    height: 100%;    
     float: left;
     margin: 0;
     padding-top: 10px;
 }
 #contentFrame {
-    width: 77%;
-    height: 94%;
-    margin-top: 5px;
+    width: 65%;
+    height: 85%;
+    margin-top: 10px;
+    margin-bottom:10px;
     border: 4px solid black;
     border-radius: 6px;
     background-color: #F4F4F4;
     box-shadow: 6px 6px 5px #888888;
-    float: right;
     padding-left: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .contentBtn {
     width: 85%;

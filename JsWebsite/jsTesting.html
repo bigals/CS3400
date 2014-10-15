@@ -158,28 +158,286 @@
 				<li><a href="https://code.jquery.com/qunit/qunit-1.15.0.js" target="blank">qunit.js:</a> The test runner and framework. </li>
 				<li><a href="https://code.jquery.com/qunit/qunit-1.15.0.css" target="blank">qunit.css:</a> The test suite's display page style's. </li>
 			</p>
-			<textarea wrap="logicial">
-			<!DOCTYPE html>
-			<html>
-			<head>
-			  <meta charset="utf-8">
-			  <title>QUnit basic example</title>
-			  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.15.0.css">
-			</head>
-			<body>
-			  <div id="qunit"></div>
-			  <div id="qunit-fixture"></div>
-			  <script src="//code.jquery.com/qunit/qunit-1.15.0.js"></script>
-			  <script>
-				QUnit.test( "a basic test example", function( assert ) {
-				  var value = "hello";
-				  assert.equal( value, "hello", "We expect value to be hello" );
-				});
-			  </script>
-			</body>
-			</html>
+			<textarea class="codeBlock">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit basic example</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.15.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-1.15.0.js"></script>
+  <script>
+	QUnit.test( "a basic test example", function( assert ) {
+	  var value = "hello";
+	  assert.equal( value, "hello", "We expect value to be hello" );
+	});
+  </script>
+</body>
+</html>
+			</textarea>
+			<center>Test Results</center>
+			<iframe src="QUnitTest1.html"  width="800" height="200" frameborder="0" ></iframe>
+			<p> The only thing you will need in the &lt;body&gt; tag is a &lt;div&gt; 
+			with the id <strong>id="qunit-fixture"</strong>. This will be required 
+			for all QUnit tests even if it's empty. This provides the fixtures 
+			for texts which will be explained under "Keeping Tests Atomic" 
+			(ADD LINK HERE).
+			</p>
+			<p> This &lt;script&gt; tag following the qunit.js include is the
+			call for the test function. The test function has two arguments:
+			<li> A string used for the test name, to be used later to display 
+			the test results.</li>
+			<li>A function, which has the actula testing code. Involving more 
+			or more assertions. This example here uses <strong>equal()</strong>. 
+			This will be explained in "Asserting Results" (ADD LINK HERE). 
+			</p>
+			<p>
+			It's important to note that there is no document-ready block. This is 
+			handled by the test runner when qUnit.test() is called. It will be 
+			added to the queue and its execution is deferred and contolled by the
+			test runner.
+			</p>
+			<p> In order to understand how to read the test results page we will
+				cover its components. The header will display:
+				<li>The page tile </li>
+				<li>A green bar when all tests have passed.</li>
+				<li>A red bar when at least one test has failed.</li>
+				<li>A bar with a view checkboxes to filter test results.</li>
+				<li>A blue bar with the <strong>navigator.userAgent</strong> string.
+				(Usefull for screenshots of test results in different browsers.)
+			</p>
+			<h2>Checkboxes</h2>
+			<p>Using the checkboxes can be very useful. For examples clicking "hide passed tests 
+				when a lot of tests passed and only a few failed. This will hide all the tests 
+				that passed. This will help you to focus on just the test that failed.
+			</p>
+			
+			<p> Using the "Check for Globals" checkbox makes Qunit create a list of all the window 
+			objects properties before and after each test. Then it will check them for differences.
+			This is very helpfull to make sure your code doesn't accidentally export global properties.
+			</p>
+			<p> The last checkbox "No try-catch" tell QUnit to test your code outside of a try-catch
+				block. If your test throws a exception, the test runner will die. Due to being unable 
+				to continue running you will get a "native" exception. This can be very helpful when
+				debugging older browser with poor debugging support. 
+			</p>
+			
+			<p>Under the header is a summary that shows the total time it took to 
+				run all the tests along with the overal number of total and failed assertions. 
+				If you still have a test running it will also show what test is being ran.
+			</p>
+			
+			<p> The contents of the test results page are the actual results. Every entry
+			in the numbered list will start with the name of the test. Then it will be followed 
+			by the number of failed, passed, and total assertions each being encosed in partentheses.
+			Clicking on a entry will show the results of each assertion. This will include details
+			about expected verus actual results. You can also use the "Rerun" link to run the test again 
+			on its own.
+			</p>
+		
+			
+			</div>
+			<div id="content-3" class="contentPanels">
+			<h1>QUnit-Asserting Results</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p> A essential element of a unit test are assertions. The writer of a test
+			needs to express the expected results and then have the testing framework 
+			compare them to the actual values that are produced.
+			
+			<h2>Solutions</h2>
+			<p> QUnit has many different built in assertions. View full 
+			<a href="http://api.qunitjs.com/category/assert/" target="blank">list</a>.
+			The three most common are:
+			<li>ok( truthy [, message ]</li>
+			<li>equal( actual, expected [, message ] )</li>
+			<li>deepEqual( actual, expected [, message ] )</li>
+			</p>
+			
+			<h3>ok( truthy [, message ]</h3>
+			<p>This the the most basic assertions and requries only one argument.
+			If the argument is true, it passes, otherwise it will fail. This will also accept
+			a string to display as a message in the results.<br/><br/>
+			
+			<textarea class="codeBlock">
+QUnit.test( "ok test", function( assert ) {
+  assert.ok( true, "true succeeds" );
+  assert.ok( "non-empty", "non-empty string succeeds" );
+ 
+  assert.ok( false, "false fails" );
+  assert.ok( 0, "0 fails" );
+  assert.ok( NaN, "NaN fails" );
+  assert.ok( "", "empty string fails" );
+  assert.ok( null, "null fails" );
+  assert.ok( undefined, "undefined fails" );
+});
+			</textarea>
+			<h3>equal( actual, expected [, message ] )</h3>
+			<p>This assertion will use the simple  comparison operator (= =) 
+			to compare the actual and expected arguments. When they are equal it passes,
+			otherwise the test fails. When it does fail both actual and expected will be 
+			given in the results. You can also pass a string message. 
+			</p>
+			<p>This function is easier to use for debugging failed test, becasue it will be
+			obivious what casued it to fail.
+			</p>
+			<p><strong>Tip: </strong> If you need to a strict comparison (===), use strictEqual() instead.
+			<br/><br/>
+			<textarea class="codeBlock">
+QUnit.test( "equal test", function( assert ) {
+  assert.equal( 0, 0, "Zero, Zero; equal succeeds" );
+  assert.equal( "", 0, "Empty, Zero; equal succeeds" );
+  assert.equal( "", "", "Empty, Empty; equal succeeds" );
+  assert.equal( 0, false, "Zero, false; equal succeeds" );
+ 
+  assert.equal( "three", 3, "Three, 3; equal fails" );
+  assert.equal( null, false, "null, false; equal fails" );
+});
+
+			</textarea>
+			</p>
+			<h3>deepEqual( actual, expected [, message ] )</h3>
+			<p> This assertion can be used like the <strong>equal()</strong>, but this is 
+			better for one main reason. It used a more accurate comparison operator (===) 
+			instead of (==). This means a undefined doesn't equal null, 0 or a empty string ("").
+			It will also compare the content of objects. Example: {key:value} is {key:value}, even if 
+			comparing two objects that have distinct identities. 
+			</p>
+			<p><strong>Tip: </strong>deepEqual() also handles NaN, dates, regular expressions, arrays, and
+			functions, while equal() would just check the object identity.
+			<br/><br/>
+			<textarea class="codeBlock">
+QUnit.test( "deepEqual test", function( assert ) {
+  var obj = { foo: "bar" };
+ 
+  assert.deepEqual( obj, { foo: "bar" }, "Two objects can be the same in value" );
+});
+			</textarea>
+			
+			</div>
+			<div id="content-4" class="contentPanels">
+			<h1>QUnit-Synchronous Callbacks</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p>Sometimes certain things in your code may prevent callback assertions to
+			never be called. Thus making your test fail silently.
+			</p>
+			<h2>Solution</h2>
+			<p>To fix this QUnit has a special assertion that deines the number of assertions
+			a test will contain. If a test was to complete with the correct number of assertions, 
+			it will fail, no matter what the results of the other assertions are. 
+			</p>
+			<p>This will provide the most value when testing callbacks.
+			When all code is running in the scope of the test function,  expect() provides
+			no additional value—any error preventing assertions to run would cause the test 
+			to fail anyway, because the test runner catches the error and fails the unit.			
+			</p>
+			<p> To using this all you have to do it call <strong>expect()</strong> at the start of your 
+			test. Passing in the number of expected assertions.
+			<br/><br/>
+			<textarea class="codeBlock">
+QUnit.test( "a test", function( assert ) {
+  expect( 2 );
+ 
+  function calc( x, operation ) {
+    return operation( x );
+  }
+ 
+  var result = calc( 2, function( x ) {
+    assert.ok( true, "calc() calls operation function" );
+    return x * x;
+  });
+ 
+  assert.equal( result, 4, "2 square equals 4" );
+});
+			</textarea>
+			<br/><br/>
+			Example:<br/>
+			<textarea class="codeBlock">
+QUnit.test( "a test", function( assert ) {
+  expect( 1 );
+ 
+  var $body = $( "body" );
+ 
+  $body.on( "click", function() {
+    assert.ok( true, "body was clicked!" );
+  });
+ 
+  $body.trigger( "click" );
+});
+			</textarea>
+			</div>
+			<div id="content-5" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p>The function expect() is useful to test synchronous callback. However it fails on
+				Asynchronous callbacks. The conflict is caused by the way the test runner 
+				queues and executes tests. When code under test starts a timeout or interval or an Ajax 
+				request, the test runner will just continue running the rest of the test, as well as other 
+				tests following it, instead of waiting for the result of the asynchronous operation.		
+			</p>
+			<h2>Solution</h2>
+			<p>To fix this you need to use <strong>QUnit.asyncTest()</strong> and call <strong>QUnit.start()</strong>
+			when your test block is complete and ready to resume. <br/><br/>
+			<textarea class="codeBlock">
+QUnit.asyncTest( "asynchronous test: one second later!", function( assert ) {
+  expect( 1 );
+ 
+  setTimeout(function() {
+    assert.ok( true, "Passed and ready to resume!" );
+    QUnit.start();
+  }, 1000);
+});
 			
 			</textarea>
+			
+			</p>
+			<p>Example:<br/>
+			<textarea class="codeBlock">
+QUnit.asyncTest( "asynchronous test: video ready to play", function( assert ) {
+  expect( 1 );
+ 
+  var $video = $( "video" );
+ 
+  $video.on( "canplaythrough", function() {
+    assert.ok( true, "video has loaded and is ready to play" );
+    QUnit.start();
+  });
+});
+			</textarea>
+			</p>
+			
+			</div>
+			<div id="content-6" class="contentPanels">
+			<h1>QUnit-Testing User Actions</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p> Sometimes you have code that has actions initiated by the user. This code
+			can not be tested by just calling a function. Usually an anonymous function is bound 
+			to an element's event, e.g., a click, which has to be simulated.  
+			</p>
+			<h2>Solution</h2>
+			</div>
+			<div id="content-7" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-8" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-9" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-10" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
 			</div>
 			</div>
             </div>

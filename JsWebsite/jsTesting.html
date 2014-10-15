@@ -158,28 +158,86 @@
 				<li><a href="https://code.jquery.com/qunit/qunit-1.15.0.js" target="blank">qunit.js:</a> The test runner and framework. </li>
 				<li><a href="https://code.jquery.com/qunit/qunit-1.15.0.css" target="blank">qunit.css:</a> The test suite's display page style's. </li>
 			</p>
-			<textarea wrap="logicial">
-			<!DOCTYPE html>
-			<html>
-			<head>
-			  <meta charset="utf-8">
-			  <title>QUnit basic example</title>
-			  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.15.0.css">
-			</head>
-			<body>
-			  <div id="qunit"></div>
-			  <div id="qunit-fixture"></div>
-			  <script src="//code.jquery.com/qunit/qunit-1.15.0.js"></script>
-			  <script>
-				QUnit.test( "a basic test example", function( assert ) {
-				  var value = "hello";
-				  assert.equal( value, "hello", "We expect value to be hello" );
-				});
-			  </script>
-			</body>
-			</html>
-			
+			<textarea class="codeBlock">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit basic example</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.15.0.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-1.15.0.js"></script>
+  <script>
+	QUnit.test( "a basic test example", function( assert ) {
+	  var value = "hello";
+	  assert.equal( value, "hello", "We expect value to be hello" );
+	});
+  </script>
+</body>
+</html>
 			</textarea>
+			<center>Test Results</center>
+			<iframe src="QUnitTest1.html"  width="800" height="200" frameborder="0" ></iframe>
+			<p> The only thing you will need in the &lt;body&gt; tag is a &lt;div&gt; 
+			with the id <strong>id="qunit-fixture"</strong>. This will be required 
+			for all QUnit tests even if it's empty. This provides the fixtures 
+			for texts which will be explained under "Keeping Tests Atomic" 
+			(ADD LINK HERE).
+			</p>
+			<p> This &lt;script&gt; tag following the qunit.js include is the
+			call for the test function. The test function has two arguments:
+			<li> A string used for the test name, to be used later to display 
+			the test results.</li>
+			<li>A function, which has the actula testing code. Involving more 
+			or more assertions. This example here uses <strong>equal()</strong>. 
+			This will be explained in "Asserting Results" (ADD LINK HERE). 
+			</p>
+			<p>
+			It's important to note that there is no document-ready block. This is 
+			handled by the test runner when qUnit.test() is called. It will be 
+			added to the queue and its execution is deferred and contolled by the
+			test runner.
+			</p>
+			<p> In order to understand how to read the test results page we will
+				cover its components. The header will display:
+				<li>The page tile </li>
+				<li>A green bar when all tests have passed.</li>
+				<li>A red bar when at least one test has failed.</li>
+				<li>A bar with a view checkboxes to filter test results.</li>
+				<li>A blue bar with the <strong>navigator.userAgent</strong> string.
+				(Usefull for screenshots of test results in different browsers.)
+			
+			</p>
+			
+		
+			
+			</div>
+			<div id="content-3" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-4" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-5" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-6" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-7" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-8" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-9" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			</div>
+			<div id="content-10" class="contentPanels">
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
 			</div>
 			</div>
             </div>

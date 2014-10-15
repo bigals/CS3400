@@ -47,6 +47,13 @@ $(document).ready(function() {
         else {
             //highlight the name field red, and create an alert for empty text
             $('#nField').css("border", "2px solid red");
+            document.getElementById("eField").value = "";
+            document.getElementById("pField").value = "";
+            document.getElementById("cField").value = "";
+        
+            document.getElementById("eField").disabled = true;
+            document.getElementById("pField").disabled = true;
+            document.getElementById("cField").disabled = true;
         }
     });
     
@@ -62,6 +69,11 @@ $(document).ready(function() {
         {
             //highlight the email field red, and create an alert for invalid/empty text
             $('#eField').css("border", "2px solid red");
+            document.getElementById("pField").disabled = true;          //Ensure the lower inputs get disabled and cleared
+            document.getElementById("cField").disabled = true;
+            document.getElementById("pField").value = "";
+            document.getElementById("cField").value = "";
+            alert("The Email you entered is invalid please enter it in the form yourUserName@yourDomain.com");
         }
     });
     
@@ -75,6 +87,9 @@ $(document).ready(function() {
         }
         else {
             //highlight the phone field red, and create an alert for invalid/empty text
+            document.getElementById("cField").disabled = true;
+            document.getElementById("cField").value = "";
+            alert("The phone number you entered is invalid please enter it in the form XXX-XXX-XXXX");
         }
     });
     
@@ -88,6 +103,9 @@ $(document).ready(function() {
         }
         else {
             //highlight the color choice field and create an alert for empty choice field
+            document.getElementById('subBtn').disabled = true;
+            $('#cField').removeAttr('disabled');
+            alert('Please enter a valid color choice from the drop down menu');
         }
     });
 });

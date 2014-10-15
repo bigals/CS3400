@@ -143,7 +143,7 @@
 			</div>
 			<div id="content-2" class="contentPanels">
 			<h1>A Summary of QUnit</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
 			<h2>The QUnit Solution </h2>
 			<p> Creating your own framework to test JavaScript would take alot of work
 				to include all the details and needed requirements for the many different
@@ -184,8 +184,7 @@
 			<p> The only thing you will need in the &lt;body&gt; tag is a &lt;div&gt; 
 			with the id <strong>id="qunit-fixture"</strong>. This will be required 
 			for all QUnit tests even if it's empty. This provides the fixtures 
-			for texts which will be explained under "Keeping Tests Atomic" 
-			(ADD LINK HERE).
+			for texts which will be explained under "Keeping Tests Atomic".
 			</p>
 			<p> This &lt;script&gt; tag following the qunit.js include is the
 			call for the test function. The test function has two arguments:
@@ -193,7 +192,7 @@
 			the test results.</li>
 			<li>A function, which has the actula testing code. Involving more 
 			or more assertions. This example here uses <strong>equal()</strong>. 
-			This will be explained in "Asserting Results" (ADD LINK HERE). 
+			This will be explained in "Asserting Results". 
 			</p>
 			<p>
 			It's important to note that there is no document-ready block. This is 
@@ -243,7 +242,7 @@
 			</div>
 			<div id="content-3" class="contentPanels">
 			<h1>QUnit-Asserting Results</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
 			<h2>Problem</h2>
 			<p> A essential element of a unit test are assertions. The writer of a test
 			needs to express the expected results and then have the testing framework 
@@ -321,7 +320,7 @@ QUnit.test( "deepEqual test", function( assert ) {
 			</div>
 			<div id="content-4" class="contentPanels">
 			<h1>QUnit-Synchronous Callbacks</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
 			<h2>Problem</h2>
 			<p>Sometimes certain things in your code may prevent callback assertions to
 			never be called. Thus making your test fail silently.
@@ -373,7 +372,7 @@ QUnit.test( "a test", function( assert ) {
 			</div>
 			<div id="content-5" class="contentPanels">
 			<h1>QUnit-Asynchronous Callbacks</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
 			<h2>Problem</h2>
 			<p>The function expect() is useful to test synchronous callback. However it fails on
 				Asynchronous callbacks. The conflict is caused by the way the test runner 
@@ -415,13 +414,80 @@ QUnit.asyncTest( "asynchronous test: video ready to play", function( assert ) {
 			</div>
 			<div id="content-6" class="contentPanels">
 			<h1>QUnit-Testing User Actions</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
 			<h2>Problem</h2>
 			<p> Sometimes you have code that has actions initiated by the user. This code
 			can not be tested by just calling a function. Usually an anonymous function is bound 
 			to an element's event, e.g., a click, which has to be simulated.  
 			</p>
 			<h2>Solution</h2>
+			<p> You can use jQuery's <strong>trigger()</strong> method to test for the expected 
+			behavior. If you don't want the native browser events to be triggered, you can use 
+			triggerHandler() to just execute the bound event handlers. This is useful when 
+			testing a click event on a link, where trigger() would cause the browser to 
+			change the location, which is hardly desired behavior in a test.
+			<br/><br/>
+			We have a simple key logger test:
+			<textarea class="codeBlock">
+function KeyLogger( target ) {
+  if ( !(this instanceof KeyLogger) ) {
+    return new KeyLogger( target );
+  }
+  this.target = target;
+  this.log = [];
+ 
+  var self = this;
+ 
+  this.target.off( "keydown" ).on( "keydown", function( event ) {
+    self.log.push( event.keyCode );
+  });
+}
+			</textarea><br/><br/>
+			Manually trigger a keypress event to see whether the logger is working: <br/>
+			<textarea class="codeBlock">
+QUnit.test( "keylogger api behavior", function( assert ) {
+ 
+  var event,
+      $doc = $( document ),
+      keys = KeyLogger( $doc );
+ 
+  // trigger event
+  event = $.Event( "keydown" );
+  event.keyCode = 9;
+  $doc.trigger( event );
+ 
+  // verify expected behavior
+  assert.equal( keys.log.length, 1, "a key was logged" );
+  assert.equal( keys.log[ 0 ], 9, "correct key was logged" );
+ 
+});
+			
+			</textarea>
+			
+			</p>
+			<p>"If your event handler doesn't rely on any specific properties of 
+			the event, you can just call<strong> .trigger(eventType)</strong>. 
+			However, if your event handler does rely on specific properties of the
+			event, you will need to create an event object using <strong> $.Event</strong> 
+			and set the necessary properties, as shown previously.
+			It's also important to trigger all relevant events for complex behaviors 
+			such as dragging, which is comprised of mousedown, at least one mousemove,
+			and a mouseup. Keep in mind that even some events that seem simple are 
+			actually compound; e.g., a click is really a mousedown, mouseup, and 
+			then click. Whether you actually need to trigger all three of these 
+			depends on the code under test. Triggering a click works for most cases.
+			If thats not enough, you have a few framework options that help simulating user events":
+
+<li>syn "is a synthetic event library that pretty much handles typing, clicking, moving, and dragging exactly how a real user would perform those actions". Used by FuncUnit, which is based on QUnit, for functional testing of web applications.</li>
+
+<br/>
+<li>JSRobot - "A testing utility for web-apps that can generate real keystrokes rather than simply simulating the JavaScript event firing. This allows the keystroke to trigger the built-in browser behaviour which isn't otherwise possible."</li>
+<br/>
+<li>DOH Robot "provides an API that enables testers to automate their UI tests using real, cross-platform, system-level input events". This gets you the closest to "real" browser events, but uses Java applets for that.</li>
+<br/>
+<li>keyvent.js - "Keyboard events simulator."</li>
+			
+			</p>
 			</div>
 			<div id="content-7" class="contentPanels">
 			<h1>QUnit-Asynchronous Callbacks</h1>

@@ -73,7 +73,7 @@ header h1 {
     background-image: linear-gradient(#41C6FA, #0186ba);
 }
 .selected {
-    width: 98%;
+    width: 92%;
     color: #555555;
     background-color: #00aaed;
     background-image: linear-gradient(#6ad0f8, #00aaed);

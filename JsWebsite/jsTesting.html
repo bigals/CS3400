@@ -51,11 +51,16 @@
                         <li>
                             <a href="jsTesting.html?tOpVal=1">Unit Testing</a>
                             <ul>
-                                <li><a href="jsTesting.html?tOpVal=1">Unit Testing 0</a></li>
-                                <li><a href="jsTesting.html?tOpVal=2">Unit Testing 1</a></li>
-                                <li><a href="jsTesting.html?tOpVal=3">Unit Testing 2</a></li>
-                                <li><a href="jsTesting.html?tOpVal=4">Unit Testing 3</a></li>
-                                <li><a href="jsTesting.html?tOpVal=5">Unit Testing 4</a></li>
+                                <li><a href="jsTesting.html?tOpVal=1">What is Unit Testing</a></li>
+                                <li><a href="jsTesting.html?tOpVal=2">The QUnit Solution</a></li>
+                                <li><a href="jsTesting.html?tOpVal=3">QUnit-Asserting Results</a></li>
+                                <li><a href="jsTesting.html?tOpVal=4">QUnit-Synchronous Callbacks</a></li>
+                                <li><a href="jsTesting.html?tOpVal=5">QUnit-Asynchronous Callbacks</a></li>
+								<li><a href="jsTesting.html?tOpVal=6">QUnit-Testing User Actions</a></li>
+                                <li><a href="jsTesting.html?tOpVal=7">QUnit-Keeping Tests Atomic</a></li>
+                                <li><a href="jsTesting.html?tOpVal=8">QUnit-Grouping Tests</a></li>
+                                <li><a href="jsTesting.html?tOpVal=9">QUnit-Custom Assertions</a></li>
+                                <li><a href="jsTesting.html?tOpVal=10">QUnit-Efficient Development</a></li>
                             </ul>
                         </li>
                         <!--JavaScript Debugging Menu -->
@@ -490,20 +495,236 @@ QUnit.test( "keylogger api behavior", function( assert ) {
 			</p>
 			</div>
 			<div id="content-7" class="contentPanels">
-			<h1>QUnit-Asynchronous Callbacks</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h1>QUnit-Keeping Tests Atomic </h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p> When tests are lumped together, it's possible to have tests that 
+			should pass but fail or tests that should fail but pass. This is a 
+			result of a test having invalid results because of side effects of
+			a previous test.
+			
+			<br/>
+			<textarea class="codeBlock">
+QUnit.test( "2 asserts", function( assert ) {
+  var $fixture = $( "#qunit-fixture" );
+ 
+  $fixture.append( "<div>hello!</div>" );
+  assert.equal( $( "div", $fixture ).length, 1, "div added successfully!" );
+ 
+  $fixture.append( "<span>hello!</span>" );
+  assert.equal( $( "span", $fixture ).length, 1, "span added successfully!" );
+});
+			</textarea>
+			<br/><br/>
+			The first append() adds a <div> that the second equal() doesn't take into account
+			<p>
+			<h2>Solution</h2>
+			<p>
+			Use the <strong>QUnit.test()</strong> method to keep tests atomic, 
+			being careful to keep each assertion clean of any possible side effects. 
+			You should only rely on the fixture markup, inside the<strong>#qunit-fixture</strong>
+			element. Modifying and relying on anything else can have side effects.
+			
+			<br/>
+			<textarea class="codeBlock">
+QUnit.test( "Appends a div", function( assert ) {
+  var $fixture = $( "#qunit-fixture" );
+ 
+  $fixture.append( "<div>hello!</div>" );
+  equal( $( "div", $fixture ).length, 1, "div added successfully!" );
+});
+ 
+QUnit.test( "Appends a span", function( assert ) {
+  var $fixture = $( "#qunit-fixture" );
+ 
+  $fixture.append("<span>hello!</span>" );
+  assert.equal( $( "span", $fixture ).length, 1, "span added successfully!" );
+});
+			</textarea>
+			</p>
+			
+			<p>QUnit will reset the elements inside the #qunit-fixture element 
+			after each test, removing any events that may have existed. As long 
+			as you use elements only within this fixture, you don't have to 
+			manually clean up after your tests to keep them atomic.
+			</p>
+			
+			<p><strong>Tip: </strong> QUnit also offers a ?noglobals flag. Consider the following test below:
+			<br/><br/>
+			<textarea class="codeBlock">
+QUnit.test( "global pollution", function( assert ) {
+  window.pollute = true;
+  assert.ok( pollute, "nasty pollution" );
+});
+			</textarea>
+			</p> 
+			<p>"In a normal test run, this passes as a valid result. 
+			Running the <strong>ok()</strong> test with the noglobals 
+			flag will cause the test to fail, because QUnit detected 
+			that it polluted the window object.There is no need to use this 
+			flag all the time, but it can be handy to detect global namespace 
+			pollution that may be problematic in combination with 
+			third-party libraries. And it helps to detect bugs 
+			in tests caused by side effects."
+			</p>
 			</div>
 			<div id="content-8" class="contentPanels">
-			<h1>QUnit-Asynchronous Callbacks</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h1>QUnit-Grouping Tests</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p>
+			"You've split up all of your tests to keep them atomic and free of 
+			side effects, but you want to keep them logically organized and be 
+			able to run a specific group of tests on their own."
+			</p>
+			<h2>Solution</h2>
+			<p>"You can use the <strong>QUnit.module()</strong> function 
+			to group tests together."
+			
+			<br/>
+			<textarea class="codeBlock">
+QUnit.module( "group a" );
+QUnit.test( "a basic test example", function( assert ) {
+  assert.ok( true, "this test is fine" );
+});
+QUnit.test( "a basic test example 2", function( assert ) {
+  assert.ok( true, "this test is fine" );
+});
+ 
+QUnit.module( "group b" );
+QUnit.test( "a basic test example 3", function( assert ) {
+  assert.ok( true, "this test is fine" );
+});
+QUnit.test( "a basic test example 4", function( assert ) {
+  assert.ok( true, "this test is fine" );
+});
+			</textarea>
+			
+			<br/><br/>
+			"All tests that occur after a call to <strong>QUnit.module() <strong> will be
+			grouped into that module. The test names will all be preceded by the 
+			module name in the test results."
+			</p>
+			
+			<p>"In addition to grouping tests, <strong>QUnit.module()</strong>
+			can be used to extract common code from tests within that module. 
+			The <strong>QUnit.module()</strong>function takes an optional 
+			second parameter to define functions to run before and after 
+			each test within the module."
+			
+			<br/>
+			<textarea class="codeBlock">
+QUnit.module( "module", {
+  setup: function( assert ) {
+    assert.ok( true, "one extra assert per test" );
+  }, teardown: function( assert ) {
+    assert.ok( true, "and one extra assert after each test" );
+  }
+});
+QUnit.test( "test with setup and teardown", function() {
+  expect( 2 );
+});
+			</textarea>
+			<br/> 
+			"You can specify both setup and teardown properties together, 
+			or just one of them. Calling <strong>QUnit.module()</strong> 
+			again without the additional argument will simply reset 
+			any setup/teardown functions defined by another module previously."
+			</p>
 			</div>
 			<div id="content-9" class="contentPanels">
-			<h1>QUnit-Asynchronous Callbacks</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h1>QUnit-Custom Assertions</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/" target="blank">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p>"You have several tests that duplicate logic for asserting some expectation. This repetitive code lessens 
+			the readability of your tests and increases the surface for bugs."
+			<br/>
+			<textarea class="codeBlock">
+QUnit.test( "retrieving object keys", function( assert ) {
+  var objectKeys = keys( { a: 1, b: 2 } );
+  assert.ok( objectKeys.indexOf("a") > -1, "Object keys" );
+  assert.ok( objectKeys.indexOf("b") > -1, "Object keys" );
+ 
+  var arrayKeys = keys( [1, 2] );
+  assert.ok( arrayKeys.indexOf("1") > -1, "Array keys" );
+  assert.ok( arrayKeys.indexOf("2") > -1, "Array keys" );
+});
+			</textarea>
+			</p>
+			<h2>Solution</h2>
+			<p>"Define a function to encapsulate the expectation in a reusable unit. Invoke 
+			<strong>QUnit.push</strong> within the body 
+			to notify QUnit that an assertion has taken place."
+			<br/>
+			<textarea class="codeBlock">
+QUnit.assert.contains = function( needle, haystack, message ) {
+  var actual = haystack.indexOf(needle) > -1;
+  QUnit.push(actual, actual, needle, message);
+};
+QUnit.test("retrieving object keys", function( assert ) {
+  var objectKeys = keys( { a: 1, b: 2 } );
+  assert.contains( "a", objectKeys, "Object keys" );
+  assert.contains( "b", objectKeys, "Object keys" );
+ 
+  var arrayKeys = keys( [1, 2] );
+  assert.contains( "1", arrayKeys, "Array keys" );
+  assert.contains( "2", arrayKeys, "Array keys" );
+});
+			</textarea>
+			</p>
+			<p>"Custom assertions can help make test suites more readable 
+			and more maintainable. At a minimum, they are simply functions 
+			that invoke <strong>QUnit.push </strong> with a Boolean 
+			value--this is how QUnit detects that an assertion has 
+			taken place and the result of that assertion.It is a good 
+			practice to define this function as a method on 
+			the global <strong>QUnit.assert</strong> object. This helps 
+			communicate the purpose of the function to other developers. 
+			You may accomplish this by directly assigning a new 
+			property on the object (i.e. <strong>QUnit.assert.myAssertion = myAssertion;</strong>)
+			or using <strong>QUnit.extend</strong> (i.e. <strong>QUnit.extend(QUnit.assert, { myAssertion: myAssertion });</strong>)".
+			
+			</p>
 			</div>
 			<div id="content-10" class="contentPanels">
-			<h1>QUnit-Asynchronous Callbacks</h1>
-			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h1>QUnit-Efficient Development</h1>
+			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/"target="blank">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p>"Once your testsuite takes longer than a few seconds to run, you want to avoid wasting a lot of time just
+			waiting for test results to come in."
+			</p>
+			<h2>Solution</h2>
+			<p>"QUnit has a bunch of features built in to make up for that. 
+			The most interesting ones require just a single click to activate. 
+			Toggle the "Hide passed tests" checkbox at the top, and QUnit will 
+			only show you tests that failed. That alone doesn't make a difference 
+			in speed, but already helps focusing on failing tests. It gets more 
+			interesting if you take another QUnit feature into account, 
+			which is enabled by default and usually not noticable. 
+			Whenever a test fails, QUnit stores the name of that test in 
+			<strong>sessionStorage</strong>. The next time you run a testsuite, 
+			that failing test will run before all other tests. The output 
+			order isn't affected, only the execution order. In combination 
+			with the "Hide passed tests" checkbox you will then get to see 
+			the failing test, if it still fails, at the top, as soon as possible."
+			</p>
+			<p>"The automatic reordering happens by default. It implies that your 
+			tests need to be atomic, as discussed previously. If your tests aren't, 
+			you'll see random non-deterministic errors. Fixing that is usually the 
+			right approach. If you're really desperate, you can set <strong>QUnit.config.reorder = false</strong>.
+			In addition to the automatic reordering, there are a few manual options available. 
+			You can rerun any test by clicking the "Rerun" link next to that test. 
+			That will add a "testNumber=N" parameter to the query string, where "N" 
+			is the number of the test you clicked. You can then reload the page to 
+			keep running just that test, or use the browser's back button to go back 
+			to running all tests".
+			</p>
+			<p>"Running all tests within a module works pretty much the same way, 
+			except that you choose the module to run using the select at the top 
+			right. It'll set a "module=N" query string, where "N" is the encoded 
+			name of the module, for example "?module=testEnvironment%20with%20object".
+			
+			</p>
 			</div>
 			</div>
             </div>

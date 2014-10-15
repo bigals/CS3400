@@ -331,6 +331,11 @@ QUnit.test( "deepEqual test", function( assert ) {
 			a test will contain. If a test was to complete with the correct number of assertions, 
 			it will fail, no matter what the results of the other assertions are. 
 			</p>
+			<p>This will provide the most value when testing callbacks.
+			When all code is running in the scope of the test function,  expect() provides
+			no additional value—any error preventing assertions to run would cause the test 
+			to fail anyway, because the test runner catches the error and fails the unit.			
+			</p>
 			<p> To using this all you have to do it call <strong>expect()</strong> at the start of your 
 			test. Passing in the number of expected assertions.
 			<br/><br/>
@@ -365,28 +370,73 @@ QUnit.test( "a test", function( assert ) {
   $body.trigger( "click" );
 });
 			</textarea>
-			</p>
-			
-			
-			
-			</p>
 			</div>
 			<div id="content-5" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p>The function expect() is useful to test synchronous callback. However it fails on
+				Asynchronous callbacks. The conflict is caused by the way the test runner 
+				queues and executes tests. When code under test starts a timeout or interval or an Ajax 
+				request, the test runner will just continue running the rest of the test, as well as other 
+				tests following it, instead of waiting for the result of the asynchronous operation.		
+			</p>
+			<h2>Solution</h2>
+			<p>To fix this you need to use <strong>QUnit.asyncTest()</strong> and call <strong>QUnit.start()</strong>
+			when your test block is complete and ready to resume. <br/><br/>
+			<textarea class="codeBlock">
+QUnit.asyncTest( "asynchronous test: one second later!", function( assert ) {
+  expect( 1 );
+ 
+  setTimeout(function() {
+    assert.ok( true, "Passed and ready to resume!" );
+    QUnit.start();
+  }, 1000);
+});
+			
+			</textarea>
+			
+			</p>
+			<p>Example:<br/>
+			<textarea class="codeBlock">
+QUnit.asyncTest( "asynchronous test: video ready to play", function( assert ) {
+  expect( 1 );
+ 
+  var $video = $( "video" );
+ 
+  $video.on( "canplaythrough", function() {
+    assert.ok( true, "video has loaded and is ready to play" );
+    QUnit.start();
+  });
+});
+			</textarea>
+			</p>
+			
 			</div>
 			<div id="content-6" class="contentPanels">
+			<h1>QUnit-Testing User Actions</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
+			<h2>Problem</h2>
+			<p> Sometimes you have code that has actions initiated by the user. This code
+			can not be tested by just calling a function. Usually an anonymous function is bound 
+			to an element's event, e.g., a click, which has to be simulated.  
+			</p>
+			<h2>Solution</h2>
 			</div>
 			<div id="content-7" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
 			</div>
 			<div id="content-8" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
 			</div>
 			<div id="content-9" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
 			</div>
 			<div id="content-10" class="contentPanels">
+			<h1>QUnit-Asynchronous Callbacks</h1>
 			<h2>~ JavaScript Unit Testing from <a href="http://qunitjs.com/cookbook/">qunitjs.com</a> ~</h2>
 			</div>
 			</div>

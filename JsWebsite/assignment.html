@@ -14,47 +14,6 @@
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-        <header>
-            <nav id="nav" role="navigation">
-                <a href="#nav" title="Show navigation">Show navigation</a>
-                <a href="#" title="Hide navigation">Hide navigation</a>
-                <ul>
-                    <li>
-                        <a href="/" aria-haspopup="true">File</a>
-                        <ul>
-                            <li><a href="/">File Sub-Item 0</a></li>
-                            <li><a href="/">File Sub-Item 1</a></li>
-                            <li><a href="/">File Sub-Item 2</a></li>
-                            <li><a href="/">File Sub-Item 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/" aria-haspopup="true">Edit</a>
-                        <ul>
-                            <li><a href="/">Edit Sub-Item 0</a></li>
-                            <li><a href="/">Edit Sub-Item 1</a></li>
-                            <li><a href="/">Edit Sub-Item 2</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/" aria-haspopup="true">Help</a>
-                        <ul>
-                            <li><a href="/">Help Sub-Item 0</a></li>
-                            <li><a href="/">Help Sub-Item 1</a></li>
-                            <li><a href="/">Help Sub-Item 2</a></li>
-                            <li><a href="/">Help Sub-Item 3</a></li>
-                            <li><a href="/">Help Sub-Item 4</a></li>
-                            <li><a href="/">Help Sub-Item 5</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-<div class="extraPersonTemplate">
-    <div class="dynamicList">
-        <input class="iOne" placeholder="First Name" type="text" name="firstname">
-    </div>
-</div>
 <div id="container"></div>
 
         <nav>
@@ -90,6 +49,28 @@
         </nav>
         
         <div id="content-wrapper">
+
+        <div class="validateEmail">
+            <form name="myForm" action="demo_form.asp" onsubmit="return validateEmail();" method="post">
+            Email: <input type="text" name="email">
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="two">
+            <h4>Form Fields</h4><button onclick="nameFunction()">Name</button>
+            <button onclick="emailFunction()">Email</button>
+            <button onclick="contactFunction()">Contact</button>
+            <button onclick="textareaFunction()">Message</button>
+            <button onclick="resetElements()">Reset</button>
+            <form action="#" id="mainform" method="get" name="mainform">
+            <span id="myForm"></span>
+            <p></p><input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="three">
+
+        </div>
+        
             <section>
 
             </section>

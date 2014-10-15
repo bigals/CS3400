@@ -486,7 +486,4 @@ $(document).ready(function() {
         loadFileAsText();
     });
 
-    $('#iOne').onchange(function() {
-        $(this).append($("<p>hello</p>"));
-     });
 });

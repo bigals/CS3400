@@ -111,18 +111,18 @@ function checkAndRenderCanvas() {
 
 function loadFileAsText()
 {
-	var fileToLoad = document.getElementById("fileToLoad").files[0];
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
 
-	var fileReader = new FileReader();
-	fileReader.onload = function(fileLoadedEvent) 
-	{
-		var textFromFileLoaded = fileLoadedEvent.target.result;
-		
-        //Output to Screen		
-		document.getElementById("ldedFile").value = textFromFileLoaded;		
-		
-	};
-	fileReader.readAsText(fileToLoad, "UTF-8");
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+        
+        //Output to Screen      
+        document.getElementById("ldedFile").value = textFromFileLoaded;     
+        
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
 }
 
 function init() {
@@ -181,9 +181,9 @@ function checkAndCreateGLCube() {
         try {
             var GL = CANVAS.getContext("experimental-webgl", {antialias: true});
         } catch (e) {
-            alert("You are not webgl compatible :(") ;
+            alert("You are not webgl compatible :(") ;
             return false;
-        } ;
+        } ;
 
         /*========================= SHADERS ========================= */
 
@@ -336,8 +336,8 @@ function checkAndCreateGLCube() {
         GL.uniformMatrix4fv(_Pmatrix, false, PROJMATRIX);
         GL.uniformMatrix4fv(_Vmatrix, false, VIEWMATRIX);
         GL.uniformMatrix4fv(_Mmatrix, false, MOVEMATRIX);
-        GL.vertexAttribPointer(_position, 3, GL.FLOAT, false,4*(3+3),0) ;
-        GL.vertexAttribPointer(_color, 3, GL.FLOAT, false,4*(3+3),3*4) ;
+        GL.vertexAttribPointer(_position, 3, GL.FLOAT, false,4*(3+3),0) ;
+        GL.vertexAttribPointer(_color, 3, GL.FLOAT, false,4*(3+3),3*4) ;
         GL.bindBuffer(GL.ARRAY_BUFFER, CUBE_VERTEX);
         GL.bindBuffer(GL.ELEMENT_ARRAY_BUFFER, CUBE_FACES);
         GL.drawElements(GL.TRIANGLES, 6*2*3, GL.UNSIGNED_SHORT, 0);
@@ -349,6 +349,58 @@ function checkAndCreateGLCube() {
         animate(0);
     }
 }
+
+function mouseOver() {
+    document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+    document.getElementById("demo").style.color = "black";
+}
+
+//dropdown menu example
+var timeout = 500;
+var closetimer  = 0;
+var ddmenuitem  = 0;
+
+// open hidden layer
+function mopen(id)
+{   
+    // cancel close timer
+    mcancelclosetime();
+
+    // close old layer
+    if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+    // get new layer and show it
+    ddmenuitem = document.getElementById(id);
+    ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+    if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+    closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+    if(closetimer)
+    {
+        window.clearTimeout(closetimer);
+        closetimer = null;
+    }
+}
+
+// close layer when click-out
+document.onclick = mclose;
 
 $(document).ready(function() {
     

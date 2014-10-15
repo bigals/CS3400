@@ -113,9 +113,143 @@
                     <div id="cNav-6" class="contentBtn">WebGL</div>
                 </div>
                 <div id="contentFrame">
+                    
                     <div id="content-1" class="contentPanels">
                         <h2>Various JavaScript Examples</h2>
+
+                        <h3>Mouseover Function</h3>
+                        <div id="exampleArea">
+                            <p id="demo">Mouse Over Me!</p>
+                            <script>
+                            document.getElementById("demo").onmouseover = function() {mouseOver()};
+                            document.getElementById("demo").onmouseout = function() {mouseOut()};
+                            </script>
+                        </div>
+                        <div class="htmlContainer">
+                            <textarea class="htmlCode">
+document.getElementById("demo").onmouseover = function() {mouseOver()};
+document.getElementById("demo").onmouseout = function() {mouseOut()};
+                            </textarea>
+                        </div>
+                        <div class="jsContainer">
+                            <textarea class="jsCode">
+function mouseOver() {
+    document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+    document.getElementById("demo").style.color = "black";
+}
+                            </textarea>
+                        </div>
                     </div>
+                    <p><small>Example from <a href="w3schools.com">w3schools.com</a></small></p>
+
+
+                    <h3>Dropdown Menu</h3>
+                    <div id="exampleArea">
+                    	<ul id="sddm">
+    <li><a href="#" 
+        onmouseover="mopen('m1')" 
+        onmouseout="mclosetime()">Home</a>
+        <div id="m1" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+        <a href="#">HTML/CSS</a>
+        <a href="#">DHTML Menu</a>
+        <a href="#">JavaScript</a>
+        </div>
+    </li>
+    <li><a href="#" 
+        onmouseover="mopen('m2')" 
+        onmouseout="mclosetime()">Download</a>
+        <div id="m2" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+        <a href="#">ASP Server-side</a>
+        <a href="#">Pulldown navigation</a>
+        <a href="#">AJAX Drop Submenu</a>
+        <a href="#">DIV Cascading </a>
+        </div>
+    </li>
+</ul>
+<div style="clear:both"></div>
+                    </div>
+                    <div class="htmlContainer">
+                	<textarea class="htmlCode">
+<li><a href="#" 
+    onmouseover="mopen('m1')" 
+    onmouseout="mclosetime()">Home</a>
+    <div id="m1" 
+        onmouseover="mcancelclosetime()" 
+        onmouseout="mclosetime()">
+    <a href="#">HTML/CSS</a>
+    <a href="#">DHTML Menu</a>
+    <a href="#">JavaScript</a>
+    </div>
+</li>
+<li><a href="#" 
+    onmouseover="mopen('m2')" 
+    onmouseout="mclosetime()">Download</a>
+    <div id="m2" 
+        onmouseover="mcancelclosetime()" 
+        onmouseout="mclosetime()">
+    <a href="#">ASP Server-side</a>
+    <a href="#">Pulldown navigation</a>
+    <a href="#">AJAX Drop Submenu</a>
+    <a href="#">DIV Cascading </a>
+    </div>
+</li>
+                    	</textarea>
+                    </div>
+                    <div class="jsContainer">
+                    	<textarea class="jsCode">
+var timeout = 500;
+var closetimer  = 0;
+var ddmenuitem  = 0;
+
+// open hidden layer
+function mopen(id)
+{   
+    // cancel close timer
+    mcancelclosetime();
+
+    // close old layer
+    if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+    // get new layer and show it
+    ddmenuitem = document.getElementById(id);
+    ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+    if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+    closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+    if(closetimer)
+    {
+        window.clearTimeout(closetimer);
+        closetimer = null;
+    }
+}
+
+// close layer when click-out
+document.onclick = mclose;
+                    	</textarea>
+                    </div>
+                    <p><small>Example from <a href="http://javascript-array.com/scripts/simple_drop_down_menu/">Javascript-array.com</a></p>
+                    
                     <div id="content-2" class="contentPanels htmlStorCanv">
                         <h2>Local File Access Examples</h2>
                         <h3>Files on Local Client Machine</h3>

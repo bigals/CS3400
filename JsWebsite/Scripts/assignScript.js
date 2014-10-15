@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    
+    $('#eventLog').text(" ");
     $('#cnclBtn').click(function() {
         document.getElementById("nField").value = "";
         document.getElementById("eField").value = "";
@@ -14,22 +14,25 @@ $(document).ready(function() {
     $('input[name~="state"]').change(function() {
         //do change of state radio buttons handleing here
         $('#colors').empty();       //Empty the options from the datalist
-        
+        var eventText = $('#eventLog').text();
         //based on the value of the checked box chnage the dropdown list
         switch(this.value) {
                 case '1':
                     //State 1 - clear the color choice field, and switch colors to Brown,Gold,Green, and White
                     document.getElementById("cField").value = "";
+                    $('#eventLog').text(eventText + "\n State Changed to State 1");
                     $('#colors').append('<option value="Brown"><option value="Gold"><option value="Green"><option value="White">');
                     break;
                 case '2':
                     //State 2 - clear the color choice field, and switch colors to Blue, Maize, Red, and Silver
                     document.getElementById("cField").value = "";
+                    $('#eventLog').text(eventText + "\n State Changed to State 2");
                     $('#colors').append('<option value="Blue"><option value="Maize"><option value="Red"><option value="Silver">');
                     break;
                 case '3':
                     //State 3 - clear the color choice field, and switch colors to Black, Teal, Orange, Pink
                     document.getElementById("cField").value = "";
+                    $('#eventLog').text(eventText + "\n State Changed to State 3");
                     $('#colors').append('<option value="Black"><option value="Teal"><option value="Orange"><option value="Pink">');
                     break;
         }
@@ -77,9 +80,11 @@ $(document).ready(function() {
     
     //value changed event handler for the Color Choice input field
     $('#cField').change(function() {
+        var eventT = $('#eventLog').text();
         if(this.value !== "")                                    //Make sure the phone number field contains something
         {
             $('#subBtn').removeAttr('disabled');              //Enable the color choice field
+            $('#eventLog').text(eventT + "\n Color Choice Chosen to be " + this.value);
         }
         else {
             //highlight the color choice field and create an alert for empty choice field

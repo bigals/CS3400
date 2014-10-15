@@ -1,43 +1,4 @@
-/* Function to detect if touch feature is available for device */
-function has_touch() {
-  return !!('ontouchstart' in window);
-}
-
-/* Function to determine if the max screen-width is 650px */
-function is_Small() {
-  return window.matchMedia("(max-width: 650px)").matches;
-}
-
-/* Function to return the type of device that the page is being displayed on */
-function detect_Device() {
-    var device = '';
-    if(has_touch()) {
-        if(is_Small()) {        //Max-Width is 650px
-            device = 'phone';
-        }
-        else {                  //Max-Width is greater than 650px
-            device = 'tablet';
-        }
-    }
-    else {                      //Device does not have touch feature
-        device = 'desktop';
-    }
-    
-    return device;
-}
-
-
 $(document).ready(function() {
-    
-   
-    switch(detect_Device()) {
-        case 'phone':
-            break;
-        case 'tablet':
-            break;
-        case 'desktop':
-            break;            
-    }
     
     $('#cnclBtn').click(function() {
         document.getElementById("nField").value = "";
@@ -82,6 +43,7 @@ $(document).ready(function() {
         }
         else {
             //highlight the name field red, and create an alert for empty text
+            $('#nField').css("border", "2px solid red");
         }
     });
     
@@ -96,6 +58,7 @@ $(document).ready(function() {
         else
         {
             //highlight the email field red, and create an alert for invalid/empty text
+            $('#eField').css("border", "2px solid red");
         }
     });
     

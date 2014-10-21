@@ -4,19 +4,41 @@
   <meta charset="utf-8">
   <title>Double Pendulum Controls</title>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="Slider.css">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  <script src="scripts/createSliders.js"></script>
-</head>
-<body>
- 
-<p>
-  <label for="amount">Volume:</label>
-  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-</p>
- 
-<div id="slider-vertical" style="height:200px;"></div>
- 
- 
+    <script src="createSlider.js"></script>
+	<body>
+<div class="sliderControls">
+<h2 align="center">Double Pendulum <br/>Slider Controls </h3>
+
+	<div class="SliderControl">
+	    <label for="s0">Slider 1:</label>
+		
+	    <input type="text" class="sliderCSS" readonly="readonly" id="s0" name="s0" value='0'>
+	    <div class="Slider" id="s0Slider"></div> 
+	</div>
+
+	<div class="SliderControl">
+	    <label for="s1">Slider 2:</label>
+	    <input type="text" class="sliderCSS" readonly="readonly" id="s1" name="s1" value='0'/>
+	    <div class="Slider" id="s1Slider"></div> 
+	</div>
+	
+	<div class="SliderControl">
+	    <label for="s2">Slider 3:</label>
+	    <input type="text" class="sliderCSS" readonly="readonly" id="s2" name="s2" value='0'/>
+	    <div class="Slider" id="s2Slider"></div> 
+	</div>
+
+	<div class="SliderControl">
+	    <label for="s3">Slider 4:</label>
+	    <input type="text" class="sliderCSS" readonly="readonly" id="s3" name="s3" value='0'/>
+	    <div class="Slider" id="s3Slider"></div> 
+	</div>
+	<input type="SUBMIT" value="Submit" name="Submit" id="Submit" onClick="grabSliderValues();" />
+</div>
+
 </body>
+	
 </html>

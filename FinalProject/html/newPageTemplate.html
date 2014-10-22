@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--JQuery Library-->
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         
         <!--JQuery Mobile Themeing/Library-->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
         
         <!--Custom Styles/Scripts-->
         <link rel="stylesheet" href="../Styles/styles.css" />
@@ -19,9 +19,17 @@
     <body>
         <div data-role="page">
             <div data-role="header">
-                <button data-icon="grid" data-mini="true"></button>   
                 <h1>Page Title</h1>
-                <button data-icon="home" data-mini="true"></button>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <!--Assign  class="ui-btn-active" to whatever link that belongs to the page that this nav bar is in-->
+                        <li><a href="./home.html" data-icon="home">Home</a></li>
+                        <li><a href="./repos.html#sum-view" data-icon="bullets">Repos</a></li>
+                        <li><a href="./pullRqs.html#sum-view" data-icon="recycle">Pull Requests</a></li>
+                        <li><a href="./issues.html#sum-view" data-icon="alert">Issues</a></li>
+                        <li><a href="./notifs.html" data-icon="comment">Notifications</a></li>
+                    </ul>
+                </div>
             </div>
             <div data-role="main" class="ui-content" data-theme="a"> <!--Make sure to change to a different swatch-->
 

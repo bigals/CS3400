@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>All Repositories (Summary)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--JQuery Library-->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        
+        <!--JQuery Mobile Themeing/Library-->
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        
+        <!--Custom Styles/Scripts-->
+        <link rel="stylesheet" href="../Styles/styles.css" />
+        <script src="../Scripts/script.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="RsumView">
+            <div data-role="header">
+                <h1>All Repositories</h1>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <!--Assign  class="ui-btn-active" to whatever link that belongs to the page that this nav bar is in-->
+                        <!--ADD A HELP LINK AND PAGE SOON-->
+                        <li><a href="./home.html" data-icon="home">Home</a></li>
+                        <li><a href="./repos.html" class="ui-btn-active" data-icon="bullets">Repos</a></li>
+                        <li><a href="./pullRqs.html" data-icon="recycle">Pull Requests</a></li>
+                        <li><a href="./issues.html" data-icon="alert">Issues</a></li>
+                        <li><a href="./notifs.html" data-icon="comment">Notifications</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" data-theme="a"> <!--Make sure to change to a different swatch-->
+                <div>Im in sum view of repos</div>
+                <a href="#RdetailedView">Link to detailed view</a>
+            </div>
+        </div>
+        <div data-role="page" id="RdetailedView">
+            <div data-role="header">
+                <h1>*blank* Repository</h1>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <!--Assign  class="ui-btn-active" to whatever link that belongs to the page that this nav bar is in-->
+                        <li><a href="./home.html" data-icon="home">Home</a></li>
+                        <li><a href="#RsumView" data-icon="back">All Repositories</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" data-theme="a"> <!--Make sure to change to a different swatch-->
+                <div>Im in detail view of repos</div>
+            </div>
+        </div>
+    </body>
+</html>

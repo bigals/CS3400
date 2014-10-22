@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>GitHub Manager Login</title>
+        <title>All Notifications</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--JQuery Library-->
@@ -19,16 +19,20 @@
     <body>
         <div data-role="page">
             <div data-role="header">
-                <h1>GitHub Manager Login</h1>
+                <h1>Notifications</h1>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <!--ADD A HELP LINK AND PAGE SOON-->
+                        <li><a href="./home.html" data-icon="home">Home</a></li>
+                        <li><a href="./repos.html" data-icon="bullets">Repos</a></li>
+                        <li><a href="./pullRqs.html" data-icon="recycle">Pull Requests</a></li>
+                        <li><a href="./issues.html" data-icon="alert">Issues</a></li>
+                        <li><a href="./notifs.html" class="ui-btn-active" data-icon="comment">Notifications</a></li>
+                    </ul>
+                </div>
             </div>
             <div data-role="main" class="ui-content center-wrapper" data-theme="a">
-                <form class="center-wrapper"> <!--Need to add method="", and action="" attributes-->
-                    <label for="loginEmail" class="ui-hidden-accessible">Email:</label>
-                    <input type="email" name="loginEmail" id="loginEmail" value="" placeholder="GitHub Email" data-clear-btn="true"/>
-                    <label for="loginPass" class="ui-hidden-accessible">Password:</label>
-                    <input type="password" name="loginPass" id="loginPass" value="" placeholder="GitHub Password" data-clear-btn="true"/>
-                    <input id="loginSubmit" type="submit" value="Submit Button" class="center-button" data-icon="check" data-iconpos="right" data-theme="a" />
-                </form>
+                <!--Enter main content of the home page here-->
             </div>
         </div>
     </body>

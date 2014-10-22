@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!--JQuery Library-->
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         
         <!--JQuery Mobile Themeing/Library-->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
-        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
         
         <!--Custom Styles/Scripts-->
         <link rel="stylesheet" href="../Styles/styles.css" />
@@ -20,6 +20,16 @@
         <div data-role="page">
             <div data-role="header">
                 <h1>GitHub Manager Home</h1>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <!--ADD A HELP LINK AND PAGE SOON-->
+                        <li><a href="./home.html" class="ui-btn-active" data-icon="home">Home</a></li>
+                        <li><a href="./repos.html" data-icon="bullets">Repos</a></li>
+                        <li><a href="./pullRqs.html" data-icon="recycle">Pull Requests</a></li>
+                        <li><a href="./issues.html" data-icon="alert">Issues</a></li>
+                        <li><a href="./notifs.html" data-icon="comment">Notifications</a></li>
+                    </ul>
+                </div>
             </div>
             <div data-role="main" class="ui-content center-wrapper" data-theme="a">
                 <!--Enter main content of the home page here-->

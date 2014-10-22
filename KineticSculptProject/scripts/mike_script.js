@@ -28,7 +28,6 @@ function drawLine(myLine, context) {
 }
 
 $(document).ready(function (){
-
     var canvs  = document.getElementById('myCanvas');
     var context = canvs.getContext('2d');
 

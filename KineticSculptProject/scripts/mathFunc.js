@@ -1,6 +1,3 @@
-//globals variables for canvas animations
-var init = {};
-
 //Global Variables for physics characteristics
 var time = 0.05;
 var g = 9.81;
@@ -79,7 +76,7 @@ function animatePendulum(circle1, circle2, line1, line2, canvas, canContext) {
     drawCircle(circle2, canContext);
 }
 
-function beginSim(canv, cxt) {
+function beginSim(canv, cxt, init) {
     var line1 = {
         name: "1",
         x0: x10,
@@ -113,8 +110,9 @@ function beginSim(canv, cxt) {
 }
 
 $(document).ready(function (){
+    var init = {};
     var canvs  = document.getElementById('pendCanvas');
     var contxt = canvs.getContext('2d');
     
-    beginSim(canvs, contxt);
+    beginSim(canvs, contxt, init);
 });

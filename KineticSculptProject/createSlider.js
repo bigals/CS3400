@@ -12,8 +12,11 @@ alert(sliderValueArray[i]);
 }
 sliderCount=0;
 };
+ $('#sliderVariables').submit(function (e) {
 
-
+  grabSliderValues();
+  });
+  
 $(document).ready(function(){
 
 

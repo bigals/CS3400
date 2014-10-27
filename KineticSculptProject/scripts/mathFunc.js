@@ -119,5 +119,9 @@ $(document).ready(function (){
         $(selOfText).val($(this).val());
     });
     
+    $('#tSteps').change(function() {
+        $('#tStepsV').val(($('#tSteps').val() / 100).toString());
+    });
+    
     beginSim(canvs, contxt, init);
 });

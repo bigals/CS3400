@@ -1,10 +1,10 @@
 //Global Variables for physics characteristics
 var time = 0.05;
 var g = 9.81;
-var length = 130;
-var mass = 30;
+var length = 120;
+var mass = 10;
 var x10 = 345;
-var y10 = 200;
+var y10 = 180;
 var mpht = 6 / (mass * Math.pow(length, 2));
 var mpot = -0.5 * (mass * Math.pow(length, 2));
 var gOvL = g / length;
@@ -113,6 +113,11 @@ $(document).ready(function (){
     var init = {};
     var canvs  = document.getElementById('pendCanvas');
     var contxt = canvs.getContext('2d');
+    
+    $('.sliders').change(function() {
+        var selOfText = "#" + $(this).attr('id') + "V";
+        $(selOfText).val($(this).val());
+    });
     
     beginSim(canvs, contxt, init);
 });

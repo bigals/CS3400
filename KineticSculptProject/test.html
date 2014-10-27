@@ -3,13 +3,58 @@
     <head>
         <meta charset="utf-8">
         <title>Double Pendulum with Momentum</title>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="styles/styles.css" />
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
         <script src="scripts/mathFunc.js"></script>
     </head>
     <body>
-        <canvas id="pendCanvas" width="700" height="600"></canvas>
+        <div id="main-wrapper">
+            <header>
+                <h1>Kinetic Sculpture Assignment</h1>
+            </header>
+            
+            <div id="content-wrapper">
+                <!--Controls-->
+                <div id="controls-wrapper">
+                    <form id="initCondForm">
+                        <h3>Initial Conditions:</h3>
+                        <label for="pot1">Initial Potential 1:</label>
+                        <input type="text" class="slyVal" readonly id="pot1V" name="po1Val" value='10' /><br />
+                        <input id="pot1" class="sliders" max="30" min="1" type="range" value="10" /><br />
+                        
+                        <label for="pot2">Initial Potential 2:</label>
+                        <input type="text" class="slyVal" readonly id="pot2V" name="po2Val" value='30'/><br />
+                        <input id="pot2" class="sliders" max="30" min="1" type="range" value="30" /><br />
+                        
+                        <label for="phet1">Initial Pheta 1:</label>
+                        <input type="text" class="slyVal" readonly id="phet1V" name="ph1Val" value='50'/><br />
+                        <input id="phet1" class="sliders" max="90" min="0" type="range" value="50" /><br />
+                        
+                        <label for="phet2">Initial Pheta 2:</label>
+                        <input type="text" class="slyVal" readonly id="phet2V" name="ph2Val" value='65'/><br />
+                        <input id="phet2" class="sliders" max="90" min="0" type="range" value="65" /><br />
+                        
+                        <label for="mass1">Mass of Rods:</label>
+                        <input type="text" class="slyVal" readonly id="mass1V" name="massVal" value='10'/><br />
+                        <input id="mass1" class="sliders" max="40" min="1" type="range" value="10" /><br />
+                        
+                        <label for="tSteps">Time Steps:</label>
+                        <input type="text" class="slyVal" readonly id="tStepsV" name="stepsVal" value='0.05'/><br />
+                        <input id="tSteps" class="sliders" max="1" min="0.01" type="range" value="0.05" /><br />
+                        
+                        <input type="submit" value="Submit" name="Submit" id="Submit" onClick="grabSliderValues();" />
+                    </form>
+                </div>
+                <!--Canvas-->
+                <div id="canvas-wrapper">
+                    <canvas id="pendCanvas" height="500px" width="700px"></canvas>
+                </div>
+            </div>
+            
+            <footer>
+                <h1>Developed By: Michael Hillenbrand, Alexander McLean, and John M. Smith</h1>
+            </footer>
+        </div>
     </body>
 </html>
 

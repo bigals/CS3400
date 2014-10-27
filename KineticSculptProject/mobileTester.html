@@ -13,7 +13,7 @@
     <body>            
         <div data-role="page" id="pageone">
             <!--Controls-->
-            <div data-role="panel" id="myPanel"> 
+            <div data-role="panel" id="myPanel" dismissible="false" swipeClose="false"> 
                 <form id="initCondForm">
                     <h3>Initial Conditions:</h3>
                     <label for="pot1">Initial Potential 1:</label>
@@ -32,19 +32,19 @@
                     <input id="mass1" class="sliders" max="40" min="1" type="range" value="10" /><br />
 
                     <label for="tSteps">Time Steps:</label>
-                    <input id="tSteps" max="100" min="1" type="range" value="5" /><br />
+                    <input id="tSteps" step="0.01" max="1.0" min="0.01" type="range" value="0.05" /><br />
 
-                    <input type="submit" value="Submit" name="Submit" id="Submit" onClick="grabSliderValues();" />
+                    <input type="button" value="Submit" name="Submit" id="btnSub" />
                 </form>
             </div>
 
             <div data-role="header">
                 <h1>Kinetic Sculpture Assignment</h1>
+                <a href="#myPanel" class="ui-btn">Toggle Initial Conditions Menu</a>
             </div>
 
             <!--Canvas-->
             <div data-role="main" class="ui-content">
-                <a href="#myPanel" class="ui-btn ui-btn-inline">Open Initial Conditions Menu</a>
                 <canvas id="pendCanvas" height="500px" width="700px"></canvas>
             </div>
 

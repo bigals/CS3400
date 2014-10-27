@@ -1,4 +1,6 @@
 //Global Variables for physics characteristics
+var canvs
+var contxt;
 var time = 0.05;
 var g = 9.81;
 var length = 120;
@@ -109,18 +111,42 @@ function beginSim(canv, cxt, init) {
     }, 10);
 }
 
+function resizeCanvas() {
+    canvs.width = window.innerWidth * 0.75;
+    canvs.height = window.innerHeight * 0.80;
+    x10 = (canvs.width * 0.5) - 8;
+    y10 = (canvs.height * 0.33) - 8;
+}
+
+function getSliderVals() {
+    poten1 = $('#pot1').val();
+    poten2 = $('#pot2').val();
+    theta1 = $('#phet1').val();
+    theta2 = $('#phet2').val();
+    mass = $('#mass1').val();
+    time = $('#tSteps').val();
+}
+
 $(document).ready(function (){
-    var init = {};
-    var canvs  = document.getElementById('pendCanvas');
-    var contxt = canvs.getContext('2d');
+    var init = {};    
+    canvs = document.getElementById('pendCanvas');
+    contxt = canvs.getContext('2d');
+    
+    resizeCanvas();
+    
+    window.addEventListener('resize', resizeCanvas, false);
     
     $('.sliders').change(function() {
         var selOfText = "#" + $(this).attr('id') + "V";
         $(selOfText).val($(this).val());
     });
     
-    $('#tSteps').change(function() {
-        $('#tStepsV').val(($('#tSteps').val() / 100).toString());
+    $('#btnSub').click(function() {
+        init = {};
+        getSliderVals();
+        canvs  = document.getElementById('pendCanvas');
+        contxt = canvs.getContext('2d');
+        beginSim(canvs, contxt, init);
     });
     
     beginSim(canvs, contxt, init);

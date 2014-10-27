@@ -4,7 +4,6 @@ function doThings(ctx) {
 	ctx.stroke();
 }
 
-
 $(document).ready(function() {
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");

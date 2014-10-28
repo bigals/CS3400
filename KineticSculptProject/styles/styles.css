@@ -1,3 +1,83 @@
 canvas { 
 	border: 1px solid black;
 }
+=======
+/* Page Layout Styles */
+#main-wrapper {
+    top:0;
+    left:0;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: #E9E9E9;
+}
+#main-wrapper header, #main-wrapper footer {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    background-color: #E9E9E9;
+    border: 1px solid #DDDDDD;
+    
+}
+#main-wrapper header {
+    top: 0;
+    font-size: 1.0em;
+}
+#main-wrapper footer {
+    bottom: 0;
+    font-size: 0.7em;
+}
+#content-wrapper {
+    top: 10%;
+    height: 79%;
+    position: relative;
+    background-color: #E9E9E9;
+}
+#controls-wrapper {
+    margin: 0;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    width: 18%;
+    display: block;
+    left: 0px;
+    background-color: #E9E9E9;
+    border-right: 1px solid #DDDDDD;
+    float: left;
+}
+#canvas-wrapper {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border: 0;
+    top: 7px;
+    height: 100%;
+    text-align: center;
+    vertical-align: bottom;
+    width: 80%;
+    float: left;
+}
+
+/* Canvas Styling */
+#pendCanvas {
+    border: 4px solid #888888;
+    border-radius: 5px;
+    background-color: #F9F9F9;
+    
+}
+
+/* Controls Styles */
+.slyVal {
+    border: 0;
+    width: 30px;
+    background-color: #E9E9E9;
+    font-weight: bold;
+}
+.sliders {
+    width: 98%;
+    margin: 5px;
+}

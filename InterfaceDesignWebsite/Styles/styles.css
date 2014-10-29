@@ -1,0 +1,209 @@
+/* General Page Layout Styling */
+body {
+    background-color: #CCCCCC;
+    margin: 0;
+    width: 100%;
+}
+
+#pageWrapper {
+    width: 95%;
+    height: 98%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-color: rgba(238, 238, 238, 0.9);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+header {
+    width: 100%;
+    height: 12%;
+    background-color: #0186ba;
+    color: #222222;    
+    z-index: 10;
+}
+header h1 {
+    margin: 0px;
+    padding-left: 5px;
+}
+
+#content {
+    height: 85%;
+    width: 100%;
+    top: 8%;
+    margin-top: 10px;
+    margin-top: 75px;
+}
+
+/* Vertical Content Panel Tabs */
+#contentNavBar {
+    width: 20%;
+    height: 100%;    
+    float: left;
+    margin: 0;
+    padding-top: 10px;
+}
+#contentFrame {
+    width: 65%;
+    height: 85%;
+    margin-top: 10px;
+    margin-bottom:10px;
+    border: 4px solid black;
+    border-radius: 6px;
+    background-color: #F4F4F4;
+    box-shadow: 6px 6px 5px #888888;
+    padding-left: 20px;
+    overflow-y: auto;
+}
+.contentBtn {
+    width: 85%;
+    height: 25px;
+    margin: 1px;
+    line-height: 25px;
+    text-align: right;
+    padding-right: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(#EEE, #888);
+}
+.contentBtn:hover {
+    background-color: #0186ba;
+    background-image: linear-gradient(#41C6FA, #0186ba);
+}
+.selected {
+    width: 92%;
+    color: #555555;
+    background-color: #00aaed;
+    background-image: linear-gradient(#6ad0f8, #00aaed);
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+/* Textarea Stylings */
+.codeBlock {
+    width: 90%;
+    height: 80px;   
+}
+.htmlContainer {
+    width: 25%;
+    height: 100%;
+    vertical-align: top;
+    display: table-cell;
+}
+.htmlCode {
+    width: 94%;
+    height: 90%;
+    margin: 5px;
+    position: relative;
+    font-size: 0.8em;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+
+}
+.jsContainer {
+    width: 25%;
+    height: 100%;
+    vertical-align: top;
+    display: table-cell;
+}
+.jsCode {
+    width: 94%;
+    height: 90%;
+    margin: 5px;
+    vertical-align: top;
+    font-size: 0.8em;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.longBlock {
+    width: 80%;
+    height: 90%;
+    font-size: 0.8em;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.shortBlock {
+    width: 20%;
+    height: 90%;
+    font-size: 0.8em;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+}
+/* JavaScript Examples Styling */
+#exampleArea {
+    width: 30%;
+    height: 100%;
+    display: table-cell;
+}
+#dragToDiv {
+    width:90%;
+    height:70px;
+    padding:10px;
+    border:1px solid #aaaaaa;
+}
+#ldedFile {
+    width: 75%; 
+    height: 100%;
+}
+
+//for dropdown menu example
+#sddm
+{   margin: 0;
+    padding: 0;
+    z-index: 30}
+
+#sddm li
+{   margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    font: bold 11px arial}
+
+#sddm li a
+{   display: block;
+    margin: 0 1px 0 0;
+    padding: 4px 10px;
+    width: 60px;
+    background: #5970B2;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none}
+
+#sddm li a:hover
+{   background: #49A3FF}
+
+#sddm div
+{   position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #EAEBD8;
+    border: 1px solid #5970B2}
+
+    #sddm div a
+    {   position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        background: #EAEBD8;
+        color: #2875DE;
+        font: 11px arial}
+
+    #sddm div a:hover
+    {   background: #49A3FF;
+        color: #FFF}
+
+.extraPersonTemplate {
+    display:none;
+}

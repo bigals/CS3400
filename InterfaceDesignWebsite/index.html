@@ -1,17 +1,27 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <meta charset="UTF-8">
+        <title>CS3400 JavaScript Website: Home</title>
+        
+        <!--Custom Style Sheets-->
+        <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" href="Styles/navBar.css" />
+        
+        <!--JQuery Library-->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        
+        <!--JQuery UI Library-->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+        
+        <!--Custom Scripts-->
         <script src="Scripts/scripts.js"></script>
-        <link rel="stylesheet" href="styles/styles.css" />
     </head>
     <body>
-        <div data-role="page" id="pageone">
-          <div data-role="header">
-            <h1>Good Interface Design</h1>
+        <div id="pageWrapper">
+            <header>
+                <h1>Good User Interface Design Website</h1>
                 <nav id="navBar">
                     <label for="show-menu" class="show-menu">Show Menu</label>
                     <input type="checkbox" id="show-menu" role="button">
@@ -21,90 +31,71 @@
                             <a href="index.html?tOpVal=1">Home</a>
                             <ul class="hidden">
                                 <li><a href="index.html?tOpVal=1">Welcome</a></li>
-                                <li><a href="index.html?tOpVal=2">Security Issues</a></li>
-                                <li><a href="index.html?tOpVal=3">Standards/Browsers</a></li>
-                                <li><a href="index.html?tOpVal=4">Embedded Browsers</a></li>
+                                <li><a href="index.html?tOpVal=2">Good Example</a></li>
                             </ul>
                         </li>
                         
-                        <!--JavaScript Best Practices Menu -->
+                        <!--Font Menu -->
                         <li>
-                            <a href="bestPractices.html?tOpVal=1">Best Practices</a>
+                            <a href="font.html?tOpVal=1">Font</a>
                             <ul class="hidden">
-                                <li><a href="bestPractices.html?tOpVal=1">Paradigms to Use</a></li>
-                                <li><a href="bestPractices.html?tOpVal=2">Paradigms to Avoid</a></li>
-                                <li><a href="bestPractices.html?tOpVal=3">Superior Paradigms</a></li>
-                                <li><a href="bestPractices.html?tOpVal=4">Naming Conventions</a></li>
-                                <li><a href="bestPractices.html?tOpVal=5">Format Conventions</a></li>
+                                <li><a href="font.html?tOpVal=1">Art</a></li>	
+                                <li><a href="font.html?tOpVal=1">Cross-Platform Issues</a></li>
+                                <li><a href="font.html?tOpVal=2">Readibility</a></li>
+                                <li><a href="font.html?tOpVal=3">Size</a></li>
+                                <li><a href="font.html?tOpVal=3">Scaling</a></li>
                             </ul>
                         </li>
                         
-                         <!--JavScript Unit Testing Menu -->
+                         <!--Color Menu -->
                         <li>
-                            <a href="jsTesting.html?tOpVal=1">Unit Testing</a>
+                            <a href="color.html?tOpVal=1">Color</a>
                             <ul class="hidden">
-                                <li><a href="jsTesting.html?tOpVal=1">What is Unit Testing</a></li>
-                                <li><a href="jsTesting.html?tOpVal=2">The QUnit Solution</a></li>
-                                <li><a href="jsTesting.html?tOpVal=3">Asserting Results</a></li>
-                                <li><a href="jsTesting.html?tOpVal=4">Synchronous Callbacks</a></li>
-                                <li><a href="jsTesting.html?tOpVal=5">Asynchronous Callbacks</a></li>
-                                <li><a href="jsTesting.html?tOpVal=6">Testing User Actions</a></li>
-                                <li><a href="jsTesting.html?tOpVal=7">Keeping Tests Atomic</a></li>
-                                <li><a href="jsTesting.html?tOpVal=8">Grouping Tests</a></li>
-                                <li><a href="jsTesting.html?tOpVal=9">Custom Assertions</a></li>
-                                <li><a href="jsTesting.html?tOpVal=10">Efficient Development</a></li>
+                                <li><a href="color.html?tOpVal=1">Art</a></li>
+                                <li><a href="color.html?tOpVal=2">Color Wheel</a></li>
+                                <li><a href="color.html?tOpVal=2">Reccommended Pallets</a></li>
+                                <li><a href="color.html?tOpVal=2">Cross Platform Issues</a></li>
                             </ul>
                         </li>
-                        <!--JavaScript Debugging Menu -->
+                        <!--Sound Menu -->
                         <li>
-                            <a href="jsDebugging.html?tOpVal=1">Debugging & IDEs</a>
+                            <a href="sound.html?tOpVal=1">Sound</a>
                             <ul class="hidden">
-                                <li><a href="jsDebugging.html?tOpVal=1">Debugging Tools</a></li>
-                                <li><a href="jsDebugging.html?tOpVal=2">JavaScript IDEs</a></li>
+                                <li><a href="sound.html?tOpVal=1">Good Example</a></li>
+                                <li><a href="sound.html?tOpVal=2">Bad Example</a></li>
                             </ul>
                         </li>
-                        <!--JavaScript Tutorials/Examples Menu -->
-                        <li>
-                            <a href="examples.html?tOpVal=1">JS Tutorials/Examples</a>
-                            <ul class="hidden">
-                                <li><a href="examples.html?tOpVal=1">Various JS Examples</a></li>
-                                <li><a href="examples.html?tOpVal=2">Local File Access</a></li>
-                                <li><a href="examples.html?tOpVal=3">Basic Canvas</a></li>
-                                <li><a href="examples.html?tOpVal=4">KineticJS Canvas</a></li>
-                                <li><a href="examples.html?tOpVal=5">Drag & Drop</a></li>
-                                <li><a href="examples.html?tOpVal=6">WebGL</a></li>
-                            </ul>
-                        </li>
-                        <!--JQuery Tutorials/Examples Menu -->
-                        <li>
-                            <a href="jqueryBestPract.html?tOpVal=1">JQuery</a>
-                            <ul class="hidden">
-                                <li><a href="jqueryBestPract.html?tOpVal=1">Intro to JQuery</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=2">Selectors</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=3">DOM Manipulation</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=4">Events</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=5">Ajax</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=6">Effects and Animations</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=7">Plugins</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=8">Chaining</a></li>
-                                <li><a href="jqueryBestPract.html?tOpVal=9">Miscellaneous</a></li>
-                            </ul>
-                        </li>
-                        <!--JavaScript Assignment Menu -->
-                        <li>
-                            <a href="assignment.html?tOpVal=1">Simple Assignment</a>
-                        </li>
-                    </ul>                                   
+                    </ul>									
                 </nav>
-          </div>
+            </header>
+            <div id="content">
 
-          <div data-role="main" class="ui-content">
-            <p>My Content..</p>
-          </div>
+                <div id="contentNavBar">
+                    <div id="cNav-1" class="contentBtn">Welcome</div>
+                    <div id="cNav-4" class="contentBtn">Accessibility</div>
+                    <div id="cNav-4" class="contentBtn">Mobile Devices</div>
+                    <div id="cNav-2" class="contentBtn">Good Example</div>
+                    <div id="cNav-3" class="contentBtn">Bad Example</div>
+                </div>
 
-          <div data-role="footer">
-            
-          </div>
-        </div> 
+                <div id="contentFrame">
+                    <div id="content-1" class="contentPanels">
+                        <h2>Welcome</h2>
+                        <p>
+                            This site contains all of the information compiled by Michael Hillenbrand, Alexander McLean, and John M. Smith, on good design practices for creating user interfaces.
+                        </p>
+                    </div>
+                    <div id="content-2" class="contentPanels">
+                        
+                    </div>  
+                    <div id="content-3" class="contentPanels">
+                        
+                    </div>
+                    <div id="content-4" class="contentPanels">
+
+                    </div>
+                </div>               
+            </div>
+        </div>
     </body>
 </html>

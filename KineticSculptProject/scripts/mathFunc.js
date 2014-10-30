@@ -166,15 +166,15 @@ function beginSim(canv, cxt) {
     }, 10);
 }
 
-function resizeCanvas(canvs, context) {
+function resizeCanvas(theStage) {
     var canWidth = window.innerWidth * 0.86;
     var canHeight = window.innerHeight * 0.76;
     
-    canvs.width = canWidth;
-    canvs.height = canHeight;
+    theStage.width = canWidth;
+    theStage.height = canHeight;
     
-    x10 = parseInt(((canvs.width * 0.5) - 6));
-    y10 = parseInt(((canvs.height * 0.33) - 6));
+    x10 = parseInt(((theStage.width * 0.5) - 6));
+    y10 = parseInt(((theStage.height * 0.33) - 6));
     
     return ((Math.min(canWidth, canHeight) / 4) - 6);
 }
@@ -210,16 +210,20 @@ function submitHandler(can, cxt, l) {
 }
 
 $(document).ready(function (){
-    var canvs  = document.getElementById('pendCanvas');
-    var contxt = canvs.getContext('2d');
+    var pendStage  = new Kinetic.Stage({
+        container: 'kinetic-container',
+        width: (window.innerWidth * 0.86),
+        height: window.innerHeight * 0.76
+    });
+    var pendLayer = new Kinetic.Layer();
     var lngth = 0;
     
     $('#myPanel').on('panelbeforeopen', function(event, ui) {
-        drawInitialBars(canvs, contxt);
+        drawInitialBars(pendStage, pendLayer);
     });
     
     $( ".sliders" ).on('slidestop', function(event) {
-        drawInitialBars(canvs, contxt);
+        drawInitialBars(pendStage, pendLayer);
     });
     
     $('#btnSub').click(function() {
@@ -230,7 +234,7 @@ $(document).ready(function (){
         submitHandler(canvs, contxt, lngth);
     });
     
-    lngth = resizeCanvas(canvs, contxt);
+    lngth = resizeCanvas(pendStage);
     getSliderVals(lngth);    
     beginSim(canvs, contxt, init);
 });

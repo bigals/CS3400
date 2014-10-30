@@ -16,16 +16,17 @@
         <link rel="stylesheet" href="../Styles/styles.css" />
         <script src="../Scripts/script.js"></script>
     </head>
-    <body>
-        <div data-role="page" id="RsumView">
-            <div data-role="header">
+    <body class="ui-mobile-viewport ui-overlay-a">
+        <div data-role="page" id="RsumView" class="ui-page ui-page-theme-b ui-page-active" data-theme="b">
+            <div data-role="header" data-theme="b">
                 <h1>All Repositories</h1>
+                <a href="./help.html" class="ui-btn-right ui-btn ui-icon-info ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Help</a>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
                         <!--Assign  class="ui-btn-active" to whatever link that belongs to the page that this nav bar is in-->
                         <!--ADD A HELP LINK AND PAGE SOON-->
                         <li><a href="./home.html" data-icon="home" rel="external">Home</a></li>
-                        <li><a href="#"  class="ui-btn-active" data-icon="bullets" rel="external">Repos</a></li>
+                        <li><a href="./repos.html"  class="ui-btn-active ui-state-persist" data-icon="bullets" rel="external">Repos</a></li>
                         <li><a href="./pullRqs.html" data-icon="recycle" rel="external">Pull Requests</a></li>
                         <li><a href="./issues.html" data-icon="alert" rel="external">Issues</a></li>
                         <li><a href="./notifs.html" data-icon="comment" rel="external">Notifications</a></li>
@@ -33,19 +34,19 @@
                     </ul>
                 </div>
             </div>
-            <div data-role="main" class="ui-content" data-theme="a"> <!--Make sure to change to a different swatch-->
+            <div data-role="main"  class="ui-content" data-theme="b"> <!--Make sure to change to a different swatch-->
                 <div>Im in sum view of repos</div>
                 <a href="#RdetailedView">Link to detailed view</a>
             </div>
         </div>
-        <div data-role="page" id="RdetailedView">
+        <div data-role="page" id="RdetailedView" class="ui-page ui-page-theme-b" data-theme="b">
             <div data-role="header">
                 <h1>*blank* Repository</h1>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
                         <!--Assign  class="ui-btn-active" to whatever link that belongs to the page that this nav bar is in-->
                         <li><a href="./home.html" data-icon="home">Home</a></li>
-                        <li><a href="#RsumView" data-icon="back">All Repositories</a></li>
+                        <li><a href="#RsumView" data-icon="back" data-direction="reverse">All Repositories</a></li>
                     </ul>
                 </div>
             </div>

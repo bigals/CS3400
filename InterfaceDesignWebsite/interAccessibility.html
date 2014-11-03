@@ -10,6 +10,7 @@
         <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
         <script src="Scripts/scripts.js"></script>
         <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     </head>
     <body>
         <div data-role="page" id="pageone">
@@ -17,23 +18,47 @@
                 <h1>Interface Accessibility</h1>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
-                        <li><a href="./index.html" rel="external">Home</a></li>
-                        <li><a href="./interExamples.html" rel="external">Interface Examples</a></li>
-                        <li><a href="./interFonts.html" rel="external">Fonts</a></li>
-                        <li><a href="./interColors.html" rel="external">Colors</a></li>
-                        <li><a href="./interSound.html" rel="external">Sound</a></li>
-                        <li><a href="#" class="ui-btn-active" rel="external">Accessibility</a></li>
-                        <li><a href="./interMobileDev.html" rel="external">Mobile Interfaces</a></li>
+                        <li class="myTab"><a href="index.html">Home</a></li>
+                        <li class="myTab"><a href="interExamples.html">Interface Examples</a></li>
+                        <li class="myTab"><a href="interFonts.html">Fonts</a></li>
+                        <li class="myTab"><a href="interColors.html">Colors</a></li>
+                        <li class="myTab"><a href="interSound.html">Sound</a></li>
+                        <li class="myTab"><a href="#" class="ui-btn-active">Accessibility</a></li>
+                        <li class="myTab"><a href="interMobileDev.html">Mobile Interfaces</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="main" class="ui-content">
-                <p>My Content..</p>
+                The W3C Web Accessibility Initiative (WAI) lays out international standards of inclusive design for a broad range of web users and people who use the web.
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <dl>
+                <dt><h3>Elderly Users</h3></dt>
+                <dd><p>As people age their senses decline. They will likely have problems with vision, physical ability (dexterity and fine motor control), hearing, and cognitive ability. Audio </p></dd>
+                <dd><strong>Audio:</strong> Elderly people often have trouble hearing low volumes and high pitches. This should be taken into consideration when choosing audio for your interface.</dd>
+                <dd><strong>Vision:</strong> Older users will usually have a tougher time identifying contrast and their perception of colors will change. Distinct colors can be used to make it easier for people to distinguish between elements on the page.</dd>
+                <dd><strong>Motor Skills:</strong> Elderly users can have trouble using a mouse or keyboard. They often will have difficulty clicking small areas. It is important to consider size and motor skills if older people will be using the interface.</dd>
+                <dd><strong>Cognitive Decline: </strong>Navigation, comprehension, and task completion can be difficult for older users with declining cognitive ability. These users may have short term memory problems, difficulty concentrating, and may become distracted easily. The developer should be sure to keep the interface simple and consistent to help people with cognitive deficiencies.</dd>
+                </dl>
+
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <dl>
+                <dt><h3>People With Disabilities</h3></dt>
+                <dd><p>User Interfaces must be able to cater to people who do not have the same sensory abilities as the average human. We will discuss a few technologies that help people with disabilities use interfaces. </p></dd>
+                <dd><strong>Audio Descriptions:</strong> narrations that describe important visual details in a video. These narrations can be during natural pauses in the audio, or in separate audio files or audio tracks in multimedia.</dd>
+                <dd><strong>Auditory, tactile, and visual notifications:</strong> prompting or alerting the user in different ways such as by blinking or displaying visual dialogs, by using sound, or by vibration.</dd>
+                <dd><strong>Captions:</strong> text with verbatim recording of any speech and with descriptions of important auditory information that appears simultaneously with the audio (including audio that accompanies video in multimedia). For real-time captioning typically professional CART writers are necessary.</dd>
+                <dd><strong>Text-to-speech:</strong> automatically converts text into a synthesized voice.</dd>
+                <dd><strong>Transcripts: </strong>text manuscripts containing the correct sequence of verbatim recording of any speech, and descriptions of important auditory or visual information.</dd>
+                </dl>
             </div>
 
             <div data-role="footer">
-                <h3>Designed By: Michael Hillenbrand, Alexander McLean, John M. Smith</h3>
+                <h3>Designed By: Michael Hillenbrand, Alexander McLean, John M. Smith</h3><p align="center"><small><a href="W3C.org/WAI/">Some content on this page taken directly from the W3C Web Accessibility page</a></small></p>
             </div>
         </div> 
     </body>

@@ -3,13 +3,27 @@ body {
     background-color: #CCCCCC;
     margin: 0;
     width: 100%;
+    font-family: Ubuntu, sans-serif;
 }
+#leftEx {
+    float: left;
+    width: 45%;
+    display: table-cell;
+}
+#rightEx {
+    float: right;
+    width: 45%;
+    display: table-cell;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
 
 #pageWrapper {
     width: 95%;
     height: 98%;
     margin: 0 auto;
-    font-family: sans-serif;
+    font-family: Ubuntu, sans-serif;
     background-color: rgba(238, 238, 238, 0.9);
     border: 3px solid black;
     border-radius: 5px;

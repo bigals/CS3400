@@ -15,19 +15,21 @@
         <!--Custom Styles/Scripts-->
         <link rel="stylesheet" href="../Styles/styles.css" />
         <script src="../Scripts/script.js"></script>
+        <script src="../Scripts/purl.js"></script>
     </head>
-    <body class="ui-body ui-body-a">
-        <div data-role="page">
-            <div data-role="header">
-                <h1>GitHub Manager Login</h1>
+    <body class="ui-mobile-viewport ui-overlay-b">
+        <div data-role="page" class="ui-page ui-page-theme-b ui-page-active" data-theme="b">
+            <div data-role="header" class="ui-header ui-bar-b" role="banner">
+                <h1 class="ui-title" role="heading" aria-level="1">GitHub Manager Login</h1>
             </div>
-            <div data-role="main" class="ui-content center-wrapper" data-theme="a">
-                <form class="center-wrapper"> <!--Need to add method="", and action="" attributes-->
+            <div data-role="main"  class="ui-content">
+                <form class="center-wrapper" data-theme="b"> <!--Need to add method="", and action="" attributes-->
                     <label for="loginUName" class="ui-hidden-accessible">UserName:</label>
-                    <input type="text" name="loginEmail" id="loginEmail" value="" placeholder="GitHub Username" data-clear-btn="true"/>
+                    <input type="text" name="loginUName" id="loginUName" value="" placeholder="GitHub Username" data-clear-btn="true"/>
                     <label for="loginPass" class="ui-hidden-accessible">Password:</label>
                     <input type="password" name="loginPass" id="loginPass" value="" placeholder="GitHub Password" data-clear-btn="true"/>
-                    <a id="loginSubmit" href="./home.html" data-role="button" data-icon="check" data-iconpos="right">Login</a>
+                    <input id="loginSubmit" type="submit" value="Login" onclick="onLoginSubmit()" />
+                    <!--<a id="loginSubmit" href="./home.html" data-role="button" data-icon="check" data-iconpos="right">Login</a>-->
                 </form>
             </div>
         </div>

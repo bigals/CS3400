@@ -7,17 +7,26 @@ body {
 }
 #leftEx {
     float: left;
-    width: 45%;
+    width: 49%;
     display: table-cell;
+    border: 2px solid;
+    border-radius: 25px;
 }
 #rightEx {
     float: right;
-    width: 45%;
+    width: 49%;
     display: table-cell;
     border: 2px solid;
     border-radius: 25px;
 }
 
+#image {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
+}
 
 #pageWrapper {
     width: 95%;
@@ -220,4 +229,9 @@ header h1 {
 
 .extraPersonTemplate {
     display:none;
+}
+
+.myTab {
+    width: 14.2% !important;
+    clear: none !important;
 }

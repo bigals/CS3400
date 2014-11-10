@@ -58,6 +58,11 @@ header h1 {
     margin-top: 75px;
 }
 
+.accordion {
+    padding-bottom: 0px;
+    padding-left: 2%;
+}
+
 /* Vertical Content Panel Tabs */
 #contentNavBar {
     width: 20%;

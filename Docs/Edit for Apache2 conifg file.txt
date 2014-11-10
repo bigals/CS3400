@@ -1,0 +1,53 @@
+LoadModule passenger_module /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53/buildout/apache2/mod_passenger.so
+<IfModule mod_passeneger.c>
+	PassengerRoot /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53
+	PassengerDefaultRuby /usr/local/bin/ruby
+</IfModule>
+
+
+
+--------------------------------------------
+Almost there!
+
+Please edit your Apache configuration file, and add these lines:
+
+   LoadModule passenger_module /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53/buildout/apache2/mod_passenger.so
+   <IfModule mod_passenger.c>
+     PassengerRoot /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53
+     PassengerDefaultRuby /usr/local/bin/ruby
+   </IfModule>
+
+After you restart Apache, you are ready to deploy any number of web
+applications on Apache, with a minimum amount of configuration!
+
+Press ENTER to continue.
+ LoadModule passenger_module /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53/buildout/apache2/mod_passenger.so
+   <IfModule mod_passenger.c>
+     PassengerRoot /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53
+
+--------------------------------------------
+
+Deploying a web application: an example
+
+Suppose you have a web application in /somewhere. Add a virtual host to your
+Apache configuration file and set its DocumentRoot to /somewhere/public:
+
+   <VirtualHost *:80>
+      ServerName www.yourhost.com
+      # !!! Be sure to point DocumentRoot to 'public'!
+      DocumentRoot /somewhere/public
+      <Directory /somewhere/public>
+         # This relaxes Apache security settings.
+         AllowOverride all
+         # MultiViews must be turned off.
+         Options -MultiViews
+         # Uncomment this if you're on Apache >= 2.4:
+         #Require all granted
+      </Directory>
+   </VirtualHost>
+
+And that's it! You may also want to check the Users Guide for security and
+optimization tips, troubleshooting and other useful information:
+
+  /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53/doc/Users guide Apache.html
+  https://www.phusionpassenger.com/documentation/Users%20guide%20Apache.html

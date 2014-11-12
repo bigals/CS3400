@@ -10,6 +10,7 @@
         <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
         <script src="Scripts/scripts.js"></script>
         <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     </head>
     <body>
         <div data-role="page" id="pageone">
@@ -17,19 +18,39 @@
                 <h1>Interface Colors</h1>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="interExamples.html">Interface Examples</a></li>
-                        <li><a href="interFonts.html">Fonts</a></li>
-                        <li><a href="#" class="ui-btn-active">Colors</a></li>
-                        <li><a href="interSound.html">Sound</a></li>
-                        <li><a href="interAccessibility.html">Accessibility</a></li>
-                        <li><a href="interMobileDev.html">Mobile Interfaces</a></li>
+                        <li class="myTab"><a href="index.html">Home</a></li>
+                        <li class="myTab"><a href="interExamples.html">Interface Examples</a></li>
+                        <li class="myTab"><a href="interFonts.html">Fonts</a></li>
+                        <li class="myTab"><a href="#" class="ui-btn-active">Colors</a></li>
+                        <li class="myTab"><a href="interSound.html">Sound</a></li>
+                        <li class="myTab"><a href="interAccessibility.html">Accessibility</a></li>
+                        <li class="myTab"><a href="interMobileDev.html">Mobile Interfaces</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="main" class="ui-content">
-                <p>My Content..</p>
+                <dl><dt><h3>Art</h3></dt>
+                <dd> </dd>
+                </dl>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <h3>Color Wheel</h3>
+                <img src="Images/color_wheel.gif">
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <dl><dt><h3>Recommended Paletts</h3></dt>
+                <dd>A color palette is a set of colors that work together to style an interface. The colors should work together nicely to be asthetically pleasing and help the user differentiate between different elements of the page.</dd>
+                <dd><a href="paletton.com">paletton.com</a> offers a free color palette creator. It lets you choose between monocrome, adjacent colors(3-colors), triad(3-colors), and tetrad(4-colors)</dd>
+                </dl>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <dl><dt><h3>Cross Platform Issues</h3></dt>
+                <dd> </dd>
+                </dl>
             </div>
 
             <div data-role="footer">

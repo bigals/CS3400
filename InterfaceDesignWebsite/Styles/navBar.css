@@ -123,6 +123,7 @@ body {
     margin: 1px;
     height: 100%;
     width: 100%;
+    font-family: Ubuntu, sans-serif;
 }
 #content-wrapper {
     position: absolute;
@@ -172,7 +173,7 @@ li a {
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Ubuntu, sans-serif;
 	color: #fff;
 	background-color: #111;
     background-image: linear-gradient(#444, #111);
@@ -236,7 +237,7 @@ ul li a:hover + .hidden, .hidden:hover {
 }
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Ubuntu, sans-serif;
 	text-decoration: none;
 	color: #FFFFFF;
 	background: #888888;
@@ -276,5 +277,4 @@ input[type=checkbox]:checked ~ #menu{
 	ul li, li a {
 		width: 100%;
 	}
-    
 }

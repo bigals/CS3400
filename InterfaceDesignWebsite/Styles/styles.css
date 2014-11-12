@@ -3,13 +3,36 @@ body {
     background-color: #CCCCCC;
     margin: 0;
     width: 100%;
+    font-family: Ubuntu, sans-serif;
+}
+#leftEx {
+    float: left;
+    width: 49%;
+    display: table-cell;
+    border: 2px solid;
+    border-radius: 25px;
+}
+#rightEx {
+    float: right;
+    width: 49%;
+    display: table-cell;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#image {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
 }
 
 #pageWrapper {
     width: 95%;
     height: 98%;
     margin: 0 auto;
-    font-family: sans-serif;
+    font-family: Ubuntu, sans-serif;
     background-color: rgba(238, 238, 238, 0.9);
     border: 3px solid black;
     border-radius: 5px;
@@ -206,4 +229,9 @@ header h1 {
 
 .extraPersonTemplate {
     display:none;
+}
+
+.myTab {
+    width: 14.2% !important;
+    clear: none !important;
 }

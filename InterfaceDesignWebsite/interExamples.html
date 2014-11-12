@@ -10,6 +10,7 @@
         <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
         <script src="Scripts/scripts.js"></script>
         <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     </head>
     <body>
         <div data-role="page" id="pageone">
@@ -17,19 +18,33 @@
                 <h1>Interface Examples</h1>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#" class="ui-btn-active">Interface Examples</a></li>
-                        <li><a href="interFonts.html">Fonts</a></li>
-                        <li><a href="interColors.html">Colors</a></li>
-                        <li><a href="interSound.html">Sound</a></li>
-                        <li><a href="interAccessibility.html">Accessibility</a></li>
-                        <li><a href="interMobileDev.html">Mobile Interfaces</a></li>
+                        <li class="myTab"><a href="index.html">Home</a></li>
+                        <li class="myTab"><a href="#" class="ui-btn-active">Interface Examples</a></li>
+                        <li class="myTab"><a href="interFonts.html">Fonts</a></li>
+                        <li class="myTab"><a href="interColors.html">Colors</a></li>
+                        <li class="myTab"><a href="interSound.html">Sound</a></li>
+                        <li class="myTab"><a href="interAccessibility.html">Accessibility</a></li>
+                        <li class="myTab"><a href="interMobileDev.html">Mobile Interfaces</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="main" class="ui-content">
-                <p>My Content..</p>
+            <div>
+                <div id="leftEx">
+                <h3 align="center">Good Interface Example</h3>
+                <a href="http://www.amazon.com">
+                    <img id="image" src="Images/amazon.jpg" style="width:90%;">
+                </a>
+                </div>
+                
+                <div id="rightEx">
+                <h3 align="center">Bad Interface Example</h3>
+                <a href="http://www.goetzskyvu.com/GOETZ_THEATRE/GOETZ_SHOW_&_TIMES.html">
+                    <img id="image" src="Images/bad_interface.jpg" style="width:90%;">
+                </a>
+                </div>
+            </div>
             </div>
 
             <div data-role="footer">

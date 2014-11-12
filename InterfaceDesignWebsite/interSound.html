@@ -10,6 +10,7 @@
         <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
         <script src="Scripts/scripts.js"></script>
         <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     </head>
     <body>
         <div data-role="page" id="pageone">
@@ -17,20 +18,46 @@
                 <h1>Interface Sound</h1>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="interExamples.html">Interface Examples</a></li>
-                        <li><a href="interFonts.html">Fonts</a></li>
-                        <li><a href="interColors.html">Colors</a></li>
-                        <li><a href="#" class="ui-btn-active">Sound</a></li>
-                        <li><a href="interAccessibility.html">Accessibility</a></li>
-                        <li><a href="interMobileDev.html">Mobile Interfaces</a></li>
+                        <li class="myTab"><a href="index.html">Home</a></li>
+                        <li class="myTab"><a href="interExamples.html">Interface Examples</a></li>
+                        <li class="myTab"><a href="interFonts.html">Fonts</a></li>
+                        <li class="myTab"><a href="interColors.html">Colors</a></li>
+                        <li class="myTab"><a href="#" class="ui-btn-active">Sound</a></li>
+                        <li class="myTab"><a href="interAccessibility.html">Accessibility</a></li>
+                        <li class="myTab"><a href="interMobileDev.html">Mobile Interfaces</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="main" class="ui-content">
-                <p>My Content..</p>
+                <dl>
+                <dt><h3>Art</h3></dt>
+                <dd><p>An interface designer must be very careful when it comes to adding sound. It is very easy to annoy the user with sounds. Those of us who remember mySpace can attest to the fact that a loud, autoplayed sound on a page is very annoying and distracting. Sounds can be used sparingly when necessary to add character to an interface.</p></dd>
+
+                </dl>
             </div>
+
+            <div data-role="main" class="ui-content">
+                <dl>
+                <dt><h3>Volume</h3></dt>
+                <dd><p>Volume can be changed in HTML using the DOM volume property. First you must assign the element to a variable using the .getElementById() function. Next you use yourVariable.volume = 0.2. This example would set the volume to 20% (1.0 is the default, max volume).</p></dd>
+                </dl>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <dl>
+                <dt><h3>Cross Platform Compatibility</h3></dt>
+                <dd><p>Not all sound formats are supported by all of the major browsers. This issues can be handled by layering the same audio file in different formats within one &ltaudio&gt tag. This way, if the browser does not support the first format listed, it will automatically try the next file format listed.</p></dd>
+                </dl>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <dl>
+                <dt><h3>Accessibility</h3></dt>
+                <dd> </dd>
+                </dl>
+            </div>
+
 
             <div data-role="footer">
                 <h3>Designed By: Michael Hillenbrand, Alexander McLean, John M. Smith</h3>

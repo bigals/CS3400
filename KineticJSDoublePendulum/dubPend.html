@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Double Pendulum with Momentum</title>
+        
+        <!--Custom CSS Style Sheet-->
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <!--JQuery Mobile CSS Style Sheet-->
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+        
+        <!--JQuery/JQuery Mobile Libraries-->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        
+        <!--KineticJS Library-->
+        <script src="./scripts/kinetic.js"></script>
+        
+        <!--JQuery Flot Graphing Plugin-->
+        <script src="./scripts/jquery.flot.js"></script>
+        <script src="./scripts/jquery.flot.time.js"></script>
+        
+        <!--Double Pendulum Script-->
+        <script src="./scripts/mathFunc.js"></script>
+    </head>
+    <body>            
+        <div data-role="page" id="pageone">
+            <!--Controls-->
+            <div data-role="panel" id="myPanel" data-display="overlay"> 
+                <form id="initCondForm">
+                    <h3>Initial Conditions:</h3>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+    	                <legend>Display Legs:</legend>
+                        <input type="radio" name="legDisplay" id="radio-choice-11" value="choice-1" data-mini="true" />
+                        <label for="radio-choice-11" data-mini="true" >Leg 1</label>
+
+                        <input type="radio" name="legDisplay" id="radio-choice-12" value="choice-2" data-mini="true" />
+                        <label for="radio-choice-12" data-mini="true" >Leg 2</label>
+
+                        <input type="radio" name="legDisplay" id="radio-choice-13" value="choice-3" checked="checked" data-mini="true" />
+                        <label for="radio-choice-13" data-mini="true" >Both</label>
+                    </fieldset>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+    	                <legend>Show Paths of Travel:</legend>
+                        <input type="radio" name="pathDisplay" id="radio-choice-21" value="choice-1" data-mini="true" />
+                        <label for="radio-choice-21" data-mini="true" >Leg 1</label>
+
+                        <input type="radio" name="pathDisplay" id="radio-choice-22" value="choice-2" data-mini="true" />
+                        <label for="radio-choice-22" data-mini="true" >Leg 2</label>
+                        
+                        <input type="radio" name="pathDisplay" id="radio-choice-23" value="choice-3" data-mini="true" />
+                        <label for="radio-choice-23" data-mini="true" >Both</label>
+
+                        <input type="radio" name="pathDisplay" id="radio-choice-24" value="choice-4" checked="checked" data-mini="true" />
+                        <label for="radio-choice-24" data-mini="true" >None</label>
+                    </fieldset>                    
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+    	                <legend>Graph Leg Energies:</legend>
+                        <input type="radio" name="graphDisplay" id="radio-choice-31" value="choice-1" data-mini="true" />
+                        <label for="radio-choice-31" data-mini="true" >Leg 1</label>
+
+                        <input type="radio" name="graphDisplay" id="radio-choice-32" value="choice-2" data-mini="true" />
+                        <label for="radio-choice-32" data-mini="true" >Leg 2</label>
+                        
+                        <input type="radio" name="graphDisplay" id="radio-choice-33" value="choice-3" data-mini="true" />
+                        <label for="radio-choice-33" data-mini="true" >Both</label>
+
+                        <input type="radio" name="graphDisplay" id="radio-choice-34" value="choice-4" checked="checked" data-mini="true" />
+                        <label for="radio-choice-34" data-mini="true" >None</label>
+                    </fieldset>                    
+                    <label for="pot1" data-mini="true" >Initial Potential 1:</label>
+                    <input id="pot1" class="sliders" max="30" min="1" type="range" value="10" data-mini="true" /><br />
+
+                    <label for="pot2" data-mini="true" >Initial Potential 2:</label>
+                    <input id="pot2" class="sliders" max="30" min="1" type="range" value="30" data-mini="true" /><br />
+
+                    <label for="phet1" data-mini="true" >Initial Pheta 1:</label>
+                    <input id="phet1" class="sliders" max="90" min="0" type="range" value="50" data-mini="true" /><br />
+
+                    <label for="phet2" data-mini="true" >Initial Pheta 2:</label>
+                    <input id="phet2" class="sliders" max="90" min="0" type="range" value="65" data-mini="true" /><br />
+
+                    <label for="mass1" data-mini="true" >Mass of Rods:</label>
+                    <input id="mass1" class="sliders" max="40" min="1" type="range" value="10" data-mini="true" /><br />
+
+                    <label for="tSteps" data-mini="true" >Time Steps:</label>
+                    <input id="tSteps" step="0.01" max="1.0" min="0.01" type="range" value="0.05" data-mini="true" /><br />
+                    
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+    	                <legend>Output Data To:</legend>
+                        <input type="radio" name="outputData" id="radio-choice-41" value="choice-1" data-mini="true" />
+                        <label for="radio-choice-41" data-mini="true" >Browser</label>
+
+                        <input type="radio" name="outputData" id="radio-choice-42" value="choice-2" data-mini="true" />
+                        <label for="radio-choice-42" data-mini="true" >File</label>
+
+                        <input type="radio" name="outputData" id="radio-choice-43" value="choice-3" data-mini="true" />
+                        <label for="radio-choice-43" data-mini="true" >Both</label>
+
+                        <input type="radio" name="outputData" id="radio-choice-44" value="choice-4" checked="checked" data-mini="true" />
+                        <label for="radio-choice-44" data-mini="true" >None</label>
+                    </fieldset>
+                    
+                    <input type="button" value="Submit" name="Submit" id="btnSub" data-mini="true" />
+                </form>
+            </div>
+
+            <div data-role="header">                
+                <h1>Kinetic Sculpture Assignment</h1>
+                <a href="#myPanel" data-corners="true" class="ui-btn ui-icon-gear ui-btn-icon-notext" title="Set The Initial Conditions"> </a>
+            </div>
+
+            <!--Canvas-->
+            <div data-role="main" class="ui-content">
+                <div id="kinetic-container"></div>
+            </div>
+
+
+            <div data-role="footer">
+                <h1>Developed By: Michael Hillenbrand, Alexander McLean, and John M. Smith</h1>
+            </div>
+        </div>
+    </body>
+</html>

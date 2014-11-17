@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mobile Interfaces</title>
+        
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <script src="Scripts/scripts.js"></script>
+        <link rel="stylesheet" href="Styles/styles.css" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    </head>
+    <body>
+        <div data-role="page" id="pageone">
+            <div data-role="header">
+                <h1>Mobile Interfaces</h1>
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <li class="myTab"><a href="index.html">Home</a></li>
+                        <li class="myTab"><a href="interExamples.html">Interface Examples</a></li>
+                        <li class="myTab"><a href="interFonts.html">Fonts</a></li>
+                        <li class="myTab"><a href="interColors.html">Colors</a></li>
+                        <li class="myTab"><a href="interSound.html">Sound</a></li>
+                        <li class="myTab"><a href="interAccessibility.html">Accessibility</a></li>
+                        <li class="myTab"><a href="#" class="ui-btn-active">Mobile Interfaces</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <p>Mobile Interfaces must be as scalable and adaptable as possible. Mobile device sizes can vary greatly between tablets and small smartphones.</p>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" class="accordion">
+                    <h3>User Input</h3>
+                    <dl><dt>Keyboard</dt>
+                    <dd>
+                    Most mobile devices have several keyboard variations to choose from (text, number, email, URL, etc). Setting this appropriately ensures the user has the most useful keyboard. Other options can be disabled to fit the specific situation like auto-correct, auto-capitalizaiton, and auto-complete. 
+                    </dd>
+                    <dt>Gestures</dt>
+                    <dd>
+                    Gestures like swiping and pinching can be used with touch interfaces. These can make it easier for a user to navigate on a small screen. 
+                    </dd>
+                    </dl>
+                </div>
+
+                <div data-role="collapsible" class="accordion">
+                    <h3>jQuery Mobile</h3>
+                    jQuery Mobile is a touch-optimized web framework designed to be easily compatible with a wide variety of smartphones and tablets. It is built on top of the jQuery core. JQuery handles a lot of the scaling issues that come up when designing interfaces for a wide range of screen sizes. 
+                </div>
+            </div>
+            <div data-role="footer">
+                <h3>Designed By: Michael Hillenbrand, Alexander McLean, John M. Smith</h3>
+            </div>
+        </div> 
+    </body>
+</html>

@@ -29,36 +29,35 @@
                 </div>
             </div>
 
-            <div data-role="main" class="ui-content">
-                <dl><dt><h3>Art</h3></dt>
-                <dd>Different fonts can convey different emotions and feelings in the reader. When choosing a font it is important to consider the purpose of the interface and the mood you are trying to convey. Be sure the font is appropriate for the situation. Sometimes it is best to choose a neutral font which can work for many different moods and situations. </dd>
+            <div data-role="collapsible-set">
 
-                <dd><p>The style of a font or fonts chose should be aesthetically pleasing to the viewer. Usually one typeface will do. A particular typeface will typically offer different weights of the same font which will naturally work together to make a nice looking page. If multiple fonts are used, they should have sufficient contrast to stand out from each other. For example, a more artsy font can be used for large titles and headings along with a simple, easy to read font for the bulk of the text. This can give the interface character without sacrificing readability.</p></dd>
+                <div data-role="collapsible" class="accordion">
+                    <h3>Art</h3>
+                    Different fonts can convey different emotions and feelings in the reader. When choosing a font it is important to consider the purpose of the interface and the mood you are trying to convey. Be sure the font is appropriate for the situation. Sometimes it is best to choose a neutral font which can work for many different moods and situations.
 
-                <dd>
+                    <p>The style of a font or fonts chose should be aesthetically pleasing to the viewer. Usually one typeface will do. A particular typeface will typically offer different weights of the same font which will naturally work together to make a nice looking page. If multiple fonts are used, they should have sufficient contrast to stand out from each other. For example, a more artsy font can be used for large titles and headings along with a simple, easy to read font for the bulk of the text. This can give the interface character without sacrificing readability.</p>                    
+                </div>
 
-                </dd>
-                </dl>
-            </div>
+                <div data-role="collapsible" class="accordion">
+                    <h3>Readability</h3>
+                    Readability is a huge issue to deal with these days with smaller and smaller devices being used to display interfaces. Low pixel density can make it difficult to distinguish one character from another. When choosing a font you should be sure that it is easy tell the difference between similar characters like 'l' and 'I'. Different typefaces will deal with this problem in different ways with varying degrees of success. This page uses the 'Ubuntu' family of fonts. This font uses a tail on the lowercase 'l' to help distinguish it from a capital 'I'.
+                </div>
 
-            <div data-role="main" class="ui-content">
-                <dl><dt><h3>Readability</h3></dt>
-                <dd><p>Readability is a huge issue to deal with these days with smaller and smaller devices being used to display interfaces. Low pixel density can make it difficult to distinguish one character from another. When choosing a font you should be sure that it is easy tell the difference between similar characters like 'l' and 'I'. Different typefaces will deal with this problem in different ways with varying degrees of success. This page uses the 'Ubuntu' family of fonts. This font uses a tail on the lowercase 'l' to help distinguish it from a capital 'I'.</p></dd></dl>
-            </div>
+                <div data-role="collapsible" class="accordion">
+                    <h3>Size</h3>
+                    The default size for standard text in web interfaces is 16 pixels. When accounting for reading distance, 16 pixels is about the same size as text printed in a book. The font size you use will depend on what the purpose of the interface is. Will the interface be used in full browsers, mobile browsers, or both? In most cases you will not want to make the font scalable so it can adapt to the screen size and make the text readable no matter what platform it is viewed on.
+                </div>
 
-            <div data-role="main" class="ui-content">
-                <dl><dt><h3>Size</h3></dt>
-                <dd><p>The default size for standard text in web interfaces is 16 pixels. When accounting for reading distance, 16 pixels is about the same size as text printed in a book. The font size you use will depend on what the purpose of the interface is. Will the interface be used in full browsers, mobile browsers, or both? In most cases you will not want to make the font scalable so it can adapt to the screen size and make the text readable no matter what platform it is viewed on.</p></dd></dl>
-            </div>
+                <div data-role="collapsible" class="accordion">
+                    <h3>Scaling</h3>
+                    <p>Fonts can be scaled to ensure the text is readable when different screen sizes are encountered. One good way to scale your font size is to use the percentages and "ems" in CSS. 1 "em" is a scalable unit which represents the current font size. If the default text size is 16 pixels, 2em would represent 32 pixel font. Similary, font size can be represented as a percentage, with 100% being the default text size for the page. </p>
+                </div>
 
-            <div data-role="main" class="ui-content">
-                <dl><dt><h3>Scaling</h3></dt>
-                <dd><p>Fonts can be scaled to ensure the text is readable when different screen sizes are encountered. One good way to scale your font size is to use the percentages and "ems" in CSS. 1 "em" is a scalable unit which represents the current font size. If the default text size is 16 pixels, 2em would represent 32 pixel font. Similary, font size can be represented as a percentage, with 100% being the default text size for the page. </p></dd></dl>
-            </div>
+                <div data-role="collapsible" class="accordion">
+                    <h3>Cross-Platform Issues</h3>
+                    <p>Browsers only support a limited number of fonts, so sometimes a certain font will not be able to be displayed by all browsers. This problem can be solved using the CSS 'font-family' property. This property holds several font names as a fallback to ensure maximum compatibility. The code should start with the specific font you want and go more general.<br>Example in CSS:<br>&nbsp&nbsp p { font-family:"Times New Roman", Times, serif }</p>
+                </div>
 
-            <div data-role="main" class="ui-content">
-                <dl><dt><h3>Cross-Platform Issues</h3></dt>
-                <dd><p>Browsers only support a limited number of fonts, so sometimes a certain font will not be able to be displayed by all browsers. This problem can be solved using the CSS 'font-family' property. This property holds several font names as a fallback to ensure maximum compatibility. The code should start with the specific font you want and go more general.<br>Example in CSS:<br>&nbsp&nbsp p { font-family:"Times New Roman", Times, serif }</p></dd></dl>
             </div>
 
             <div data-role="footer">

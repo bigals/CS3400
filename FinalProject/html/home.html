@@ -5,34 +5,48 @@
         <title>GitHub Manager Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <!--JQuery Library-->
-        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <!--JQuery Mobile Themeing-->
+        <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.css">
         
-        <!--JQuery Mobile Themeing/Library-->
-        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
-        <script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <!--JQuery Library-->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        
+        <!--JQuery Mobile Library-->
+        <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.js"></script>
         
         <!--Custom Styles/Scripts-->
         <link rel="stylesheet" href="../Styles/styles.css" />
         <script src="../Scripts/script.js"></script>
+        <script src="../Scripts/purl.js"></script>
     </head>
-    <body>
-        <div data-role="page">
-            <div data-role="header">
-                <h1>GitHub Manager Home</h1>
-                <div data-role="navbar" data-iconpos="left">
-                    <ul>
+    <body class="ui-mobile-viewport ui-overlay-a">
+        <div data-role="page" class="ui-page ui-page-theme-b ui-page-active" data-theme="b">
+            <div data-role="panel" id="navPanel" data-position="left" data-display="overlay">
+                <ul data-role="listview" ><!-- class="ui-grid-b"????????-->
+                    <li><a href="./home.html" class="navBLinks" data-icon="home" data-ajax="false">Home</a></li>
+                    <li><a href="./repos.html" class="navBLinks" data-icon="bullets" data-ajax="false" >Repos</a></li>
+                    <li><a href="./pullRqs.html" class="navBLinks" data-icon="recycle" data-ajax="false">Pull Requests</a></li>
+                    <li><a href="./issues.html" class="navBLinks" data-icon="alert" data-ajax="false">Issues</a></li>
+                    <li><a href="./notifs.html" class="navBLinks" data-icon="comment" data-ajax="false">Notifications</a></li>
+                </ul>
+            </div>
+            
+            <div data-role="header" class="ui-header ui-bar-b" role="banner">
+                <a id="navOpen" href="#navPanel" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Menu</a>
+                <h1 class="ui-title" role="heading" aria-level="1">GitHub Manager Home</h1>
+                <a href="./help.html" class="ui-btn-right ui-btn ui-icon-info ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Help</a>
+                <div id="fullNav" data-role="navbar" data-iconpos="top" role="navigation">
+                    <ul><!-- class="ui-grid-b"????????-->
                         <!--ADD A HELP LINK AND PAGE SOON-->
-                        <li><a href="#" class="ui-btn-active" data-icon="home" rel="external">Home</a></li>
-                        <li><a href="./repos.html" data-icon="bullets" rel="external">Repos</a></li>
-                        <li><a href="./pullRqs.html" data-icon="recycle" rel="external">Pull Requests</a></li>
-                        <li><a href="./issues.html" data-icon="alert" rel="external">Issues</a></li>
-                        <li><a href="./notifs.html" data-icon="comment" rel="external">Notifications</a></li>
-                        <li><a href="./help.html" data-icon="info" rel="external">Help</a></li>
+                        <li><a href="./home.html" class="ui-btn-active ui-state-persist navBLinks" data-icon="home" data-ajax="false">Home</a></li>
+                        <li><a class="navBLinks" data-icon="bullets" data-ajax="false" >Repos</a></li>
+                        <li><a href="./pullRqs.html" class="navBLinks" data-icon="recycle" data-ajax="false">Pull Requests</a></li>
+                        <li><a href="./issues.html" class="navBLinks" data-icon="alert" data-ajax="false">Issues</a></li>
+                        <li><a href="./notifs.html" class="navBLinks" data-icon="comment" data-ajax="false">Notifications</a></li>
                     </ul>
                 </div>
             </div>
-            <div data-role="main" class="ui-content center-wrapper" data-theme="a">
+            <div data-role="main"  class="ui-content">
                 <!--Enter main content of the home page here-->
             </div>
         </div>

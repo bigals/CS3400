@@ -3,6 +3,12 @@ var init = {};
 var stage;
 var layer;
 var cometLayer;
+var comet1;
+var comet2;
+var line1;
+var line2;
+var circle1;
+var circle2;
 var time;
 var g;
 var length;
@@ -20,10 +26,14 @@ var fOrdPoten1;
 var fOrdPoten2;
 var fOrdTheta1;
 var fOrdTheta2;
+
 var displayCheck;
 var pathsCheck;
 var graphCheck;
 var outPutCheck;
+var initialScale;
+var initialWidth;
+var initialHeight;
 
 function calcNxtVals() {
     fOrdTheta1 = mpht * (((2 * poten1) - (3 * poten2 * Math.cos(theta1 - theta2))) / (16 - (9 * Math.pow((Math.cos(theta1 - theta2)), 2))));
@@ -36,52 +46,17 @@ function calcNxtVals() {
     poten2 += (fOrdPoten2 * time);
 }
 
-function animatePendulum(stage, layer, cometLayer) {
+function animatePendulum(stage, layer) {
     calcNxtVals();    //get the new phetas and potential energies and store into global variables
     
-    var line1 = new Kinetic.Line({
-        points: [x10, y10, (x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1))],
-        stroke: 'red',
-        strokeWidth: 10,
-        lineCap: 'square',
-        lineJoin: 'square'
-    });
-    var line2 = new Kinetic.Line({
-        points: [(x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1)), (x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))],
-        stroke: 'blue',
-        strokeWidth: 10,
-        lineCap: 'square',
-        lineJoin: 'square'
-    });
-    var circle1 = new Kinetic.Circle({
-        x: x10 + (length * Math.sin(theta1)),
-        y: y10 + (length * Math.cos(theta1)),
-        radius: 7,
-        fill: 'black'        
-    });
-    var circle2 = new Kinetic.Circle({
-        x: x10 + length * Math.sin(theta1) + length * Math.sin(theta2),
-        y: y10 + length * Math.cos(theta1) + length * Math.cos(theta2),
-        radius: 7,
-        fill: 'black'
-    });        
-    var comet1 = new Kinetic.Line({
-        points: [(x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1))],
-        stroke: 'red',
-        strokeWidth: 1,
-        lineCap: 'square',
-        lineJoin: 'square'
-    });
-    var comet2 = new Kinetic.Line({
-        points: [(x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))],
-        stroke: 'blue',
-        strokeWidth: 1,
-        lineCap: 'square',
-        lineJoin: 'square'
-    });
+    line1.points([x10, y10, (x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1))]);
+    line2.points([(x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1)), (x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))]);
     
-    circle1.move((x10 + length * Math.sin(theta1)),(y10 + length * Math.cos(theta1)));
-    circle2.move((x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2)));    
+    circle1.position({ x: x10 + (length * Math.sin(theta1)), y: y10 + (length * Math.cos(theta1)) });
+    circle2.position({ x: x10 + length * Math.sin(theta1) + length * Math.sin(theta2), y: y10 + length * Math.cos(theta1) + length * Math.cos(theta2) });
+    
+    comet1.points.push({x: (x10 + length * Math.sin(theta1)), y: (y10 + length * Math.cos(theta1))});
+    comet2.points.push({x: (x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), y: (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))});
     
     layer.removeChildren();
     layer.draw();
@@ -91,67 +66,32 @@ function animatePendulum(stage, layer, cometLayer) {
     {
         case 'choice-3':                                    //Both Leg Display
             layer.add(line2, line1, circle2, circle1);
-            if(pathsCheck == 'choice-4')                    //No Path/Comet Trail Display   
-            {
-                cometLayer.removeChildren();
-                cometLayer.draw();
-            }
-            if(pathsCheck == 'choice-3')                    //Both Path/Comet Trail Display
-            {
-                cometLayer.add(comet1, comet2);
-            }
-            if(pathsCheck == 'choice-2')                    //Leg 2 Path/Comet Trail Display
-            {
-                cometLayer.add(comet2);
-            }
-            if(pathsCheck == 'choice-1')                    //Leg 1 Path/Comet Trail Display
-            {
-                cometLayer.add(comet1);
-            }
             break;
         case 'choice-2':                                    //Just Leg 2 Display
             layer.add(line2, circle2);
-            if(pathsCheck == 'choice-4')                    //No Path/Comet Trail Display
-            {
-                cometLayer.removeChildren();
-                cometLayer.draw();
-            }
-            if(pathsCheck == 'choice-3')                    //Both Path/Comet Trail Display
-            {
-                cometLayer.add(comet1, comet2);
-            }
-            if(pathsCheck == 'choice-2')                    //Leg 2 Path/Comet Trail Display
-            {
-                cometLayer.add(comet2);
-            }
-            if(pathsCheck == 'choice-1')                    //Leg 1 Path/Comet Trail Display
-            {
-                cometLayer.add(comet1);
-            }
             break;
         case 'choice-1':                                    //Just Leg 1 Display
         default:
             layer.add(line1, circle1);
-            if(pathsCheck == 'choice-4')                    //No Path/Comet Trail Display
-            {
-                cometLayer.removeChildren();
-                cometLayer.draw();
-            }
-            if(pathsCheck == 'choice-3')                    //Both Path/Comet Trail Display
-            {
-                cometLayer.add(comet1, comet2);
-            }
-            if(pathsCheck == 'choice-2')                    //Leg 2 Path/Comet Trail Display
-            {
-                cometLayer.add(comet2);
-            }
-            if(pathsCheck == 'choice-1')                    //Leg 1 Path/Comet Trail Display
-            {
-                cometLayer.add(comet1);
-            }
             break;
     }
-    stage.add(layer, cometLayer);
+    switch(pathsCheck)
+    {
+        case 'choice-1':
+            cometLayer.add(comet1);
+            break;
+        case 'choice-2':
+            cometLayer.add(comet2);
+            break;
+        case 'choice-3':
+            cometLayer.add(comet1, comet2);
+            break;
+        case 'choice-4':
+            cometLayer.removeChildren();
+            cometLayer.draw();
+            break;
+    }
+    stage.add(cometLayer, layer);
 }
 
 function drawInitialBars(stage, layer, cometLayer) {
@@ -161,46 +101,46 @@ function drawInitialBars(stage, layer, cometLayer) {
     
     getConditionVals(l);
     
-    var line1 = new Kinetic.Line({
+    line1 = new Kinetic.Line({
         points: [x10, y10, (x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1))],
         stroke: 'red',
         strokeWidth: 10,
         lineCap: 'square',
         lineJoin: 'square'
     });
-    var line2 = new Kinetic.Line({
+    line2 = new Kinetic.Line({
         points: [(x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1)), (x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))],
         stroke: 'blue',
         strokeWidth: 10,
         lineCap: 'square',
         lineJoin: 'square'
     });
-    var circle1 = new Kinetic.Circle({
+    circle1 = new Kinetic.Circle({
         x: x10 + (length * Math.sin(theta1)),
         y: y10 + (length * Math.cos(theta1)),
         radius: 7,
         fill: 'black'        
     });
-    var circle2 = new Kinetic.Circle({
+    circle2 = new Kinetic.Circle({
         x: x10 + length * Math.sin(theta1) + length * Math.sin(theta2),
         y: y10 + length * Math.cos(theta1) + length * Math.cos(theta2),
         radius: 7,
         fill: 'black'
     });
     
-    var comet1 = new Kinetic.Line({
+    comet1 = new Kinetic.Line({
         points: [(x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1))],
         stroke: 'red',
-        strokeWidth: 1,
-        lineCap: 'square',
-        lineJoin: 'square'
+        strokeWidth: 10,
+        lineCap: 'round',
+        tension: 1
     });
-    var comet2 = new Kinetic.Line({
+    comet2 = new Kinetic.Line({
         points: [(x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))],
         stroke: 'blue',
-        strokeWidth: 1,
-        lineCap: 'square',
-        lineJoin: 'square'
+        strokeWidth: 10,
+        lineCap: 'round',
+        tension: 1
     });
     
     circle1.move((x10 + length * Math.sin(theta1)),(y10 + length * Math.cos(theta1)));
@@ -209,118 +149,89 @@ function drawInitialBars(stage, layer, cometLayer) {
     layer.removeChildren();
     layer.draw();
     layer.clear();
+    
+    cometLayer.removeChildren();
+    cometLayer.draw();
+    cometLayer.clear();
 
     switch(displayCheck)
     {
         case 'choice-3':                                    //Both Leg Display
             layer.add(line2, line1, circle2, circle1);
-            if(pathsCheck == 'choice-4')                    //No Path/Comet Trail Display   
-            {
-                cometLayer.removeChildren();
-                cometLayer.draw();
-            }
-            if(pathsCheck == 'choice-3')                    //Both Path/Comet Trail Display
-            {
-                cometLayer.add(comet1, comet2);
-            }
-            if(pathsCheck == 'choice-2')                    //Leg 2 Path/Comet Trail Display
-            {
-                cometLayer.add(comet2);
-            }
-            if(pathsCheck == 'choice-1')                    //Leg 1 Path/Comet Trail Display
-            {
-                cometLayer.add(comet1);
-            }
             break;
         case 'choice-2':                                    //Just Leg 2 Display
             layer.add(line2, circle2);
-            if(pathsCheck == 'choice-4')                    //No Path/Comet Trail Display
-            {
-                cometLayer.removeChildren();
-                cometLayer.draw();
-            }
-            if(pathsCheck == 'choice-3')                    //Both Path/Comet Trail Display
-            {
-                cometLayer.add(comet1, comet2);
-            }
-            if(pathsCheck == 'choice-2')                    //Leg 2 Path/Comet Trail Display
-            {
-                cometLayer.add(comet2);
-            }
-            if(pathsCheck == 'choice-1')                    //Leg 1 Path/Comet Trail Display
-            {
-                cometLayer.add(comet1);
-            }
             break;
         case 'choice-1':                                    //Just Leg 1 Display
         default:
             layer.add(line1, circle1);
-            if(pathsCheck == 'choice-4')                    //No Path/Comet Trail Display
-            {
-                cometLayer.removeChildren();
-                cometLayer.draw();
-            }
-            if(pathsCheck == 'choice-3')                    //Both Path/Comet Trail Display
-            {
-                cometLayer.add(comet1, comet2);
-            }
-            if(pathsCheck == 'choice-2')                    //Leg 2 Path/Comet Trail Display
-            {
-                cometLayer.add(comet2);
-            }
-            if(pathsCheck == 'choice-1')                    //Leg 1 Path/Comet Trail Display
-            {
-                cometLayer.add(comet1);
-            }
             break;
     }
-    stage.add(layer, cometLayer);
+    switch(pathsCheck)
+    {
+        case 'choice-1':
+            cometLayer.add(comet1);
+            break;
+        case 'choice-2':
+            cometLayer.add(comet2);
+            break;
+        case 'choice-3':
+            cometLayer.add(comet1, comet2);
+            break;
+        case 'choice-4':
+            cometLayer.removeChildren();
+            cometLayer.draw();
+            break;
+    }
+    stage.add(cometLayer, layer);
 }
 
 function beginSim(stage, layer, cometLayer) {
-    var line1 = new Kinetic.Line({
+    line1 = new Kinetic.Line({
         points: [x10, y10, 0, 0],
         stroke: 'red',
         strokeWidth: 10,
         lineCap: 'square',
         lineJoin: 'square'
     });
-    var line2 = new Kinetic.Line({
+    line2 = new Kinetic.Line({
         points: [0, 0, 0, 0],
         stroke: 'blue',
         strokeWidth: 10,
         lineCap: 'square',
         lineJoin: 'square'
     });
-    var circle1 = new Kinetic.Circle({
+    circle1 = new Kinetic.Circle({
         x: x10 + (length * Math.sin(theta1)),
         y: y10 + (length * Math.cos(theta1)),
         radius: 7,
         fill: 'black'        
     });
-    var circle2 = new Kinetic.Circle({
+    circle2 = new Kinetic.Circle({
         x: x10 + length * Math.sin(theta1) + length * Math.sin(theta2),
         y: y10 + length * Math.cos(theta1) + length * Math.cos(theta2),
         radius: 7,
         fill: 'black'
     });
         
-    var comet1 = new Kinetic.Line({
+    comet1 = new Kinetic.Line({
         points: [(x10 + length * Math.sin(theta1)), (y10 + length * Math.cos(theta1))],
         stroke: 'red',
-        strokeWidth: 1,
-        lineCap: 'square',
-        lineJoin: 'square'
+        strokeWidth: 10,
+        lineCap: 'round',
+        tension: 1
     });
-    var comet2 = new Kinetic.Line({
+    comet2 = new Kinetic.Line({
         points: [(x10 + length * Math.sin(theta1) + length * Math.sin(theta2)), (y10 + length * Math.cos(theta1) + length * Math.cos(theta2))],
         stroke: 'blue',
-        strokeWidth: 1,
-        lineCap: 'square',
-        lineJoin: 'square'
+        strokeWidth: 10,
+        lineCap: 'round',
+        tension: 1
     });
     
     clearInterval(init);
+    layer.removeChildren();
+    layer.draw();
     layer.clear();
     
     init = setInterval(function () {
@@ -329,16 +240,22 @@ function beginSim(stage, layer, cometLayer) {
 }
 
 function resizeCanvas(stage, layer) {
-    var stageWidth = window.innerWidth * 0.86;
-    var stageHeight = window.innerHeight * 0.76;
+    var width = window.innerWidth * 0.86;
+    var height = window.innerHeight * 0.76;
     
-    stage.setWidth(stageWidth);
-    stage.setHeight(stageHeight);
+    var xScale = (width / initialWidth) * initialScale.x;
+    var yScale = (height / initialHeight) * initialScale.y;
+    var newScale = {x: xScale, y: yScale};
     
-    x10 = parseInt(((stage.getWidth() * 0.5) - 6));
-    y10 = parseInt(((stage.getHeight() * 0.33) - 6));
+    stage.setAttr('width', width);
+    stage.setAttr('height', height);
+    stage.setAttr('scale', newScale);
+    stage.draw();
     
-    return ((Math.min(stageWidth, stageHeight) / 4) - 6);
+    x10 = parseInt(((width * 0.5) - 6));
+    y10 = parseInt(((height * 0.33) - 6));
+    
+    return ((Math.min(width, height) / 4) - 6);
 }
 
 function getConditionVals(ln) {
@@ -368,13 +285,13 @@ function getConditionVals(ln) {
     outPutCheck = $('input[name="outputData"]:checked').val();
 }
 
-function submitHandler(stage, layer, cometLayer, l) {
+function submitHandler(stage, layer, cometLayer,  l) {
     $('#myPanel').panel('close');
     getConditionVals(l);
     stage  = new Kinetic.Stage({
         container: 'kinetic-container',
-        width: 500,
-        height: 700
+        width: window.innerWidth * 0.86,
+        height: window.innerHeight * 0.76
     });
     layer = new Kinetic.Layer();
     cometLayer = new Kinetic.Layer();
@@ -384,9 +301,13 @@ function submitHandler(stage, layer, cometLayer, l) {
 $(document).ready(function (){
    stage = new Kinetic.Stage({
         container: 'kinetic-container',
-        width: 500,
-        height: 700
+        width: window.innerWidth * 0.86,
+        height: window.innerHeight * 0.76
     });
+    
+    initialWidth = window.innerWidth * 0.86;
+    initialHeight = window.innerHeight * 0.76;    
+    initialScale = stage.scale();
     
     layer = new Kinetic.Layer();
     cometLayer = new Kinetic.Layer();
@@ -405,12 +326,12 @@ $(document).ready(function (){
     });
     
     $('#btnSub').click(function() {
-        lngth = resizeCanvas(stage, layer);
+        //lngth = resizeCanvas(stage, layer);
         submitHandler(stage, layer, cometLayer, lngth);
     });
     
     $('#btnSub').bind('tap', function() {
-        lngth = resizeCanvas(stage, layer);
+        //lngth = resizeCanvas(stage, layer);
         submitHandler(stage, layer, cometLayer, lngth);
     });
     

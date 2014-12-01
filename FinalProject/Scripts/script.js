@@ -1,32 +1,36 @@
 'use strict';
-//wrap all javascript logic in an anonymous function
-(function() {
-    //Global Login Credentials Object
-    var loginCred = {
-        loginEmail: " ",
-        loginPass: " "
-    };
 
-    function onLoginSubmit() {
-        var emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-        
-        loginCred.loginEmail = $("input[name='loginEmail']").val();
-        loginCred.loginPass = $("input[name='loginPass']").val();
-        
-        //Check that email has a valid input.... TODO: Need to add check for password here
-        if(emailRegEx.test(loginCred.loginEmail))
-        {
-            location.href = "home.html";
-        }
-        else
-        {
-            //need error handleing for invalid email here
-        }
+//Global Login Credentials Object
+var loginCred = {
+    loginUname: " ",
+    loginPass: " "
+};
+
+function onLoginSubmit() {
+    loginCred.loginUname = $("#loginUName").val();
+    loginCred.loginPass = $("#loginPass").val();
+    
+    localStorage.setItem("username", loginCred.loginUname);
+    localStorage.setItem("password", loginCred.loginPass);
+
+    //TODO: Authenticate
+    window.location = "home.html"
+    //location.href = "./home.html?uName=" + loginCred.loginUname + "&uPass=" + loginCred.loginPass;
+}
+
+function getLocalStoreData() {
+    if(localStorage.getItem('username') !== 'undefined')
+    {
+        loginCred.loginUname = localStorage.getItem('username');
+        loginCred.loginPass = localStorage.getItem('password');
     }
+}
 
-    $(document).ready(function () {
-        $('#loginSubmit').click(function() {
-            onLoginSubmit();
-        });
+//JQuery Mobile Equivilent of $(document).ready()
+$(document).on('pageinit', function() {
+    getLocalStoreData();
+    
+    $('#loginSubmit').click(function() {
+        onLoginSubmit();
     });
-})();
+});

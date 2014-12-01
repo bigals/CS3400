@@ -15,41 +15,42 @@
         <!--Custom Styles/Scripts-->
         <link rel="stylesheet" href="../Styles/styles.css" />
         <script src="../Scripts/script.js"></script>
+        <script src="../Scripts/purl.js"></script>
     </head>
-    <body>
-        <div data-role="page" id="Psum-view">
-            <div data-role="header">
-                <h1>All Pull Requests</h1>
-                <div data-role="navbar" data-iconpos="left">
+    <body class="ui-mobile-viewport ui-overlay-a">
+        <div data-role="page" id="Psum-view" class="ui-page ui-page-theme-b ui-page-active" data-theme="b">
+            <div data-role="header" class="ui-header ui-bar-b" role="banner">
+                <h1 class="ui-title" role="heading" aria-level="1">All Pull Requests</h1>
+                <a href="./help.html" class="ui-btn-right ui-btn ui-icon-info ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Help</a>
+                <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <!--Assign  class="ui-btn-active ui-disabled" to whatever link that belongs to the page that this nav bar is in-->
                         <!--ADD A HELP LINK AND PAGE SOON-->
-                        <li><a href="./home.html" data-icon="home" rel="external">Home</a></li>
-                        <li><a href="./repos.html" data-icon="bullets" rel="external">Repos</a></li>
-                        <li><a href="#" class="ui-btn-active" data-icon="recycle" rel="external">Pull Requests</a></li>
-                        <li><a href="./issues.html" data-icon="alert" rel="external">Issues</a></li>
-                        <li><a href="./notifs.html" data-icon="comment" rel="external">Notifications</a></li>
-                        <li><a href="./help.html" data-icon="info" rel="external">Help</a></li>
+                        <li class="navBLinks"><a href="./home.html" class="navBLinks" data-icon="home" data-ajax="false">Home</a></li>
+                        <li class="navBLinks"><a href="./repos.html" class="navBLinks" data-icon="bullets" data-ajax="false">Repos</a></li>
+                        <li class="navBLinks"><a href="./pullRqs.html" class="ui-btn-active ui-state-persist" data-icon="recycle" data-ajax="false">Pull Requests</a></li>
+                        <li class="navBLinks"><a href="./issues.html" class="navBLinks" data-icon="alert" data-ajax="false">Issues</a></li>
+                        <li class="navBLinks"><a href="./notifs.html" class="navBLinks" data-icon="comment" data-ajax="false">Notifications</a></li>
                     </ul>
                 </div>
             </div>
-            <div data-role="main" class="ui-content" data-theme="a"> <!--Make sure to change to a different swatch-->
+            <div data-role="main" class="ui-content" data-theme="b"> <!--Make sure to change to a different swatch-->
                 <div>Im in sum view of pull requests</div>
                 <a href="#Pdetailed-view">Link to detailed view</a>
             </div>
         </div>
-        <div data-role="page" id="Pdetailed-view">
+        <div data-role="page" id="Pdetailed-view" class="ui-page ui-page-theme-b" data-theme="b">
             <div data-role="header">
                 <h1>Issue &#35;*blank* on *repoName*</h1>
                 <div data-role="navbar" data-iconpos="left">
                     <ul>
                         <!--Assign  class="ui-btn-active" to whatever link that belongs to the page that this nav bar is in-->
                         <li><a href="./home.html" data-icon="home">Home</a></li>
-                        <li><a href="#Psum-view" data-icon="back">All Pull Requests</a></li>
+                        <li><a href="#Psum-view" data-icon="back" data-direction="reverse">All Pull Requests</a></li>
                     </ul>
                 </div>
             </div>
-            <div data-role="main" class="ui-content" data-theme="a"> <!--Make sure to change to a different swatch-->
+            <div data-role="main" class="ui-content" data-theme="b"> <!--Make sure to change to a different swatch-->
                 <div>Im in detailed view of pull requests</div>
             </div>
         </div>

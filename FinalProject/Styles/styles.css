@@ -7,3 +7,43 @@
 .center-wrapper * {
     margin: 0 auto;
 }
+#fullNav {
+   display: none; 
+}
+#navOpen {
+}
+h1 {
+    font-size: 0.7em !important;
+}
+
+/* Media Query to switch to panel style navigation*/
+@media all and (min-width: 454px){
+	#fullNav {
+       display: inline; 
+    }
+    #navOpen {
+        display: none;
+    }
+}
+
+/* Media Queries to shrink header text based on window size*/
+@media all and (min-width: 550px){
+	h1 {
+        font-size: 2.0em !important;
+    }
+}
+@media all and (min-width: 394px){
+	h1 {
+        font-size: 0.9em !important;
+    }
+}
+@media all and (min-width: 475px){
+	h1 {
+        font-size: 1.0em !important;
+    }
+}
+@media all and (min-width: 519px){
+	h1 {
+        font-size: 1.2em !important;
+    }
+}

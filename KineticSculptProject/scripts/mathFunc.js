@@ -22,6 +22,7 @@ var sOrdPoten2;
 var sOrdTheta1;
 var sOrdTheta2;
 
+
 //draws circle based on a context passed in, and our defined circle object thats passed in
 function drawCircle(myCircle, context) {
     context.beginPath();
@@ -209,11 +210,51 @@ function submitHandler(can, cxt, l) {
     beginSim(can, cxt);
 }
 
+var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
+
+var dataset = [{label: "line1",data: data}];
+
+var options = {
+    series: {
+        lines: { show: true },
+        points: {
+            radius: 3,
+            show: true
+        }
+    }
+};
+
 $(document).ready(function (){
     var canvs  = document.getElementById('pendCanvas');
     var contxt = canvs.getContext('2d');
     var lngth = 0;
-    
+    $.plot($("#placeholder"), dataset, options);
+/*    
+    var xVal = 0;
+    var data = [[],[]];
+    var plot = $.plot( $("#placeholder"), data);
+
+    function getData(){
+        // This could be an ajax call back.
+        var yVal1 = Math.floor(Math.random()*11);
+        var yVal2 = Math.floor(Math.random()*11);
+        var datum1 = [xVal, yVal1];
+        var datum2 = [xVal, yVal2];
+        data[0].push(datum1);
+        data[1].push(datum2);
+        if(data[0].length>10){
+            // only allow ten points
+            data[0] = data[0].splice(1);
+            data[1] = data[1].splice(1);
+        }
+        xVal++;
+        plot.setData(data);
+        plot.setupGrid();
+        plot.draw();
+    }
+
+    setInterval(getData, 1000);
+*/
     $('#myPanel').on('panelbeforeopen', function(event, ui) {
         drawInitialBars(canvs, contxt);
     });

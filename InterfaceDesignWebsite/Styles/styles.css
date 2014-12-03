@@ -58,6 +58,10 @@ header h1 {
     margin-top: 75px;
 }
 
+#golden {
+    padding: 50px;
+}
+
 .accordion {
     padding-bottom: 0px;
     padding-left: 2%;
